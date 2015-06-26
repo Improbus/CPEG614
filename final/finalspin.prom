@@ -1,0 +1,53 @@
+	
+int Balance = 100;
+int curBalance=0;
+
+int transactions =0;
+
+bit isDepo[N]= 0;
+bit isWith[N]= 0;
+
+inline withdraw(amount){
+	atomic { curBalance = Balance; }
+
+	atomic {
+	if :: curBalance > amount ->
+	      curBalance=curBalance-amount
+	:: else fi;
+	}
+
+	atomic {Balance = curBalance; }
+
+	
+}
+
+inline deposit(amount){
+	atomic { curBalance = Balance; }
+	atomic{curBalance= curBalance+amount;}
+	atomic {Balance = curBalance;}
+}
+
+
+active [N] proctype BankUser(){
+	
+
+	do
+	::atomic { isDepo[_pid]=1; deposit(50); 
+	           printf("USER %d Deposited 50.  BALANCE = %d \n", _pid, Balance);
+		   transactions++;
+		   isDepo[_pid]=0;
+	}
+	atomic {isWith[_pid]=1; withdraw(75);  
+	           printf("USER %d Withdrew 75.  BALANCE = %d \n", _pid, Balance); 
+                   transactions++;
+	           isWith[_pid]=0;
+	}
+
+	if :: transactions > 30 -> break; :: else fi;
+	od;
+}
+
+ltl f1 {[](Balance>=0)}
+ltl f2 {(isDepo[0]==1 || isDepo[1]==1) -> <>(Balance==150)}
+ltl f3 { (isWith[0]==1 || isWith[1]==1) -> <>(Balance==25)}
+ltl f4 {<>(Balance==75)}

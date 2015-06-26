@@ -1,0 +1,132 @@
+/* Daniel A DeCamillo */
+/* 04-December-2014 */
+/* CISC 414/614 FALL 2014 */
+/* Homework 5 */
+
+dan@0466J-E6400:~/cpeg614/homework/HW5/P4$ spin -DN=4 bakery.pml 
+          Thread 1 critical. Using resource.
+          Thread 1 noncritical. Not Using resource.
+                  Thread 3 critical. Using resource.
+                  Thread 3 noncritical. Not Using resource.
+      Thread 0 critical. Using resource.
+      Thread 0 noncritical. Not Using resource.
+              Thread 2 critical. Using resource.
+              Thread 2 noncritical. Not Using resource.
+          Thread 1 critical. Using resource.
+          Thread 1 noncritical. Not Using resource.
+                  Thread 3 critical. Using resource.
+                  Thread 3 noncritical. Not Using resource.
+      Thread 0 critical. Using resource.
+      Thread 0 noncritical. Not Using resource.
+              Thread 2 critical. Using resource.
+              Thread 2 noncritical. Not Using resource.
+4 processes created
+
+dan@0466J-E6400:~/cpeg614/homework/HW5/P4$ cc -o pan pan.c
+
+dan@0466J-E6400:~/cpeg614/homework/HW5/P4$ ./pan -a -n 
+warning: no accept labels are defined, so option -a has no effect (ignored)
+hint: this search is more efficient if pan.c is compiled -DSAFETY
+
+(Spin Version 6.3.2 -- 17 May 2014)
+	+ Partial Order Reduction
+
+Full statespace search for:
+	never claim         	- (none specified)
+	assertion violations	+
+	acceptance   cycles 	- (not selected)
+	invalid end states	+
+
+State-vector 96 byte, depth reached 276, errors: 0
+   503465 states, stored
+   657555 states, matched
+  1161020 transitions (= stored+matched)
+  5144223 atomic steps
+hash conflicts:      5359 (resolved)
+
+Stats on memory usage (in Megabytes):
+   59.538	equivalent memory usage for states (stored*(State-vector + overhead))
+   53.048	actual memory usage for states (compression: 89.10%)
+         	state-vector as stored = 82 byte + 28 byte overhead
+  128.000	memory used for hash table (-w24)
+    0.534	memory used for DFS stack (-m10000)
+  181.464	total actual memory usage
+
+
+
+pan: elapsed time 2.32 seconds
+pan: rate 217010.78 states/second
+
+dan@0466J-E6400:~/cpeg614/homework/HW5/P4$ rm -rf pan*
+
+dan@0466J-E6400:~/cpeg614/homework/HW5/P4$ spin -a -DN=4 bakery.pml 
+ltl mutex: [] (((((crit[0]+crit[1])+crit[2])+crit[3])<=1))
+ltl fair: (((<> (crit[0])) && (<> (crit[1]))) && (<> (crit[2]))) && (<> (crit[3]))
+  the model contains 2 never claims: fair, mutex
+  only one claim is used in a verification run
+  choose which one with ./pan -a -N name (defaults to -N mutex)
+
+dan@0466J-E6400:~/cpeg614/homework/HW5/P4$ cc -o pan pan.c
+
+dan@0466J-E6400:~/cpeg614/homework/HW5/P4$ ./pan -a -n -N mutex
+
+(Spin Version 6.3.2 -- 17 May 2014)
+	+ Partial Order Reduction
+
+Full statespace search for:
+	never claim         	+ (mutex)
+	assertion violations	+ (if within scope of claim)
+	acceptance   cycles 	+ (fairness disabled)
+	invalid end states	- (disabled by never claim)
+
+State-vector 112 byte, depth reached 321, errors: 0
+   503465 states, stored
+   657559 states, matched
+  1161024 transitions (= stored+matched)
+  5144223 atomic steps
+hash conflicts:      5572 (resolved)
+
+Stats on memory usage (in Megabytes):
+   67.220	equivalent memory usage for states (stored*(State-vector + overhead))
+   60.760	actual memory usage for states (compression: 90.39%)
+         	state-vector as stored = 99 byte + 28 byte overhead
+  128.000	memory used for hash table (-w24)
+    0.534	memory used for DFS stack (-m10000)
+  189.179	total actual memory usage
+
+
+
+pan: elapsed time 2.85 seconds
+pan: rate 176654.39 states/second
+
+dan@0466J-E6400:~/cpeg614/homework/HW5/P4$ ./pan -a -n -N fair
+
+(Spin Version 6.3.2 -- 17 May 2014)
+	+ Partial Order Reduction
+
+Full statespace search for:
+	never claim         	+ (fair)
+	assertion violations	+ (if within scope of claim)
+	acceptance   cycles 	+ (fairness disabled)
+	invalid end states	- (disabled by never claim)
+
+State-vector 112 byte, depth reached 314, errors: 0
+   479938 states, stored (959876 visited)
+  1492659 states, matched
+  2452535 transitions (= visited+matched)
+ 10966212 atomic steps
+hash conflicts:     13754 (resolved)
+
+Stats on memory usage (in Megabytes):
+   64.079	equivalent memory usage for states (stored*(State-vector + overhead))
+   58.021	actual memory usage for states (compression: 90.55%)
+         	state-vector as stored = 99 byte + 28 byte overhead
+  128.000	memory used for hash table (-w24)
+    0.534	memory used for DFS stack (-m10000)
+  186.444	total actual memory usage
+
+
+
+pan: elapsed time 5.43 seconds
+pan: rate 176772.74 states/second
+

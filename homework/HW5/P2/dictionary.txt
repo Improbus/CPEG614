@@ -1,0 +1,103 @@
+/* Daniel A DeCamillo */
+/* 04-December-2014 */
+/* CISC 414/614 FALL 2014 */
+/* Homework 5 */
+
+dan@0466J-E6400:~/cpeg614/homework/HW5/P2$ spin -DN=4 dictionary.pml 
+
+                  Philosopher[3] has picked up left fork
+          Philosopher[1] has picked up left fork
+                  Philosopher[3] has picked up right fork
+                  Philosopher[3] eats
+      Philosopher[0] has picked up the Dictionary
+                  Philosopher[3] has put down left fork
+              Philosopher[2] has picked up left fork
+              Philosopher[2] has picked up right fork
+              Philosopher[2] eats
+                  Philosopher[3] has put down right fork
+                  Philosopher[3] thinks
+                  Right Philosopher[2] Dictionary Status : 0
+              Philosopher[2] has put down left fork
+              Philosopher[2] has put down right fork
+                  Philosopher[3] has picked up left fork
+          Philosopher[1] has picked up right fork
+                  Philosopher[3] has picked up right fork
+          Philosopher[1] eats
+              Philosopher[2] thinks
+          Philosopher[1] has put down left fork
+              Right Philosopher[1] Dictionary Status : 0
+          Philosopher[1] has put down right fork
+                  Philosopher[3] eats
+                  Philosopher[3] has put down left fork
+          Philosopher[1] thinks
+                  Philosopher[3] has put down right fork
+              Philosopher[2] has picked up left fork
+              Philosopher[2] has picked up right fork
+              Philosopher[2] eats
+                  Philosopher[3] thinks
+          Right Philosopher[0] Dictionary Status : 1
+          Philosopher[0] has passed the Dictionary
+          Philosopher[1] has picked up the Dictionary
+      Philosopher[0] has picked up left fork
+      Philosopher[0] has picked up right fork
+                  Right Philosopher[2] Dictionary Status : 0
+      Philosopher[0] eats
+              Philosopher[2] has put down left fork
+              Philosopher[2] has put down right fork
+              Philosopher[2] thinks
+                  Philosopher[3] has picked up left fork
+              Right Philosopher[1] Dictionary Status : 1
+              Philosopher[1] has passed the Dictionary
+              Philosopher[2] has picked up the Dictionary
+      Philosopher[0] has put down left fork
+      Philosopher[0] has put down right fork
+                  Philosopher[3] has picked up right fork
+      Philosopher[0] thinks
+                  Philosopher[3] eats
+          Philosopher[1] has picked up left fork
+          Philosopher[1] has picked up right fork
+      Right Philosopher[3] Dictionary Status : 0
+                  Philosopher[3] has put down left fork
+          Philosopher[1] eats
+          Philosopher[1] has put down left fork
+                  Philosopher[3] has put down right fork
+                  Philosopher[3] thinks
+      Philosopher[0] has picked up left fork
+                  Right Philosopher[2] Dictionary Status : 1
+                  Philosopher[2] has passed the Dictionary
+                  Philosopher[3] has picked up the Dictionary
+
+dan@0466J-E6400:~/cpeg614/homework/HW5/P2$ spin -DN=4 -a dictionary.pml
+dan@0466J-E6400:~/cpeg614/homework/HW5/P2$ cc -o pan pan.c
+dan@0466J-E6400:~/cpeg614/homework/HW5/P2$ ./pan -a -n 
+warning: no accept labels are defined, so option -a has no effect (ignored)
+hint: this search is more efficient if pan.c is compiled -DSAFETY
+
+(Spin Version 6.3.2 -- 17 May 2014)
+	+ Partial Order Reduction
+
+Full statespace search for:
+	never claim         	- (none specified)
+	assertion violations	+
+	acceptance   cycles 	- (not selected)
+	invalid end states	+
+
+State-vector 44 byte, depth reached 940, errors: 0
+     1826 states, stored
+     2163 states, matched
+     3989 transitions (= stored+matched)
+     2143 atomic steps
+hash conflicts:         2 (resolved)
+
+Stats on memory usage (in Megabytes):
+    0.125	equivalent memory usage for states (stored*(State-vector + overhead))
+    0.285	actual memory usage for states
+  128.000	memory used for hash table (-w24)
+    0.534	memory used for DFS stack (-m10000)
+  128.730	total actual memory usage
+
+
+
+pan: elapsed time 0 seconds
+
+

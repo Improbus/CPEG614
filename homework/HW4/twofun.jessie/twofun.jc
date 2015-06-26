@@ -1,0 +1,81 @@
+# InvariantPolicy = Arguments
+# SeparationPolicy = Regions
+# AnnotationPolicy = None
+# AbstractDomain = Pol
+
+axiomatic Padding {
+
+  logic type padding
+  
+}
+
+tag unsigned_charP = {
+  integer unsigned_charM: 8;
+}
+
+type unsigned_charP = [unsigned_charP]
+
+tag charP = {
+  integer charM: 8;
+}
+
+type charP = [charP]
+
+tag voidP = {
+}
+
+type voidP = [voidP]
+
+integer f(integer n_1)
+behavior default:
+  ensures (_C_3 : true);
+{  
+   (var integer __retres);
+   
+   {  (_C_2 : (__retres = (_C_1 : (n_1 / 2))));
+      
+      (return __retres)
+   }
+}
+
+integer g(integer n_2)
+behavior default:
+  ensures (_C_7 : true);
+{  
+   (var integer __retres_0);
+   
+   {  (_C_6 : (__retres_0 = (_C_5 : ((_C_4 : (3 * n_2)) - 1))));
+      
+      (return __retres_0)
+   }
+}
+
+integer h(integer n_3)
+  requires (_C_16 : (n_3 >= 1));
+behavior default:
+  ensures (_C_15 : ((((\at(n_3,Old) % 2) == 0) ==>
+                      (\result == (\at(n_3,Old) / 2))) ||
+                     (((\at(n_3,Old) % 2) > 0) ==>
+                       (\result == ((3 * \at(n_3,Old)) - 1)))));
+{  
+   (var integer tmp);
+   
+   (var integer tmp_0);
+   
+   (var integer __retres_1);
+   
+   {  (if ((_C_14 : (n_3 % 2)) == 0) then 
+      {  (_C_12 : (tmp = (_C_11 : f(n_3))));
+         (_C_13 : (__retres_1 = tmp));
+         
+         (goto return_label)
+      } else 
+      {  (_C_9 : (tmp_0 = (_C_8 : g(n_3))));
+         (_C_10 : (__retres_1 = tmp_0));
+         
+         (goto return_label)
+      });
+      (return_label : 
+      (return __retres_1))
+   }
+}

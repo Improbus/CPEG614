@@ -1,0 +1,206 @@
+[JC_17]
+file = "/home/ddeco/HW4/series.c"
+line = 36
+begin = 21
+end = 28
+
+[JC_23]
+file = "/home/ddeco/HW4/series.c"
+line = 37
+begin = 21
+end = 34
+
+[JC_22]
+file = "/home/ddeco/HW4/series.c"
+line = 38
+begin = 21
+end = 33
+
+[JC_5]
+file = "/home/ddeco/HW4/series.c"
+line = 28
+begin = 13
+end = 18
+
+[JC_9]
+file = "/home/ddeco/HW4/series.c"
+line = 29
+begin = 12
+end = 41
+
+[JC_24]
+file = "/home/ddeco/HW4/series.c"
+line = 36
+begin = 21
+end = 25
+
+[JC_25]
+file = "/home/ddeco/HW4/series.c"
+line = 36
+begin = 24
+end = 28
+
+[JC_26]
+file = "/home/ddeco/HW4/series.c"
+line = 36
+begin = 21
+end = 28
+
+[JC_8]
+file = "/home/ddeco/HW4/series.jessie/"
+line = 0
+begin = -1
+end = -1
+
+[JC_13]
+file = "/home/ddeco/HW4/series.c"
+line = 38
+begin = 21
+end = 33
+
+[JC_11]
+file = "/home/ddeco/HW4/series.jessie/"
+line = 0
+begin = -1
+end = -1
+
+[JC_15]
+file = "/home/ddeco/HW4/series.c"
+line = 36
+begin = 21
+end = 25
+
+[JC_27]
+file = "/home/ddeco/HW4/series.jessie/"
+line = 0
+begin = -1
+end = -1
+
+[series_ensures_default]
+name = "Function series"
+behavior = "default behavior"
+file = "/home/ddeco/HW4/series.c"
+line = 31
+begin = 6
+end = 12
+
+[JC_12]
+file = "/home/ddeco/HW4/series.jessie/"
+line = 0
+begin = -1
+end = -1
+
+[JC_6]
+file = "/home/ddeco/HW4/series.c"
+line = 28
+begin = 22
+end = 28
+
+[JC_4]
+file = "/home/ddeco/HW4/series.jessie/"
+line = 0
+begin = -1
+end = -1
+
+[power0]
+name = "Lemma power0"
+behavior = "axiom"
+file = "/home/ddeco/HW4/series.c"
+line = 23
+begin = 4
+end = 48
+
+[JC_29]
+file = "/home/ddeco/HW4/series.jessie/series.jc"
+line = 61
+begin = 6
+end = 591
+
+[JC_7]
+file = "/home/ddeco/HW4/series.c"
+line = 28
+begin = 13
+end = 28
+
+[JC_16]
+file = "/home/ddeco/HW4/series.c"
+line = 36
+begin = 24
+end = 28
+
+[JC_2]
+file = "/home/ddeco/HW4/series.c"
+line = 28
+begin = 22
+end = 28
+
+[JC_14]
+file = "/home/ddeco/HW4/series.c"
+line = 37
+begin = 21
+end = 34
+
+[JC_21]
+file = "/home/ddeco/HW4/series.c"
+line = 39
+begin = 19
+end = 22
+
+[JC_1]
+file = "/home/ddeco/HW4/series.c"
+line = 28
+begin = 13
+end = 18
+
+[series_safety]
+name = "Function series"
+behavior = "Safety"
+file = "/home/ddeco/HW4/series.c"
+line = 31
+begin = 6
+end = 12
+
+[JC_10]
+file = "/home/ddeco/HW4/series.c"
+line = 29
+begin = 12
+end = 41
+
+[power1]
+name = "Lemma power1"
+behavior = "axiom"
+file = "/home/ddeco/HW4/series.c"
+line = 24
+begin = 4
+end = 81
+
+[JC_20]
+file = "/home/ddeco/HW4/series.jessie/series.jc"
+line = 61
+begin = 6
+end = 591
+
+[JC_18]
+file = "/home/ddeco/HW4/series.jessie/"
+line = 0
+begin = -1
+end = -1
+
+[JC_3]
+file = "/home/ddeco/HW4/series.c"
+line = 28
+begin = 13
+end = 28
+
+[JC_19]
+file = "/home/ddeco/HW4/series.jessie/series.jc"
+line = 61
+begin = 6
+end = 591
+
+[JC_28]
+file = "/home/ddeco/HW4/series.jessie/series.jc"
+line = 61
+begin = 6
+end = 591
+

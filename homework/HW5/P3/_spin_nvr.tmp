@@ -1,0 +1,89 @@
+never f1 {    /* !([] ((s>=0))) */
+T0_init:
+	do
+	:: atomic { (! (((s>=0)))) -> assert(!(! (((s>=0))))) }
+	:: (1) -> goto T0_init
+	od;
+accept_all:
+	skip
+}
+never f2 {    /* !(<> ([] ((s>=1)))) */
+T0_init:
+	do
+	:: (! (((s>=1)))) -> goto accept_S9
+	:: (1) -> goto T0_init
+	od;
+accept_S9:
+	do
+	:: (1) -> goto T0_init
+	od;
+}
+never f3 {    /* !((! (<> ((s==2)))) || ([] ((s==2)))) */
+T0_init:
+	do
+	:: (! (((s==2)))) -> goto T0_S4
+	:: (((s==2))) -> goto T0_S9
+	:: (1) -> goto T0_init
+	od;
+T0_S4:
+	do
+	:: atomic { (((s==2))) -> assert(!(((s==2)))) }
+	:: (1) -> goto T0_S4
+	od;
+T0_S9:
+	do
+	:: atomic { (! (((s==2)))) -> assert(!(! (((s==2))))) }
+	:: (1) -> goto T0_S9
+	od;
+accept_all:
+	skip
+}
+never f4 {    /* !((! (((s==1)) && (<> ((s==3))))) || ((! ((s==3))) U ((s==2)))) */
+T0_init:
+	do
+	:: (! (((s==2))) && ((s==1)) && ((s==3))) -> goto accept_S10
+	:: atomic { (! ((! ((s==3)))) && ! (((s==2))) && ((s==1)) && ((s==3))) -> assert(!(! ((! ((s==3)))) && ! (((s==2))) && ((s==1)) && ((s==3)))) }
+	:: (! (((s==2))) && ((s==1))) -> goto T0_S13
+	:: (! ((! ((s==3)))) && ! (((s==2))) && ((s==1))) -> goto T0_S1
+	od;
+accept_S10:
+	do
+	:: (! (((s==2)))) -> goto accept_S10
+	:: atomic { (! ((! ((s==3)))) && ! (((s==2)))) -> assert(!(! ((! ((s==3)))) && ! (((s==2))))) }
+	od;
+T0_S13:
+	do
+	:: (! (((s==2))) && ((s==3))) -> goto accept_S10
+	:: atomic { (! ((! ((s==3)))) && ! (((s==2))) && ((s==3))) -> assert(!(! ((! ((s==3)))) && ! (((s==2))) && ((s==3)))) }
+	:: (! (((s==2)))) -> goto T0_S13
+	:: (! ((! ((s==3)))) && ! (((s==2)))) -> goto T0_S1
+	od;
+T0_S1:
+	do
+	:: atomic { (((s==3))) -> assert(!(((s==3)))) }
+	:: (1) -> goto T0_S1
+	od;
+accept_all:
+	skip
+}
+never f5 {    /* !((([] (<> ((s==1)))) && ([] (<> ((s==2))))) && ([] (<> ((s==3))))) */
+T0_init:
+	do
+	:: (! (((s==3)))) -> goto accept_S6
+	:: (! (((s==2)))) -> goto accept_S11
+	:: (! (((s==1)))) -> goto accept_S16
+	:: (1) -> goto T0_init
+	od;
+accept_S6:
+	do
+	:: (! (((s==3)))) -> goto accept_S6
+	od;
+accept_S11:
+	do
+	:: (! (((s==2)))) -> goto accept_S11
+	od;
+accept_S16:
+	do
+	:: (! (((s==1)))) -> goto accept_S16
+	od;
+}

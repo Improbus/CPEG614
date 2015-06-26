@@ -1,0 +1,39 @@
+/* share.prom: shared resource example.
+ * Authors: Stephen F. Siegel and George S. Avrunin
+ */
+
+int x = 0;
+chan synch = [0] of {bit};
+
+active [1] proctype rw0() {
+  do
+  :: x = 0;
+     synch!1;
+     if
+     :: x == 0 ->
+useResource:
+        printf("rw0 uses resource\n")
+     :: else
+     fi
+  od
+}
+
+active [1] proctype rw1() {
+  do
+  :: x = 1;
+     synch?1;
+     if
+     :: x == 1 ->
+useResource:
+        printf("rw1 uses resource\n")
+     :: else
+     fi
+  od
+}
+
+
+#define u0 rw0@useResource
+#define u1 rw1@useResource
+
+ltl mutex { []!(u0 && u1) }
+ltl live  { <>(u0 || u1)  }

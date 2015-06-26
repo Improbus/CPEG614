@@ -1,0 +1,1349 @@
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/arg.c,498
+static int gdbFlag 25,546
+int32_t blockreport 26,570
+int32_t taskreport 27,644
+int _runInGDB(29,707
+static void printHeaders(33,750
+void printHelpTable(52,1147
+  typedef struct _flagType 53,1175
+    const char* flag;54,1204
+    const char* description;55,1226
+    const char headerType;56,1255
+  } flagType;57,1282
+static int32_t _argNumLocales 106,2672
+void parseNumLocales(108,2708
+int32_t getArgNumLocales(122,3231
+void parseArgs(131,3364
+int chpl_specify_locales_error(314,8475
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/chpl-comm.c,354
+int32_t chpl_nodeID 18,454
+int32_t chpl_numNodes 19,480
+int32_t chpl_numPrivateObjects 20,508
+static int32_t chpl_capPrivateObjects 21,544
+void** chpl_privateObjects;22,587
+int chpl_verbose_comm;24,616
+int chpl_comm_diagnostics;25,639
+int chpl_verbose_mem;26,666
+void chpl_newPrivatizedClass(28,689
+extern void* chpl_getPrivatizedClass(48,1628
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/chpl-mem-desc.c,125
+#define CHPL_MEMDESC_DESC(25,565
+static const char* rt_memDescs[rt_memDescs26,618
+const char* chpl_mem_descString(30,701
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/chpl-mem-hook.c,73
+void chpl_memhook_check_pre(20,446
+void chpl_memhook_check_post(33,923
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/chpl-mem.c,117
+static int heapInitialized 16,392
+void chpl_mem_init(19,426
+void chpl_mem_exit(25,504
+int chpl_mem_inited(30,559
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/chpl-tasks.c,179
+int32_t chpl_task_getenvNumThreadsPerLocale(24,567
+static size_t stack_size_default(61,1482
+static size_t stack_size_max(91,2262
+size_t chpl_task_getMinCallStackSize(113,2616
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/chpl-timers.c,194
+_timevalue chpl_null_timevalue(14,333
+_timevalue chpl_now_timevalue(21,444
+int64_t chpl_timevalue_seconds(27,545
+int64_t chpl_timevalue_microseconds(28,611
+void chpl_timevalue_parts(30,684
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/chplcast.c,735
+static int scanningNCounts(20,453
+static int illegalFirstUnsChar(37,832
+#define _type(45,1071
+#define _define_string_to_int_precise(47,1115
+#define _define_string_to_bigint_precise(63,2180
+_define_string_to_int_precise(95,4358
+#define _real_type(120,5181
+#define _define_string_to_float_precise(122,5229
+_define_string_to_float_precise(148,7043
+#define _define_string_to_imag_precise(151,7141
+#define _define_string_to_complex_precise(190,9570
+#define _define_string_to_type(265,14708
+#define _define_string_to_real_type(300,17001
+#define integral_to_string(337,19318
+#define NANSTRING 368,20220
+#define NEGINFSTRING 369,20244
+#define POSINFSTRING 370,20272
+#define real_to_string(374,20408
+real_to_string(392,21207
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/chplcopygc.c,287
+_memory_space *_from_space,_from_space16,402
+_memory_space *_from_space, *_to_space;_to_space16,402
+int totalRoots 18,443
+void *rootlist[rootlist19,463
+void _chpl_gc_copy_collect(21,490
+void* _chpl_gc_malloc(114,4012
+void _chpl_gc_init(138,4833
+void _chpl_gc_cleanup(162,5784
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/chplexit.c,110
+#undef exit18,434
+static void chpl_exit_common(20,447
+void chpl_exit_all(37,753
+void chpl_exit_any(42,821
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/chplgmp.c,315
+static void* chpl_gmp_alloc(22,458
+static void* chpl_gmp_realloc(25,566
+static void chpl_gmp_free(28,724
+void chpl_gmp_init(32,826
+void chpl_gmp_get_mpz(36,932
+void chpl_gmp_get_randstate(51,1444
+uint64_t chpl_gmp_mpz_nlimbs(62,1856
+void chpl_gmp_mpz_print(67,1947
+chpl_string chpl_gmp_mpz_get_str(75,2077
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/chplio.c,78
+chpl_string chpl_refToString(16,353
+chpl_string chpl_wideRefToString(23,481
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/chplmemtrack.c,1867
+chpl_bool chpl_memTrack 38,1092
+#undef malloc40,1126
+#undef calloc41,1140
+#undef free42,1154
+typedef struct memTableEntry_struct 44,1167
+  size_t number;45,1223
+  size_t size;46,1240
+  chpl_mem_descInt_t description;47,1255
+  void* memAlloc;48,1289
+  int32_t lineno;49,1307
+  c_string filename;50,1325
+  struct memTableEntry_struct* nextInBucket;51,1346
+} memTableEntry;52,1391
+#define NUM_HASH_SIZE_INDICES 54,1409
+static int hashSizes[hashSizes56,1443
+static int hashSizeIndex 60,1808
+static int hashSize 61,1838
+static memTableEntry** memTable 63,1864
+static _Bool memLeaks 65,1905
+static _Bool memLeaksTable 66,1936
+static _Bool memStats 67,1972
+static size_t memMax 68,2003
+static size_t memThreshold 69,2029
+static c_string memLog 70,2061
+static FILE* memLogFile 71,2090
+static c_string memLeaksLog 72,2122
+static size_t totalMem 74,2157
+static size_t maxMem 75,2230
+static size_t totalAllocated 76,2303
+static size_t totalFreed 77,2366
+static size_t totalEntries 78,2425
+static chpl_sync_aux_t memTrack_sync;80,2500
+void chpl_setMemFlags(83,2540
+static unsigned hash(141,4505
+static void increaseMemStat(153,4781
+static void decreaseMemStat(164,5065
+resizeTable(171,5207
+static void addMemTableEntry(198,5917
+static memTableEntry* removeMemTableEntry(225,6826
+uint64_t chpl_memoryUsed(259,7858
+void chpl_printMemStat(267,8082
+static int leakedMemTableEntryCmp(304,10258
+static void chpl_printLeakedMemTable(308,10367
+void chpl_reportMemInfo(348,11795
+static int descCmp(375,12513
+void chpl_printMemTable(388,12959
+void chpl_track_malloc(476,15759
+void chpl_track_free(499,16563
+void chpl_track_realloc_pre(528,17591
+void chpl_track_realloc_post(545,18051
+void chpl_startVerboseMem(568,18899
+void chpl_stopVerboseMem(574,19095
+void chpl_startVerboseMemHere(580,19290
+void chpl_stopVerboseMemHere(584,19351
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/chplsys.c,147
+#define chplGetPageSize(29,612
+uint64_t chpl_bytesPerLocale(32,669
+int64_t chpl_numCoresOnThisLocale(63,1647
+chpl_string chpl_nodeName(87,2265
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/chpltypes.c,1141
+#define NANSTRING 24,563
+#define NEGINFSTRING 25,587
+#define POSINFSTRING 26,615
+const char* _default_format_write_complex64 28,643
+const char* _default_format_write_complex128 29,701
+char* chpl_glom_strings(33,867
+chpl_string chpl_format(57,1351
+struct chpl_chpl____wide_chpl_string_s 73,1803
+  chpl_localeID_t locale;74,1844
+  chpl_string addr;75,1870
+  int64_t size;76,1890
+typedef struct chpl_chpl____wide_chpl_string_s chpl____wide_chpl_string;78,1909
+chpl_wide_string_copy(81,1995
+void chpl_gen_comm_wide_string_get(103,3045
+chpl_string_widen(134,4125
+chpl_comm_wide_get_string(147,4631
+void string_from_c_string(161,5219
+void wide_string_from_c_string(177,5613
+void c_string_from_string(196,6123
+void c_string_from_wide_string(200,6239
+chpltypes_malloc(220,6776
+string_copy(231,7023
+string_concat(246,7340
+int string_index_of(258,7782
+string_select(268,8172
+string_index(305,9156
+string_contains(318,9476
+int32_t chpl_string_compare(326,9584
+string_length(332,9682
+int64_t real2int(337,9734
+    _real64 r;341,9878
+    uint64_t u;342,9893
+object2int(351,9978
+const char* chpl_get_argument_i(355,10034
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/config.c,1204
+#define HASHSIZE 21,454
+typedef struct _configVarType 23,476
+  char* varName;24,526
+  const char* moduleName;25,543
+  char* defaultValue;26,569
+  char* setValue;27,591
+  struct _configVarType* nextInBucket;29,610
+  struct _configVarType* nextInstalled;30,649
+} configVarType;31,689
+static configVarType* configVarTable[configVarTable35,725
+static configVarType* firstInTable 36,774
+static configVarType* lastInTable 37,817
+static configVarType _ambiguousConfigVar;39,860
+static configVarType* ambiguousConfigVar 40,902
+static void parseModVarName(50,1338
+static int aParsedString(67,1748
+void initConfigVarTable(139,3861
+static unsigned hash(148,3998
+void printConfigVarTable(157,4199
+static configVarType* lookupConfigVar(215,5852
+static void handleDeprecatedConfig(248,6799
+static void checkDeprecatedConfig(267,7479
+void initSetValue(276,7843
+const char* lookupSetValue(296,8505
+void installConfigVar(313,8923
+static configVarType* breakIntoPiecesAndLookup(336,9703
+static void handleUnexpectedConfigVar(363,10880
+int handlePossibleConfigVar(380,11532
+void parseConfigFile(425,13349
+chpl_bool chpl_config_has_value(472,15345
+chpl_string chpl_config_get_value(477,15453
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/error.c,296
+int verbosity 21,444
+void chpl_warning(23,464
+static atomic_flag thisLocaleAlreadyExiting;39,902
+void chpl_error_init(40,947
+static void spinhaltIfAlreadyExiting(45,1040
+static void chpl_error_common(56,1287
+void chpl_error(68,1653
+void chpl_internal_error(75,1827
+void chpl_msg(83,1999
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/gdb.c,32
+void gdbShouldBreakHere(13,288
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/main.c,369
+static const char myFilename[myFilename31,694
+chpl_main_argument chpl_gen_main_arg;38,792
+char* chpl_executionCommand;40,831
+int handleNonstandardArg(42,861
+void printAdditionalHelp(57,1269
+static void recordExecutionCommand(61,1306
+static void chpl_main(77,1777
+void chpl_rt_preUserCodeHook(128,3276
+void chpl_rt_postUserCodeHook(147,3736
+int main(154,3799
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/main_launcher.c,595
+chpl_main_argument chpl_gen_main_arg;27,716
+static void chpl_launch_sanity_checks(33,874
+chpl_run_utility1K(54,1612
+char** chpl_bundle_exec_args(181,5257
+int chpl_launch_using_exec(212,6064
+int chpl_launch_using_fork_exec(235,6579
+int chpl_launch_using_system(260,7171
+char* chpl_get_enviro_keys(272,7482
+int handleNonstandardArg(311,8493
+void printAdditionalHelp(336,9284
+#define BIN_NAME_SIZE 345,9569
+static char chpl_real_binary_name[chpl_real_binary_name346,9595
+void chpl_compute_real_binary_name(348,9646
+const char* chpl_get_real_binary_name(375,10493
+int main(379,10578
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/tasks/fifo/tasks-fifo.c,4652
+#define NDEBUG12,379
+typedef struct task_pool_struct* task_pool_p;38,846
+  chpl_bool    serial_state;41,910
+} task_private_data_t;42,972
+typedef struct task_pool_struct 44,996
+  chpl_taskID_t    id;45,1030
+  chpl_fn_p        fun;46,1082
+  void*            arg;47,1144
+  chpl_bool        begun;48,1205
+  chpl_task_list_p ltask;49,1282
+  chpl_string      filename;50,1365
+  int              lineno;51,1394
+  task_private_data_t chpl_data;52,1421
+  task_pool_p      next;53,1454
+  task_pool_p      prev;54,1479
+} task_pool_t;55,1504
+struct chpl_task_list 63,1874
+  chpl_fn_p fun;64,1898
+  void* arg;65,1915
+  task_private_data_t chpl_data;66,1928
+  volatile task_pool_p ptask;67,1961
+  chpl_string filename;68,2048
+  int lineno;69,2072
+  chpl_task_list_p next;70,2086
+  chpl_fn_p fp;78,2187
+  void* arg;79,2203
+  chpl_bool countRunning;80,2216
+  task_private_data_t chpl_data;81,2242
+} movedTaskWrapperDesc_t;82,2275
+typedef struct lockReport 85,2303
+  const char*        filename;86,2331
+  int                lineno;87,2362
+  uint64_t           prev_progress_cnt;88,2391
+  chpl_bool          maybeLocked;89,2431
+  struct lockReport* next;90,2465
+} lockReport_t;91,2492
+  task_pool_p   ptask;96,2579
+  lockReport_t* lockRprt;97,2602
+} thread_private_data_t;98,2628
+static chpl_bool        initialized 101,2655
+static volatile chpl_bool canCountRunningTasks 103,2701
+static chpl_thread_mutex_t threading_lock;105,2758
+static chpl_thread_mutex_t extra_task_lock;106,2830
+static chpl_thread_mutex_t task_id_lock;107,2902
+static chpl_thread_mutex_t task_list_lock;108,2974
+                           task_pool_head;110,3074
+                           task_pool_tail;112,3170
+static int                 queued_task_cnt;114,3239
+static int                 running_task_cnt;115,3318
+static int64_t             extra_task_cnt;116,3392
+static int                 waking_thread_cnt;118,3548
+static int                 blocked_thread_cnt;120,3696
+static int                 idle_thread_cnt;122,3842
+static uint64_t            progress_cnt;124,3979
+static chpl_thread_mutex_t block_report_lock;127,4136
+static lockReport_t* lockReportHead 128,4209
+static lockReport_t* lockReportTail 129,4253
+static chpl_bool do_taskReport 131,4298
+static chpl_thread_mutex_t taskTable_lock;132,4338
+static chpl_string idleTaskName 134,4411
+static chpl_fn_p comm_task_fn;136,4456
+static void sync_wait_and_lock(176,6206
+void chpl_sync_lock(233,7950
+void chpl_sync_unlock(237,8030
+void chpl_sync_waitFullAndLock(241,8114
+void chpl_sync_waitEmptyAndLock(246,8291
+static chpl_bool chpl_thread_sync_suspend(251,8471
+static void chpl_thread_sync_awaken(269,9021
+void chpl_sync_markAndSignalFull(275,9241
+void chpl_sync_markAndSignalEmpty(281,9373
+chpl_bool chpl_sync_isFull(287,9507
+static void chpl_thread_condvar_init(292,9623
+void chpl_sync_initAux(297,9800
+void chpl_sync_destroyAux(304,9996
+void chpl_task_init(308,10057
+void chpl_task_exit(373,12228
+void chpl_task_callMain(381,12315
+void chpl_task_stdModulesInitialized(386,12385
+int chpl_task_createCommTask(424,13565
+static void comm_task_wrapper(430,13709
+void chpl_task_addToTaskList(462,14702
+void chpl_task_processTaskList(515,16500
+void chpl_task_executeTasksInList(621,19747
+void chpl_task_freeTaskList(731,23216
+void chpl_task_startMovedTask(751,23877
+static void movedTaskWrapper(780,24781
+chpl_taskID_t chpl_task_getId(806,25241
+void chpl_task_yield(811,25317
+void chpl_task_sleep(816,25373
+chpl_bool chpl_task_getSerial(820,25424
+void chpl_task_setSerial(824,25519
+c_sublocid_t chpl_task_getNumSublocales(828,25621
+size_t chpl_task_getCallStackSize(836,25780
+uint32_t chpl_task_getNumQueuedTasks(840,25866
+uint32_t chpl_task_getNumRunningTasks(842,25938
+int32_t  chpl_task_getNumBlockedTasks(847,26063
+static chpl_taskID_t get_next_task_id(874,26633
+static thread_private_data_t* get_thread_private_data(890,26961
+static task_pool_p get_current_ptask(905,27270
+static void set_current_ptask(913,27429
+static void report_locked_threads(923,27703
+static void report_all_tasks(947,28277
+static void SIGINT_handler(973,28916
+static void initializeLockReportForThread(998,29662
+static chpl_bool set_block_loc(1033,30784
+static void unset_block_loc(1066,31565
+static void check_for_deadlock(1085,31946
+thread_begin(1112,32637
+static void thread_end(1254,37260
+void begin_task(1276,37642
+launch_next_task_in_new_thread(1314,38605
+static void schedule_next_task(1362,40173
+static task_pool_p add_to_task_pool(1388,41091
+uint32_t chpl_task_getNumThreads(1436,42434
+uint32_t chpl_task_getNumIdleThreads(1440,42516
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/threads/pthreads/threads-pthreads.c,1371
+#define NDEBUG12,384
+  void* (*fn)fn35,803
+  void* arg;36,825
+} thread_func_t;37,838
+typedef struct thread_list* thread_list_p;43,911
+struct thread_list 44,954
+  pthread_t     thread;45,975
+  thread_list_p next;46,999
+static chpl_bool       exiting 49,1025
+static pthread_mutex_t thread_info_lock;51,1099
+static int64_t         curr_thread_id 53,1173
+static thread_list_p   thread_list_head 55,1217
+static thread_list_p   thread_list_tail 56,1288
+static pthread_attr_t  thread_attributes;58,1360
+static int32_t         maxThreads 63,1492
+static uint32_t        numThreads 64,1531
+static pthread_mutex_t numThreadsLock;65,1570
+static size_t          threadCallStackSize 67,1610
+void chpl_thread_mutexInit(78,1875
+chpl_thread_mutex_p chpl_thread_mutexNew(84,2099
+void chpl_thread_mutexLock(92,2356
+void chpl_thread_mutexUnlock(98,2546
+chpl_thread_id_t chpl_thread_getId(107,2765
+void chpl_thread_yield(116,2976
+void chpl_thread_init(131,3349
+static void* initial_pthread_func(239,6752
+int chpl_thread_createCommThread(247,6883
+void chpl_thread_exit(252,7048
+chpl_bool chpl_thread_canCreate(285,7948
+int chpl_thread_create(290,8067
+static void* pthread_func(330,9595
+void chpl_thread_destroy(377,10825
+uint32_t chpl_thread_getMaxThreads(396,11419
+uint32_t chpl_thread_getNumThreads(400,11486
+size_t chpl_thread_getCallStackSize(404,11553
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/timers/generic/timers-generic.c,30
+_real64 chpl_now_time(13,315
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/comm/none/comm-none-locales.c,88
+int64_t chpl_comm_default_num_locales(10,299
+void chpl_comm_verify_num_locales(14,360
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/comm/none/comm-none.c,1643
+static int mysystem(26,555
+int32_t chpl_comm_getMaxThreads(41,918
+void chpl_comm_init(45,973
+void chpl_comm_post_mem_init(50,1067
+int chpl_comm_run_in_gdb(52,1107
+void chpl_comm_post_task_init(66,1518
+void chpl_comm_rollcall(68,1559
+void chpl_comm_desired_shared_heap(72,1641
+void chpl_comm_broadcast_global_vars(77,1748
+void chpl_comm_broadcast_private(79,1806
+void chpl_comm_barrier(81,1880
+void chpl_comm_pre_task_exit(83,1925
+void chpl_comm_exit(85,1968
+void  chpl_comm_put(87,2014
+void  chpl_comm_get(95,2246
+void  chpl_comm_put_strd(103,2478
+void  chpl_comm_get_strd(257,7203
+  chpl_fn_int_t fid;411,11877
+  int           arg_size;412,11898
+  char          arg[arg413,11924
+} fork_t;414,11982
+void chpl_comm_fork(416,11993
+static void fork_nb_wrapper(423,12174
+void chpl_comm_fork_nb(431,12345
+void chpl_comm_fork_fast(450,12983
+int chpl_comm_numPollingTasks(457,13174
+void chpl_startVerboseComm(459,13225
+void chpl_stopVerboseComm(460,13258
+void chpl_startVerboseCommHere(461,13290
+void chpl_stopVerboseCommHere(462,13327
+void chpl_startCommDiagnostics(464,13364
+void chpl_stopCommDiagnostics(465,13401
+void chpl_startCommDiagnosticsHere(466,13437
+void chpl_stopCommDiagnosticsHere(467,13478
+void chpl_resetCommDiagnosticsHere(469,13519
+void chpl_getCommDiagnosticsHere(470,13560
+uint64_t chpl_numCommGets(472,13624
+uint64_t chpl_numCommNBGets(473,13670
+uint64_t chpl_numCommTestNBGets(474,13718
+uint64_t chpl_numCommWaitNBGets(475,13770
+uint64_t chpl_numCommPuts(476,13822
+uint64_t chpl_numCommForks(477,13868
+uint64_t chpl_numCommFastForks(478,13915
+uint64_t chpl_numCommNBForks(479,13966
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/mem/default/mem-default.c,64
+void chpl_mem_layerInit(19,443
+void chpl_mem_layerExit(29,648
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/qio/regexp/none/fail-regexp.c,486
+void qio_regexp_init_default_options(14,426
+void qio_regexp_create_compile(21,609
+void qio_regexp_create_compile_flags(26,784
+void qio_regexp_retain(31,983
+void qio_regexp_release(34,1034
+void qio_regexp_get_options(39,1088
+void qio_regexp_get_pattern(43,1174
+int64_t qio_regexp_get_ncaptures(47,1251
+qio_bool qio_regexp_ok(52,1323
+const char* qio_regexp_error(56,1388
+bool qio_regexp_match(61,1486
+int64_t qio_regexp_replace(67,1732
+err_t qio_regexp_channel_match(73,2003
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/qio/auxFilesys/none/fail-hdfs.c,379
+#define QIOPLUGIN_HDFS_C6,228
+#define _DARWIN_C_SOURCE10,303
+#define _GNU_SOURCE15,385
+qioerr hdfs_connect(31,609
+qioerr hdfs_disconnect(37,757
+char **hdfs_alloc_array(hdfs_alloc_array43,871
+void hdfs_create_locale_mapping(49,975
+hdfs_block_byte_map_t hdfs_index_array(54,1098
+qio_file_functions_ptr_t hdfs_create_file_functions(60,1243
+qioerr hdfs_get_owners(66,1368
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/qio/bulkget.c,64
+qbytes_t* bulk_get_bytes(14,465
+err_t bulk_put_buffer(39,1207
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/qio/deque.c,147
+void debug_print_deque_iter(13,297
+void _deque_map_copy_forward(18,445
+void _deque_map_copy_backward(26,631
+err_t _deque_reallocate_map(36,837
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/qio/qbuffer.c,1581
+size_t qbytes_iobuf_size 24,528
+void _qbytes_free_qbytes(35,803
+void qbytes_free_null(44,944
+void qbytes_free_munmap(48,1010
+void qbytes_free_qio_free(64,1406
+void qbytes_free_sys_free(68,1496
+void qbytes_free_iobuf(74,1640
+void debug_print_bytes(79,1761
+void _qbytes_init_generic(88,2112
+err_t qbytes_create_generic(98,2373
+err_t _qbytes_init_iobuf(116,2840
+err_t qbytes_create_iobuf(137,3449
+err_t qbytes_create_calloc(176,4113
+void qbuffer_clear_cached(234,5307
+void debug_print_qbuffer_iter(238,5354
+void debug_print_qbuffer(244,5516
+err_t qbuffer_init(268,6386
+err_t qbuffer_destroy(276,6562
+err_t qbuffer_create(302,7138
+err_t qbuffer_destroy_free(325,7454
+err_t qbuffer_init_part(333,7576
+void qbuffer_extend_back(352,8100
+void qbuffer_extend_front(366,8655
+err_t qbuffer_append(380,9145
+err_t qbuffer_append_buffer(405,9729
+err_t qbuffer_prepend(427,10237
+void qbuffer_trim_front(454,10872
+void qbuffer_trim_back(496,12205
+err_t qbuffer_pop_front(538,13570
+err_t qbuffer_pop_back(558,13939
+void qbuffer_reposition(579,14343
+qbuffer_iter_t qbuffer_begin(599,14859
+qbuffer_iter_t qbuffer_end(607,15019
+void qbuffer_iter_next_part(615,15175
+void qbuffer_iter_prev_part(630,15672
+void qbuffer_iter_floor_part(640,15962
+void qbuffer_iter_ceil_part(663,16630
+void qbuffer_iter_advance(679,17106
+qbuffer_iter_t qbuffer_iter_at(733,18854
+err_t qbuffer_to_iov(773,19957
+err_t qbuffer_flatten(863,23210
+err_t qbuffer_copyout(970,26029
+err_t qbuffer_copyin(1005,27035
+err_t qbuffer_copyin_buffer(1040,28046
+err_t qbuffer_memset(1081,29595
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/qio/qio.c,3902
+#define _QIO_C6,228
+#define _DARWIN_C_SOURCE10,293
+#define _GNU_SOURCE15,375
+ssize_t qio_too_small_for_default_mmap 45,918
+ssize_t qio_too_large_for_default_mmap 46,968
+ssize_t qio_mmap_chunk_iobufs 47,1038
+ssize_t qio_initial_mmap_max 50,1157
+bool qio_allow_default_mmap 51,1201
+err_t qio_lock(54,1256
+void qio_unlock(76,1692
+err_t qio_readv(94,2001
+err_t qio_writev(141,3277
+err_t qio_preadv(188,4553
+err_t qio_freadv(235,5876
+err_t qio_fwritev(283,6955
+err_t qio_pwritev(332,8027
+err_t qio_recv(379,9376
+err_t qio_send(436,10936
+qio_hint_t choose_io_method(491,12311
+err_t qio_fadvise_for_hints(580,15490
+err_t qio_madvise_for_hints(626,16588
+err_t qio_mmap_initial(648,17109
+err_t qio_file_init(704,18523
+err_t qio_file_init_usr(843,22353
+err_t _qio_file_do_close(923,24455
+err_t qio_file_close(984,25649
+err_t qio_file_sync(1000,25994
+void _qio_file_destroy(1018,26319
+err_t open_flags_for_string(1043,26769
+const char* string_for_open_flags(1064,27361
+int flags_for_mmap_open(1079,27861
+err_t qio_file_open(1093,28147
+err_t qio_file_open_usr(1123,29087
+err_t qio_file_open_mem_ext(1148,30019
+err_t qio_file_open_mem(1206,31670
+err_t qio_file_open_access(1211,31899
+err_t qio_file_open_access_usr(1223,32301
+err_t qio_file_open_tmp(1235,32739
+err_t qio_file_path_for_fd(1286,33833
+err_t qio_file_path_for_fp(1315,34439
+err_t qio_file_path(1322,34631
+err_t qio_file_length(1338,35005
+err_t _qio_channel_init(1373,35734
+err_t _qio_channel_init_file_internal(1388,36042
+err_t _qio_channel_makebuffer_unlocked(1452,37746
+err_t _qio_channel_needbuffer_unlocked(1506,39391
+err_t _qio_channel_init_file(1515,39575
+err_t qio_channel_create(1569,41165
+err_t qio_relative_path(1590,41735
+err_t qio_shortest_path(1667,43876
+err_t qio_channel_path_offset(1701,44641
+err_t _qio_channel_final_flush_unlocked(1731,45208
+void _qio_channel_destroy(1800,47496
+qbuffer_iter_t _av_end_iter(1824,47932
+qbuffer_iter_t _av_start_iter(1834,48162
+int64_t _right_mark_start(1844,48403
+void _add_right_mark_start(1850,48506
+void _set_right_mark_start(1856,48623
+qbuffer_iter_t _right_mark_start_iter(1862,48732
+err_t _buffered_allocate_bufferspace(1882,49208
+err_t _buffered_makespace_atleast(1915,49994
+err_t _buffered_get_memory_file_lock_held(1943,50576
+err_t _buffered_get_memory(2032,53048
+err_t _buffered_get_mmap(2051,53458
+err_t _buffered_read_atleast(2176,56899
+err_t _qio_flush_bits_if_needed_unlocked(2250,58810
+void _qio_buffered_advance_cached(2306,60466
+void _qio_buffered_setup_cached(2347,61796
+err_t _qio_buffered_behind(2393,63217
+err_t _qio_channel_require_unlocked(2492,66331
+err_t _qio_buffered_read(2535,67510
+err_t _qio_buffered_write(2591,68826
+err_t _qio_unbuffered_write(2634,69953
+err_t _qio_unbuffered_read(2723,72715
+err_t _qio_channel_flush_qio_unlocked(2811,75379
+err_t _qio_channel_flush_unlocked(2843,76299
+int _use_buffered(2862,76763
+err_t _qio_slow_write(2892,77972
+err_t _qio_slow_read(2913,78375
+err_t qio_channel_offset(2941,78961
+err_t qio_channel_end_offset(2962,79303
+err_t _qio_channel_put_bytes_unlocked(2984,79660
+err_t qio_channel_put_bytes(3106,83522
+err_t _qio_channel_put_buffer_unlocked(3133,84085
+err_t qio_channel_put_buffer(3248,87617
+err_t qio_channel_begin_peek_buffer(3269,88121
+err_t qio_channel_end_peek_buffer(3302,88852
+err_t qio_channel_mark_maybe_flush_bits(3324,89246
+err_t qio_channel_mark(3399,91204
+err_t qio_channel_advance_unlocked(3411,91603
+void qio_channel_revert_unlocked(3450,92587
+void qio_channel_commit_unlocked(3498,94088
+err_t qio_channel_advance(3520,94617
+void _qio_channel_write_bits_cached_realign(3544,95048
+err_t _qio_channel_write_bits_slow(3615,97625
+err_t qio_channel_flush_bits(3719,100717
+void _qio_channel_read_bits_cached_realign(3742,101087
+err_t _qio_channel_read_bits_slow(3819,103319
+int64_t qio_channel_style_element(3900,105379
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/qio/qio_formatted.c,3615
+int qio_glocale_utf8 25,592
+void qio_set_glocale(27,619
+static int towlower(45,1120
+static int iswprint(46,1172
+static int iswspace(47,1224
+static int wcwidth(48,1276
+err_t qio_channel_read_uvarint(54,1363
+err_t qio_channel_read_svarint(95,2096
+err_t qio_channel_write_uvarint(102,2356
+err_t qio_channel_write_svarint(136,2978
+err_t _peek_until_byte(144,3191
+err_t _getc_after_whitespace(179,3968
+err_t _append_char(235,5169
+err_t qio_channel_read_string(286,6523
+err_t qio_channel_scan_string(406,9422
+err_t qio_channel_scan_literal(683,17083
+err_t qio_channel_scan_literal_2(808,20123
+err_t qio_channel_print_literal(814,20326
+err_t qio_channel_print_literal_2(819,20510
+err_t qio_channel_write_string(832,21008
+#define MB_LEN_MAX_OR_6 923,23389
+#define MB_LEN_MAX_OR_6 925,23421
+#define JSON_ESC_MAX 928,23464
+char _qio_tohex(931,23522
+int _qio_chr_escape(943,23883
+#define WRITEC(953,24132
+#undef WRITEC1066,27360
+err_t qio_channel_print_string(1069,27377
+err_t qio_quote_string_length(1203,31222
+err_t qio_quote_string(1315,34595
+#define WRITEC(1355,35663
+#undef WRITEC1402,36739
+const char* qio_quote_string_chpl(1405,36756
+typedef struct number_reading_state_s 1421,37251
+  int base;1422,37291
+  char allow_base;1424,37365
+  char allow_pos_sign;1426,37503
+  char allow_neg_sign;1427,37526
+  char positive_char;1428,37549
+  char negative_char;1429,37587
+  char allow_real;1431,37626
+  char point_char;1432,37645
+  char exponent_char;1433,37717
+  char other_exponent_char;1434,37774
+  char allow_i_after;1436,37844
+  char i_char;1437,37900
+  int usebase;1439,37916
+  signed char sign;1441,37932
+  char is_nan;1442,37992
+  char is_inf;1443,38030
+  int gotbase;1444,38077
+  int64_t digits_start;1445,38092
+  int64_t point;1446,38146
+  int64_t exponent;1447,38194
+  int64_t i_after;1448,38259
+  int64_t end;1449,38335
+} number_reading_state_t;1451,38434
+err_t _peek_number_unlocked(1454,38468
+#define NEXT_CHR 1456,38588
+#define NEXT_CHR_OR_EOF 1462,38724
+#define ACCEPT 1469,38906
+#define UNGET_ACCEPT 1474,38998
+#define START_DIGITS 1480,39101
+err_t qio_channel_scan_int(1636,43224
+err_t qio_channel_scan_float_or_imag(1771,46328
+err_t qio_channel_scan_float(1946,50609
+err_t qio_channel_scan_imag(1950,50793
+int _ltoa(1962,51276
+int _ftoa(2056,53844
+err_t qio_channel_print_int(2339,61911
+#define MAX_DOUBLE_DIGITS 2471,64885
+err_t qio_channel_print_float_or_imag(2475,64991
+err_t qio_channel_print_float(2572,67251
+err_t qio_channel_print_imag(2576,67448
+err_t qio_channel_scan_complex(2582,67645
+err_t qio_channel_skip_past_newline(2742,71629
+err_t qio_channel_write_newline(2789,72713
+static err_t maybe_left_pad(2795,72872
+static err_t maybe_right_pad(2808,73242
+err_t qio_channel_print_complex(2821,73536
+err_t _qio_channel_read_char_slow_unlocked(3034,79779
+const char* qio_encode_to_string(3215,85338
+err_t _qio_channel_write_char_slow_unlocked(3239,85699
+static const char* space 3303,87632
+static const char* dec_num 3306,87754
+static const char* lit_chars 3312,88005
+static const char* regexp_flag_chars 3313,88053
+static inline int istype(3315,88101
+void qio_conv_destroy(3324,88239
+void qio_conv_init(3331,88382
+int _qio_regexp_flags_then_rcurly(3344,88735
+qioerr qio_conv_parse(3361,89018
+#define WIDTH_IN_ARG 3374,89417
+#define WIDTH_NOT_SET 3375,89441
+qioerr qio_format_error_too_many_args(3960,109410
+qioerr qio_format_error_too_few_args(3967,109566
+qioerr qio_format_error_arg_mismatch(3974,109723
+qioerr qio_format_error_bad_regexp(3997,110664
+qioerr qio_format_error_write_regexp(4004,110823
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/qio/sys.c,2482
+#undef _POSIX_C_SOURCE8,282
+#define _POSIX_C_SOURCE 10,312
+#define HAS_PREADV38,888
+#define HAS_PWRITEV39,907
+void sys_init_sys_sockaddr(47,1066
+size_t sys_page_size(55,1285
+err_t sys_fseeko(82,1779
+err_t sys_ftello(97,2001
+err_t sys_fopen(114,2257
+err_t sys_fdopen(131,2517
+err_t sys_fclose(148,2768
+err_t sys_fread(166,3018
+err_t sys_fwrite(186,3410
+err_t sys_fflush(206,3816
+err_t sys_feof(225,4061
+err_t sys_ferror(231,4144
+err_t sys_posix_fadvise(238,4213
+err_t sys_posix_madvise(254,4508
+const char* extended_errors[extended_errors271,4732
+err_t sys_strerror_internal(284,5068
+err_t sys_strerror(352,6714
+const char* sys_strerror_syserr_str(357,6839
+err_t sys_readlink(383,7482
+int sys_getenv(423,8403
+err_t sys_open(436,8587
+err_t sys_close(453,8862
+err_t sys_lseek(471,9109
+err_t sys_stat(488,9397
+err_t sys_fstat(503,9601
+err_t sys_lstat(518,9796
+err_t sys_mkstemp(532,10001
+err_t sys_ftruncate(549,10241
+err_t sys_sysconf(564,10440
+err_t sys_posix_fallocate(581,10672
+err_t sys_mmap(594,10914
+err_t sys_munmap(610,11245
+err_t sys_read(625,11436
+err_t sys_write(645,11815
+err_t sys_pread(664,12157
+err_t sys_pwrite(687,12636
+int64_t sys_iov_total_bytes(707,13054
+err_t sys_readv(715,13221
+err_t sys_writev(753,14041
+err_t sys_preadv(790,14791
+err_t sys_preadv(833,15753
+err_t sys_pwritev(871,16537
+err_t sys_pwritev(909,17329
+err_t sys_fsync(943,17925
+err_t sys_fcntl(960,18141
+err_t sys_fcntl_long(977,18378
+err_t sys_fcntl_ptr(994,18635
+err_t sys_dup(1011,18892
+err_t sys_dup2(1028,19115
+err_t sys_pipe(1045,19357
+err_t sys_accept(1072,19722
+err_t sys_bind(1098,20289
+err_t sys_connect(1117,20592
+int sys_getaddrinfo_flags(1170,21895
+int sys_getaddrinfo_family(1171,21965
+int sys_getaddrinfo_socktype(1172,22037
+int sys_getaddrinfo_protocol(1173,22113
+sys_sockaddr_t sys_getaddrinfo_addr(1174,22189
+sys_addrinfo_ptr_t sys_getaddrinfo_next(1180,22362
+void sys_freeaddr_info(1182,22446
+err_t sys_getnameinfo(1188,22530
+err_t sys_getpeername(1247,23855
+err_t sys_getsockname(1262,24113
+err_t sys_getsockopt(1278,24372
+err_t sys_setsockopt(1293,24649
+err_t sys_listen(1309,24926
+err_t sys_recv(1324,25128
+err_t sys_recvfrom(1343,25479
+err_t sys_recvmsg(1362,25929
+err_t sys_send(1384,26281
+err_t sys_sendto(1403,26640
+err_t sys_sendmsg(1422,27095
+err_t sys_shutdown(1442,27452
+err_t sys_socket(1461,27729
+err_t sys_socketpair(1479,28012
+err_t sys_unlink(1501,28421
+err_t sys_getcwd(1513,28585
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/src/qio/sys_xsi_strerror_r.c,179
+#undef _POSIX_C_SOURCE15,473
+#define _POSIX_C_SOURCE 18,504
+#define _XOPEN_SOURCE 19,535
+#undef _GNU_SOURCE20,561
+#define HAS_STRERROR_R25,621
+int sys_xsi_strerror_r(30,709
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/arg.h,22
+#define _arg_H_7,244
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chpl-comm-compiler-llvm-support.h,191
+#define _chpl_comm_compiler_llvm_support_h_7,272
+void chpl_gen_comm_get_ctl(25,781
+void chpl_gen_comm_put_ctl(33,1095
+void chpl_gen_comm_getput(45,1667
+void chpl_gen_comm_memset(74,2632
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chpl-comm-compiler-macros.h,625
+#define _chpl_comm_compiler_macros_h_7,266
+void chpl_gen_comm_get(24,586
+void chpl_gen_comm_put(40,1071
+void chpl_gen_comm_get_strd(56,1556
+void chpl_gen_comm_put_strd(69,2103
+chpl_bool chpl_is_node_local(84,2745
+void chpl_check_local(92,3097
+void chpl_heap_register_global_var(99,3281
+#define CHPL_COMM_DEBUG_BROADCAST_GLOBAL_VARS(106,3486
+#define CHPL_COMM_DEBUG_BROADCAST_GLOBAL_VARS(110,3700
+void chpl_gen_comm_broadcast_global_vars(114,3792
+void chpl_check_nil(123,4098
+void* chpl_array_alloc(130,4278
+void* chpl_wide_array_alloc(135,4492
+void chpl_array_free(142,4794
+void chpl_wide_array_free(148,4929
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chpl-comm-launch.h,70
+#define _chpl_comm_launch_h7,256
+#define CHPL_COMM_PRELAUNCH(15,526
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chpl-comm-locales.h,36
+#define _chpl_comm_locales_h_7,258
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chpl-comm.h,504
+#define _chpl_comm_h_7,250
+int32_t chpl_numPrivatizedClasses(38,1317
+typedef struct _chpl_commDiagnostics 300,11259
+  uint64_t get;301,11298
+  uint64_t get_nb;302,11314
+  uint64_t get_nb_test;303,11333
+  uint64_t get_nb_wait;304,11357
+  uint64_t put;305,11381
+  uint64_t fork;306,11397
+  uint64_t fork_fast;307,11414
+  uint64_t fork_nb;308,11436
+} chpl_commDiagnostics;309,11456
+#define chpl_comm_barrier(338,12289
+#define chpl_comm_exit_all(339,12318
+#define chpl_comm_exit_any(340,12356
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chpl-gen-includes.h,142
+void chpl_ftable_call(24,649
+c_localeid_t id_pub2rt(33,892
+chpl_localeID_t id_rt2pub(41,1094
+chpl_localeID_t chpl_gen_getLocaleID(47,1222
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chpl-main.h,28
+#define _CHPL_MAIN_H_7,250
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chpl-mem-desc.h,268
+#define _chpl_mem_desc_H_7,254
+#define CHPL_MD_ALL_MEMDESCS(28,1266
+#define CHPL_MEMDESC_ENUM(129,8442
+  CHPL_MD_ALL_MEMDESCS(131,8525
+  CHPL_MD_ALL_MEMDESCS(CHPL_MEMDESC_ENUM)131,8525
+} chpl_mem_rtMemDesc_t;132,8567
+typedef int16_t chpl_mem_descInt_t;146,9003
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chpl-mem-hook.h,385
+#define _chpl_mem_hook_H_7,254
+#define CHPL_MEMHOOKS_ACTIVE 30,893
+#define CHPL_MEMHOOKS_ACTIVE 33,951
+#define CHPL_MEMHOOKS_ACTIVE 35,1000
+chpl_mem_descInt_t chpl_memhook_md_num(43,1156
+void chpl_memhook_malloc_pre(58,1615
+void chpl_memhook_malloc_post(67,1931
+void chpl_memhook_free_pre(79,2419
+void chpl_memhook_realloc_pre(90,2751
+void chpl_memhook_realloc_post(101,3147
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chpl-mem-warning-macros.h,229
+#define _chpl_mem_warning_macros_h_7,264
+#define _chpl_mem_warning_macros_really_h_12,449
+static ___always_inline void sys_free(17,737
+#define malloc 20,809
+#define calloc 21,872
+#define free 22,935
+#define realloc 23,991
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chpl-mem.h,288
+#define _chpl_mem_H_7,249
+void* chpl_mem_allocMany(34,788
+void* chpl_mem_alloc(46,1248
+void* chpl_mem_allocManyZero(52,1471
+void* chpl_mem_calloc(64,1944
+void* chpl_mem_realloc(70,2173
+void chpl_mem_free(89,2803
+#define chpl_mem_allocMany(106,3255
+#define chpl_mem_free(109,3363
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chpl-tasks.h,573
+#define _chpl_tasks_h_7,251
+typedef chpl_sync_aux_t chpl_single_aux_t;50,1623
+void chpl_single_lock(53,1691
+void chpl_single_unlock(55,1781
+void chpl_single_waitFullAndLock(57,1875
+void chpl_single_markAndSignalFull(62,2076
+chpl_bool chpl_single_isFull(66,2194
+void chpl_single_initAux(70,2325
+void chpl_single_destroyAux(72,2421
+#define CHPL_TASK_STD_MODULES_INITIALIZED(110,3780
+typedef struct chpl_task_list* chpl_task_list_p;114,3833
+typedef void chpl_sync_aux_t;266,8658
+typedef chpl_sync_aux_t chpl_single_aux_t;267,8688
+#define chpl_task_exit(268,8731
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chpl-threads.h,90
+#define _chpl_threads_h_7,253
+typedef chpl_thread_mutex_t* chpl_thread_mutex_p;104,2581
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chpl-wide-ptr-fns.h,653
+#define _chpl_wide_ptr_impl_h_7,259
+#define WIDE_PTR_INLINE 26,635
+  #define CHPL_WIDE_PTR_MARK_BITS 36,1100
+  #define CHPL_WIDE_PTR_MARK 37,1136
+  #define CHPL_PTR_BITS 39,1168
+  #define CHPL_NODE_MASK 41,1250
+  #define CHPL_PTR_MASK 42,1323
+wide_ptr_t chpl_return_wide_ptr_node(46,1412
+void chpl_check_wide_ptr(72,2136
+wide_ptr_t chpl_return_wide_ptr_loc(87,2577
+wide_ptr_t chpl_return_wide_ptr_loc_ptr(103,3006
+c_nodeid_t chpl_wide_ptr_get_node(110,3163
+void* chpl_wide_ptr_get_address(123,3475
+chpl_localeID_t chpl_wide_ptr_get_localeID(137,3754
+void chpl_wide_ptr_read_localeID(151,4084
+wide_ptr_t chpl_return_wide_ptr_add(159,4259
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chpl_md.h,26
+#define _CHPL_MD_H_7,248
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chpl_rt_utils_static.h,39
+#define _chpl_rt_utils_static_H_7,261
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chplcast.h,264
+#define _chplcast_h_7,249
+chpl_string chpl_bool_to_chpl_string(66,3619
+chpl_string chpl_bool8_to_chpl_string(70,3728
+chpl_string chpl_bool16_to_chpl_string(74,3839
+chpl_string chpl_bool32_to_chpl_string(78,3952
+chpl_string chpl_bool64_to_chpl_string(82,4065
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chplcgfns.h,38
+#define _CHPL_GEN_INTERFACE_H_16,593
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chplcopygc.h,283
+#define _chplcopygc_H_7,251
+#define MAXROOTS 12,338
+#define HEAP_AS_PTR(14,361
+#define STACK_PTR(17,412
+  char* head;21,476
+  char* current;22,490
+  char* tail;23,507
+} _memory_space;24,521
+#define _addRoot(40,1046
+#define _addNullRoot(41,1101
+#define _deleteRoot(42,1182
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chplexit.h,58
+#define _CHPL_EXIT_H_7,250
+#define chpl_exit_any(18,518
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chplfp.h,26
+#define _CHPL_FP_H_7,248
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chplio.h,336
+#define _chplio_H_7,247
+#define _default_string_length 22,514
+#define _default_format_read_string 23,561
+typedef FILE* _cfile;25,615
+static inline _cfile chpl_cnullfile(28,639
+typedef FILE* c_file;34,864
+static inline c_file chpl_cstdin(35,886
+static inline c_file chpl_cstdout(36,943
+static inline c_file chpl_cstderr(37,1002
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chpllaunch.h,30
+#define _CHPL_LAUNCH_H_7,252
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chplmath.h,1195
+#define _CHPL_MATH_H_7,250
+static inline double chpl_macro_INFINITY(9,273
+static inline double chpl_macro_NAN(15,429
+static inline int chpl_macro_double_isinf(21,572
+static inline int chpl_macro_float_isinf(22,645
+static inline int chpl_macro_double_isfinite(23,716
+static inline int chpl_macro_float_isfinite(24,795
+static inline int chpl_macro_double_isnan(25,872
+static inline int chpl_macro_float_isnan(26,945
+#define fabsf(30,1048
+#define cosf(31,1080
+#define erff(32,1110
+#define expf(33,1140
+#define logf(34,1170
+#define sinf(35,1200
+#define tanf(36,1230
+#define acosf(37,1260
+#define asinf(38,1292
+#define atanf(39,1324
+#define cbrtf(40,1356
+#define ceilf(41,1388
+#define coshf(42,1420
+#define erfcf(43,1452
+#define exp2f(44,1484
+#define log2f(45,1516
+#define rintf(46,1548
+#define sinhf(47,1580
+#define tanhf(48,1612
+#define sqrtf(49,1644
+#define lgammaf(50,1676
+#define acoshf(51,1712
+#define asinhf(52,1746
+#define atan2f(53,1780
+#define atanhf(54,1818
+#define expm1f(55,1852
+#define floorf(56,1886
+#define log10f(57,1920
+#define log1pf(58,1954
+#define roundf(59,1988
+#define truncf(60,2022
+#define nearbyintf(61,2056
+#define tgammaf(62,2098
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chplmemtrack.h,165
+#define _chplmemtrack_H_7,253
+#define chpl_setMemmax(45,1561
+#define chpl_setMemstat(46,1591
+#define chpl_setMemreport(47,1617
+#define chpl_setMemtrack(48,1645
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chplrt.h,69
+#define _chplrt_H_19,756
+#define _noop(25,818
+#define exit 29,874
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chplsys.h,27
+#define _CHPL_SYS_H_7,249
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chpltimers.h,71
+#define _chpltimers_h_7,251
+typedef struct timeval _timevalue;13,364
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chpltypes.h,4713
+#define _chpltypes_H_7,250
+typedef char c_char;17,432
+typedef signed char c_schar;18,453
+typedef unsigned char c_uchar;19,482
+typedef short c_short;20,513
+typedef unsigned short c_ushort;21,536
+typedef int c_int;22,569
+typedef unsigned int c_uint;23,588
+typedef long c_long;24,617
+typedef unsigned long c_ulong;25,638
+typedef long long c_longlong;26,669
+typedef unsigned long long c_ulonglong;27,699
+typedef float c_float;28,739
+typedef double c_double;29,762
+typedef void* c_void_ptr;30,787
+#define c_nil 31,813
+static inline c_int is_c_nil(32,832
+static inline void* c_pointer_return(33,890
+typedef const char* c_string;34,950
+  CHPL_TYPE_chpl_bool,37,996
+  CHPL_TYPE_chpl_bool8,38,1019
+  CHPL_TYPE_chpl_bool16,39,1043
+  CHPL_TYPE_chpl_bool32,40,1068
+  CHPL_TYPE_chpl_bool64,41,1093
+  CHPL_TYPE_enum,42,1118
+  CHPL_TYPE_int8_t,43,1136
+  CHPL_TYPE_int16_t,44,1156
+  CHPL_TYPE_int32_t,45,1177
+  CHPL_TYPE_int64_t,46,1198
+  CHPL_TYPE_uint8_t,47,1219
+  CHPL_TYPE_uint16_t,48,1240
+  CHPL_TYPE_uint32_t,49,1262
+  CHPL_TYPE_uint64_t,50,1284
+  CHPL_TYPE__real32,51,1306
+  CHPL_TYPE__real64,52,1327
+  CHPL_TYPE__imag32,53,1348
+  CHPL_TYPE__imag64,54,1369
+  CHPL_TYPE__complex64,55,1390
+  CHPL_TYPE__complex128,56,1414
+  CHPL_TYPE_chpl_string,57,1439
+  CHPL_TYPE_wide_string,58,1464
+  CHPL_TYPE__cfile,59,1489
+  CHPL_TYPE_chpl_task_list_p,60,1509
+  CHPL_TYPE__timevalue,61,1539
+  CHPL_TYPE_chpl_sync_aux_t,62,1563
+  CHPL_TYPE_chpl_single_aux_t,63,1592
+  CHPL_TYPE_chpl_taskID_t,64,1623
+  CHPL_TYPE__symbol,65,1650
+  CHPL_TYPE_CLASS_REFERENCE,66,1671
+  CHPL_TYPE_DONE67,1700
+} chplType;68,1717
+typedef struct _chpl_fieldType 70,1730
+  chplType type;71,1763
+  size_t offset;72,1780
+} chpl_fieldType;73,1797
+typedef int32_t c_nodeid_t;78,2006
+#define FORMAT_c_nodeid_t 79,2034
+typedef int32_t c_sublocid_t;80,2067
+#define FORMAT_c_sublocid_t 81,2097
+typedef int64_t c_localeid_t;82,2132
+#define c_sublocid_none_val 85,2236
+#define c_sublocid_any_val 86,2267
+static const c_sublocid_t c_sublocid_none 88,2299
+static const c_sublocid_t c_sublocid_any 89,2364
+typedef struct wide_ptr_s 104,2992
+  chpl_localeID_t locale;105,3020
+  void* addr;106,3046
+} wide_ptr_t;107,3060
+typedef wide_ptr_t* ptr_wide_ptr_t;108,3074
+typedef void * wide_ptr_t;115,3335
+typedef wide_ptr_t* ptr_wide_ptr_t;116,3362
+typedef void* ptr_wide_ptr_t;130,3898
+#define nil 137,3964
+typedef void* _nilType;138,3979
+typedef void* _nilRefType;139,4003
+typedef void* _chpl_object;140,4030
+typedef void* _chpl_value;141,4058
+typedef void* chpl_opaque;142,4085
+#define nilRef 144,4113
+#define chpl_emptyCstring 145,4130
+#define INT8(148,4212
+#define INT16(149,4253
+#define INT32(150,4296
+#define INT64(151,4339
+#define UINT8(152,4382
+#define UINT16(153,4425
+#define UINT32(154,4470
+#define UINT64(155,4515
+typedef _Bool chpl_bool;160,4616
+typedef bool chpl_bool;162,4647
+typedef int8_t chpl_bool8;165,4679
+typedef int16_t chpl_bool16;166,4706
+typedef int32_t chpl_bool32;167,4735
+typedef int64_t chpl_bool64;168,4764
+typedef void (*chpl_fn_p)chpl_fn_p170,4794
+typedef int16_t chpl_fn_int_t;171,4867
+#define false 176,5113
+#define  true 179,5150
+typedef float               _real32;182,5174
+typedef double              _real64;183,5211
+typedef float               _imag32;184,5248
+typedef double              _imag64;185,5285
+typedef struct __complex64 186,5322
+typedef struct __complex64 { _real32 re;186,5322
+typedef struct __complex64 { _real32 re; _real32 im;186,5322
+typedef struct __complex64 { _real32 re; _real32 im; } _complex64;186,5322
+typedef struct __complex128 187,5389
+typedef struct __complex128 { _real64 re;187,5389
+typedef struct __complex128 { _real64 re; _real64 im;187,5389
+typedef struct __complex128 { _real64 re; _real64 im; } _complex128;187,5389
+typedef const char*         chpl_string;188,5458
+typedef int64_t              _symbol;189,5499
+#define MIN_INT8 192,5601
+#define MIN_INT16 193,5638
+#define MIN_INT32 194,5676
+#define MIN_INT64 195,5714
+#define MAX_INT8 196,5752
+#define MAX_INT16 197,5789
+#define MAX_INT32 198,5827
+#define MAX_INT64 199,5865
+#define MIN_UINT8 201,5904
+#define MIN_UINT16 202,5936
+#define MIN_UINT32 203,5968
+#define MIN_UINT64 204,6000
+#define MAX_UINT8 205,6032
+#define MAX_UINT16 206,6070
+#define MAX_UINT32 207,6109
+#define MAX_UINT64 208,6148
+#define MAX_FLOAT32 212,6338
+#define MAX_FLOAT64 213,6374
+int8_t ascii(216,6435
+chpl_string chpl_format(225,6556
+typedef int32_t chpl__class_id;252,8343
+typedef struct chpl_main_argument_s 254,8376
+  int64_t argc;255,8414
+  const char **argv;argv256,8430
+  int32_t return_value;257,8451
+} chpl_main_argument;258,8475
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/config.h,25
+#define _config_H_7,247
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/error.h,46
+#define _error_H_7,246
+void chpl_msg(17,533
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/gdb.h,22
+#define _GDB_H_7,244
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/stdchpl.h,26
+#define _stdchpl_H_7,248
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/stdchplrt.h,28
+#define _stdchplrt_H_7,250
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/sys_basic.h,512
+#define _SYS_BASIC_H7,249
+#define _BSD_SOURCE11,328
+#define _DARWIN_C_SOURCE16,416
+#define _ALL_SOURCE22,532
+#define _XOPEN_SOURCE 31,865
+#define _POSIX_C_SOURCE 35,923
+#define _FILE_OFFSET_BITS 38,988
+#define ___always_inline 42,1041
+#define ___always_inline 44,1114
+#define __STDC_CONSTANT_MACROS48,1218
+#define PTR_ADDBYTES(58,1392
+#define PTR_DIFFBYTES(60,1470
+#define ULLONG_MAX 64,1665
+#define UINT32_MAX 70,1843
+#define INT64_MAX 73,1899
+#define restrict 81,2162
+#define restrict 83,2196
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/tasks/fifo/tasks-fifo.h,673
+#define _tasks_fifo_h_7,251
+#define CHPL_TASK_STD_MODULES_INITIALIZED 19,484
+typedef uint64_t chpl_taskID_t;33,902
+#define chpl_nullTaskID 34,934
+typedef pthread_cond_t chpl_thread_condvar_t;39,990
+  volatile chpl_bool  is_full;46,1079
+  chpl_thread_mutex_t lock;47,1110
+  chpl_thread_condvar_t signal_full;48,1138
+  chpl_thread_condvar_t signal_empty;49,1216
+} chpl_sync_aux_t;51,1333
+#define CHPL_TASK_GETSUBLOC_IMPL_DECL 63,1652
+c_sublocid_t chpl_task_getSubloc(66,1713
+#define CHPL_TASK_SETSUBLOC_IMPL_DECL 74,1872
+void chpl_task_setSubloc(77,1933
+#define CHPL_TASK_GETREQUESTEDSUBLOC_IMPL_DECL 85,2124
+c_sublocid_t chpl_task_getRequestedSubloc(88,2194
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/threads/pthreads/threads-pthreads.h,938
+#define _threads_pthreads_h_7,257
+typedef int64_t chpl_thread_id_t;19,632
+#define chpl_thread_nullThreadId 20,666
+typedef pthread_mutex_t chpl_thread_mutex_t;22,710
+#define CHPL_TLS 29,1017
+#define CHPL_TLS 34,1178
+#define CHPL_TLS 36,1233
+# define CHPL_TLS_DECL(41,1343
+# define CHPL_TLS_DECL_INIT(42,1402
+# define CHPL_TLS_GET(43,1465
+# define CHPL_TLS_SET(44,1510
+# define CHPL_TLS_INIT(45,1563
+# define CHPL_TLS_INIT2(46,1592
+# define CHPL_TLS_DELETE(47,1628
+static inline void chpl_tlschk(51,1738
+# define CHPL_TLS_DECL(58,1888
+# define CHPL_TLS_DECL_INIT(59,1947
+# define CHPL_TLS_GET(60,2006
+# define CHPL_TLS_SET(61,2072
+# define CHPL_TLS_INIT(62,2171
+# define CHPL_TLS_INIT2(63,2261
+# define CHPL_TLS_DELETE(64,2353
+#define CHPL_THREAD_GETPRIVATEDATA_IMPL_DECL 73,2679
+void* chpl_thread_getPrivateData(76,2747
+#define CHPL_THREAD_SETPRIVATEDATA_IMPL_DECL 83,2948
+void chpl_thread_setPrivateData(86,3016
+
+/home/dan/cpeg614/chapel/chapel-1.9.0/runtime/include/chplgmp.h,0

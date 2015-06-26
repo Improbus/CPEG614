@@ -1,0 +1,5071 @@
+
+adt/bitVec.cpp,546
+#define TYPE 9,267
+BitVec::BitVec(11,290
+BitVec::~BitVec(24,541
+void BitVec::clear(29,579
+bool BitVec::get(35,657
+void BitVec::unset(42,784
+void BitVec::disjunction(49,920
+void BitVec::intersection(55,1030
+bool BitVec::equals(71,1387
+void BitVec::set(81,1543
+void BitVec::set(87,1620
+void BitVec::reset(94,1739
+void BitVec::reset(100,1831
+void BitVec::flip(107,1966
+void BitVec::flip(113,2050
+int BitVec::count(127,2484
+int BitVec::size(141,2715
+bool BitVec::test(146,2764
+bool BitVec::any(153,2892
+bool BitVec::none(163,3020
+
+adt/map.cpp,60
+uint32_t open_hash_multipliers[open_hash_multipliers9,285
+
+adt/vec.cpp,181
+unsigned int prime2[prime241,1729
+i_find(50,2015
+Intervals::in(74,2418
+Intervals::insert(84,2562
+UnionFind::size(148,3567
+UnionFind::find(156,3670
+UnionFind::unify(168,3829
+
+AST/alist.cpp,225
+AList::AList(15,369
+Expr* AList::first(23,448
+Expr* AList::last(28,494
+Expr* AList::only(33,539
+Expr* AList::get(44,757
+void AList::insertAtHead(60,1031
+void AList::insertAtTail(92,1852
+GenRet AList::codegen(124,2656
+
+AST/astutil.cpp,2212
+void collectFnCalls(20,546
+void collectFnCallsSTL(28,749
+void collectExprs(35,971
+void collect_stmts(41,1141
+void collect_stmts_STL(50,1364
+void collectDefExprs(59,1609
+void collectDefExprsSTL(65,1795
+void collectCallExprs(71,2001
+void collectCallExprsSTL(77,2197
+void collectMyCallExprs(83,2413
+void collectMyCallExprsSTL(91,2716
+void collectGotoStmts(99,3042
+void collectGotoStmtsSTL(105,3238
+void collectSymExprs(111,3454
+void collectSymExprsSTL(117,3640
+static void collectMySymExprsHelp(123,3846
+static void collectMySymExprsHelp(130,4108
+void collectMySymExprs(139,4502
+void collectMySymExprs(145,4715
+void collectSymbols(150,4907
+void collectSymbolsSTL(156,5083
+void collect_asts(162,5279
+void collect_asts_STL(167,5400
+void collect_asts_postorder(172,5543
+void collect_asts_postorder_STL(177,5684
+static void collect_top_asts_internal(182,5847
+void collect_top_asts(189,6053
+static void collect_top_asts_internal_STL(194,6205
+void collect_top_asts_STL(208,6741
+void reset_ast_loc(213,6915
+void reset_ast_loc(217,7026
+void compute_call_sites(223,7178
+void buildDefUseMaps(248,8034
+void collectSymbolSetSymExprVec(269,8740
+void buildDefUseMaps(284,9282
+void buildDefUseMaps(296,9796
+static void addUseOrDef(306,10183
+void addDef(318,10423
+void addUse(323,10520
+bool isOpEqualPrim(333,10773
+int isDefAndOrUse(359,11663
+void buildDefUseMaps(383,12432
+typedef Map<Symbol*Symbol398,12880
+typedef Map<Symbol*,Vec<SymExpr*>*> SymbolToVecSymExprMap;398,12880
+typedef MapElem<Symbol*Symbol399,12939
+typedef MapElem<Symbol*,Vec<SymExpr*>*> SymbolToVecSymExprMapElem;399,12939
+void freeDefUseMaps(401,13007
+buildDefUseSetsInternal(415,13327
+void buildDefUseSets(432,13837
+void subSymbol(444,14146
+void sibling_insert_help(452,14353
+void parent_insert_help(465,14734
+void insert_help(483,15263
+void remove_help(498,15665
+actual_to_formal(513,16113
+Expr* formal_to_actual(535,16656
+pruneVisit(548,16926
+pruneVisit(563,17371
+visitVisibleFunctions(586,18085
+pruneUnusedTypes(619,19256
+static void pruneUnusedAggregateTypes(628,19399
+static void pruneUnusedRefs(662,20241
+static void changeDeadTypesToVoid(708,21319
+void prune2(722,21819
+prune(727,22004
+
+AST/baseAST.cpp,1168
+#define decl_gvecs(21,508
+static int uid 24,581
+#define decl_counters(26,602
+#define sum_gvecs(29,743
+void printStatistics(31,781
+void trace_remove(111,4845
+#define clean_gvec(128,5503
+void cleanAst(140,6040
+static void cleanModuleList(178,7280
+void destroyAst(189,7527
+  #define destroy_gvec(190,7547
+verify(200,7791
+  #define verify_gvec(201,7802
+int breakOnID 209,7996
+int breakOnDeleteID 210,8016
+int lastNodeIDUsed(212,8043
+static void checkid(219,8185
+BaseAST::BaseAST(226,8274
+const char* BaseAST::stringLoc(245,8638
+ModuleSymbol* BaseAST::getModule(254,8829
+FnSymbol* BaseAST::getFunction(271,9268
+Type* BaseAST::getValType(290,9778
+Type* BaseAST::getRefType(301,10056
+Type* BaseAST::getWideRefType(312,10311
+const char* astTagName[astTagName324,10584
+Vec<ModuleSymbol*> mainModules;355,11012
+Vec<ModuleSymbol*> userModules;356,11069
+Vec<ModuleSymbol*> allModules;357,11133
+void registerModule(359,11190
+#define SUB_SYMBOL(375,11525
+#define SUB_LABEL(382,11830
+#define SUB_TYPE(389,12135
+void update_symbols(396,12440
+GenRet baseASTCodegen(417,13118
+GenRet baseASTCodegenInt(424,13283
+GenRet baseASTCodegenString(428,13375
+
+AST/bb.cpp,909
+BasicBlock::BasicBlock(14,359
+#define BB_START(17,405
+#define BB_ADD(22,595
+#define BB_STOP(28,810
+#define BB_RESTART(31,899
+#define BBB(37,1114
+#define BB_THREAD(40,1196
+BasicBlock* BasicBlock::basicBlock;48,1424
+Map<LabelSymbol*,std::vector<BasicBlock*>*> BasicBlock::gotoMaps;49,1460
+Map<LabelSymbol*,BasicBlock*> BasicBlock::labelMaps;50,1526
+int BasicBlock::nextid;51,1579
+bool BasicBlock::isOK(55,1666
+void BasicBlock::clear(80,2350
+void BasicBlock::reset(91,2575
+BasicBlock* BasicBlock::Steal(100,2737
+void buildBasicBlocks(108,2892
+void BasicBlock::buildBasicBlocks(118,3193
+bool verifyBasicBlocks(216,5876
+void buildLocalsVectorMap(226,6030
+void backwardFlowAnalysis(244,6481
+void forwardFlowAnalysis(279,7513
+void printBasicBlocks(338,9221
+void printLocalsVector(359,9686
+void printDefsVector(367,9924
+void printLocalsVectorSets(376,10213
+void printBitVectorSets(390,10548
+
+AST/build.cpp,2843
+checkControlFlow(18,440
+static void addPragmaFlags(89,2939
+BlockStmt* buildPragmaStmt(127,4381
+CallExpr* buildOneTuple(142,4844
+CallExpr* buildTuple(146,4930
+Expr* buildSquareCallExpr(153,5123
+Expr* buildNamedActual(160,5266
+Expr* buildNamedAliasActual(165,5361
+Expr* buildFormalArrayType(172,5584
+Expr* buildIntLiteral(192,6435
+Expr* buildRealLiteral(207,6814
+Expr* buildImagLiteral(212,6922
+Expr* buildStringLiteral(221,7119
+Expr* buildDotExpr(226,7212
+Expr* buildDotExpr(261,8669
+Expr* buildLogicalAndExpr(266,8792
+Expr* buildLogicalOrExpr(279,9412
+BlockStmt* buildChapelStmt(292,10030
+static void addModuleToSearchList(305,10328
+static BlockStmt* buildUseList(315,10669
+BlockStmt* buildUseStmt(327,10956
+buildTupleVarDeclHelp(336,11134
+buildTupleVarDeclStmt(359,11835
+buildLabelStmt(386,12772
+buildIfStmt(415,13762
+buildExternBlockStmt(423,14123
+void createInitFn(432,14387
+ModuleSymbol* buildModule(457,15091
+CallExpr* buildPrimitiveExpr(466,15353
+FnSymbol* buildIfExpr(485,16063
+CallExpr* buildLetExpr(521,17328
+BlockStmt* buildWhileDoLoopStmt(532,17664
+BlockStmt* buildDoWhileLoopStmt(556,18660
+BlockStmt* buildSerialStmt(587,19853
+checkIndices(603,20382
+destructureIndices(615,20748
+handleArrayTypeCase(654,22065
+static int loopexpr_uid 740,26310
+buildForLoopExpr(744,26392
+static void buildSerialIteratorFn(779,27746
+static void buildLeaderIteratorFn(798,28472
+static FnSymbol* buildFollowerIteratorFn(832,29757
+buildForallLoopExpr(864,31166
+CallExpr* buildForallLoopExprFromArrayType(902,32869
+BlockStmt* buildForLoopStmt(935,34207
+buildFollowLoop(994,36235
+buildForallLoopStmt(1029,37647
+addByrefVars(1115,41040
+BlockStmt* buildCoforallLoopStmt(1130,41564
+insertBeforeCompilerTemp(1212,44630
+BlockStmt* buildParamForLoopStmt(1221,44883
+buildAssignment(1255,46183
+BlockStmt* buildLAndAssignment(1261,46323
+BlockStmt* buildLOrAssignment(1271,46673
+BlockStmt* buildSelectStmt(1281,47021
+BlockStmt* buildTypeSelectStmt(1327,48522
+buildReduceScanPreface(1393,51004
+CallExpr* buildReduceExpr(1420,52060
+CallExpr* buildScanExpr(1497,55698
+backPropagateInitsTypes(1522,56439
+buildVarDecls(1551,57273
+buildClassDefExpr(1615,59968
+buildArgDefExpr(1636,60580
+buildTupleArgDefExpr(1657,61284
+destructureTupleGroupedArgs(1674,61853
+FnSymbol* buildLambda(1704,62778
+FnSymbol* buildFunctionSymbol(1727,63324
+buildFunctionDecl(1749,64060
+buildFunctionFormal(1813,66019
+BlockStmt* buildLocalStmt(1829,66404
+static Expr* extractLocaleID(1844,66715
+buildOnStmt(1868,67699
+buildBeginStmt(1934,69825
+buildSyncStmt(1980,71125
+buildCobeginStmt(1996,71797
+buildGotoStmt(2038,73230
+BlockStmt* buildPrimitiveStmt(2042,73331
+buildAtomicStmt(2047,73468
+CallExpr* buildPreDecIncWarning(2058,73711
+BlockStmt* convertTypesToExtern(2071,74098
+BlockStmt* handleConfigTypes(2089,74598
+
+AST/checkAST.cpp,142
+void checkForDuplicateUses(21,482
+void checkNoUnresolveds(43,1140
+void checkPrimitives(54,1527
+void checkReturnTypesHaveRefTypes(263,9084
+
+AST/dominator.cpp,170
+static void unsetDeadBlocks(63,2395
+void computeDominators(119,4328
+bool dominates(168,5717
+bool strictlyDominates(181,6015
+void computeImmediateDominators(201,6715
+
+AST/expr.cpp,6377
+#define __STDC_FORMAT_MACROS8,258
+#define createTempRef(30,883
+static int codegen_tmp 79,3498
+Expr::Expr(81,3527
+Expr* Expr::getStmtExpr(91,3662
+void Expr::verify(100,3847
+bool Expr::inTree(111,4156
+Type* Expr::typeInfo(119,4266
+callReplaceChild(126,4381
+void Expr::prettyPrint(134,4575
+Expr* Expr::remove(144,4993
+void Expr::replace(171,5433
+void Expr::insertBefore(202,6193
+void Expr::insertAfter(223,6781
+SymExpr::SymExpr(244,7365
+SymExpr::replaceChild(255,7533
+SymExpr::verify(261,7659
+SymExpr::copyInner(273,7959
+Type* SymExpr::typeInfo(278,8027
+GenRet SymExpr::codegen(283,8083
+void SymExpr::prettyPrint(313,8824
+UnresolvedSymExpr::UnresolvedSymExpr(333,9474
+UnresolvedSymExpr::replaceChild(344,9721
+UnresolvedSymExpr::verify(350,9867
+UnresolvedSymExpr::copyInner(360,10110
+Type* UnresolvedSymExpr::typeInfo(365,10205
+GenRet UnresolvedSymExpr::codegen(370,10271
+void UnresolvedSymExpr::prettyPrint(379,10531
+DefExpr::DefExpr(384,10610
+void DefExpr::verify(427,11790
+DefExpr::copyInner(449,12450
+void DefExpr::replaceChild(454,12564
+Type* DefExpr::typeInfo(465,12812
+GenRet DefExpr::codegen(471,12921
+llvm::Value* createTempVarLLVM(507,13955
+llvm::Value *convertValueToType(convertValueToType514,14117
+PromotedPair convertValuesToLarger(521,14341
+#define WIDE_GEP_LOC 529,14622
+#define WIDE_GEP_ADDR 530,14645
+#define WIDE_GEP_SIZE 531,14669
+static const char* wide_fields[wide_fields533,14694
+GenRet codegenWideAddr(547,15320
+GenRet codegenWideAddrWithAddr(647,18892
+#define USE_TBAA 660,19422
+llvm::StoreInst* codegenStoreLLVM(666,19563
+llvm::StoreInst* codegenStoreLLVM(680,20001
+llvm::LoadInst* codegenLoadLLVM(707,20967
+llvm::LoadInst* codegenLoadLLVM(723,21471
+GenRet codegenUseGlobal(738,21829
+GenRet codegenLocaleForNode(762,22373
+GenRet codegenUseCid(779,22782
+GenRet codegenGetNodeID(790,23072
+GenRet codegenGetLocaleID(799,23258
+GenRet codegenUseGlobal(817,23715
+GenRet codegenWideHere(823,23808
+static bool isWide(831,24024
+Type* getRefTypesForWideThing(843,24474
+static GenRet codegenCastWideToVoid(872,25499
+static GenRet codegenWideThingField(906,26844
+GenRet codegenRaddr(952,28154
+static GenRet codegenRlocale(994,29446
+static GenRet codegenRsize(1041,30867
+static GenRet codegenRnode(1049,31067
+static const int field_normal 1095,32678
+static const int field_cid 1096,32713
+static const int field_uid 1097,32745
+static const int field_other 1098,32777
+GenRet codegenFieldPtr(1125,33907
+void DefExpr::prettyPrint(1275,38690
+GenRet codegenFieldPtr(1280,38770
+GenRet codegenFieldPtr(1298,39283
+GenRet codegenFieldPtr(1307,39506
+GenRet codegenFieldCidPtr(1316,39720
+GenRet codegenFieldUidPtr(1323,39908
+GenRet codegenElementPtr(1347,40755
+llvm::Value* createTempVarLLVM(1440,43518
+GenRet createTempVar(1450,43697
+static GenRet createTempVar(1473,44244
+GenRet createTempVarWith(1499,44964
+GenRet codegenValue(1525,45660
+GenRet codegenValuePtr(1585,47278
+static GenRet codegenAddrOf(1605,47707
+GenRet codegenLocalAddrOf(1631,48436
+GenRet codegenLocalDeref(1641,48573
+GenRet codegenDeref(1660,49223
+GenRet codegenEquals(1679,49638
+GenRet codegenNotEquals(1705,50318
+GenRet codegenLogicalOr(1731,51004
+GenRet codegenLogicalAnd(1748,51458
+GenRet codegenAdd(1766,51916
+GenRet codegenSub(1793,52674
+GenRet codegenNeg(1820,53432
+GenRet codegenMul(1842,53870
+GenRet codegenDiv(1870,54629
+GenRet codegenMod(1898,55386
+GenRet codegenLsh(1927,56143
+GenRet codegenRsh(1945,56599
+GenRet codegenAnd(1968,57171
+GenRet codegenOr(1988,57673
+GenRet codegenXor(2008,58173
+GenRet codegenTernary(2030,58677
+GenRet codegenIsZero(2091,60748
+GenRet codegenIsNotZero(2120,61314
+GenRet codegenDynamicCastCheck(2147,61877
+void convertArgumentForCall(2158,62156
+GenRet codegenArgForFormal(2239,64867
+GenRet codegenCallExpr(2272,65819
+GenRet codegenCallExpr(2383,68989
+void codegenCall(2400,69374
+GenRet codegenCallExpr(2414,69793
+GenRet codegenCallExpr(2420,69915
+GenRet codegenCallExpr(2427,70070
+GenRet codegenCallExpr(2435,70258
+GenRet codegenCallExpr(2444,70479
+GenRet codegenCallExpr(2455,70756
+void codegenCall(2475,71178
+void codegenCall(2482,71316
+void codegenCall(2490,71487
+void codegenCall(2499,71691
+void codegenCall(2509,71928
+void codegenCall(2521,72215
+void codegenCall(2550,72894
+void codegenCall(2603,74198
+GenRet codegenBasicPrimitiveExpr(2623,74706
+GenRet codegenZero(2648,75362
+GenRet codegenOne(2654,75446
+GenRet codegenNullPointer(2660,75529
+void codegenCallMemcpy(2681,76154
+GenRet codegenSizeof(2746,78767
+GenRet codegenSizeof(2756,78918
+GenRet codegenSizeof(2775,79227
+void codegenCopy(2783,79398
+isTupleOfTuple(2840,80995
+GenRet codegenCast(2849,81299
+GenRet codegenCast(2888,82238
+GenRet codegenCastToVoidStar(2926,83018
+GenRet codegenCastToCharStar(2946,83414
+void codegenAssign(2984,84553
+codegenExprMinusOne(3136,90006
+static void callExprHelper(3151,90435
+CallExpr::CallExpr(3161,90654
+CallExpr::CallExpr(3187,91271
+CallExpr::CallExpr(3205,91691
+CallExpr::CallExpr(3224,92124
+CallExpr::~CallExpr(3243,92567
+void CallExpr::verify(3246,92595
+CallExpr::copyInner(3304,94417
+void CallExpr::replaceChild(3320,94796
+CallExpr::insertAtHead(3330,94999
+CallExpr::insertAtTail(3339,95168
+FnSymbol* CallExpr::isResolved(3347,95332
+bool CallExpr::isNamed(3353,95460
+int CallExpr::numActuals(3364,95748
+Expr* CallExpr::get(3369,95806
+FnSymbol* CallExpr::findFnSymbol(3374,95872
+Type* CallExpr::typeInfo(3384,96104
+void CallExpr::prettyPrint(3393,96285
+void codegenOpAssign(3478,98706
+GenRet CallExpr::codegen(3534,100876
+bool CallExpr::isPrimitive(5362,166078
+bool CallExpr::isPrimitive(5367,166192
+NamedExpr::NamedExpr(5372,166315
+void NamedExpr::verify(5381,166474
+NamedExpr::copyInner(5392,166717
+void NamedExpr::replaceChild(5397,166814
+Type* NamedExpr::typeInfo(5406,167010
+GenRet NamedExpr::codegen(5411,167077
+void NamedExpr::prettyPrint(5418,167196
+get_int(5424,167280
+get_uint(5441,167627
+get_string(5458,167978
+get_string(5473,168310
+get_constant(5481,168466
+CallExpr* callChplHereAlloc(5498,168812
+void insertChplHereAlloc(5516,169562
+CallExpr* callChplHereFree(5550,171107
+#define AST_RET_CHILD(5572,171789
+#define AST_RET_LIST(5574,171881
+Expr* getFirstExpr(5577,171983
+Expr* getNextExpr(5607,172646
+isIdentifierChar(5628,173419
+new_Expr(5637,173630
+new_Expr(5646,173783
+
+AST/flags.cpp,811
+typedef Map<const char*char12,314
+typedef Map<const char*, int> FlagMap;12,314
+typedef MapElem<const char*char13,353
+typedef MapElem<const char*, int> FlagMapElem;13,353
+static FlagMap flagMap;15,441
+static const char* flagNames[flagNames16,465
+static const char* flagComments[flagComments17,506
+static bool flagPragma[flagPragma18,550
+pragma2flag(22,592
+initFlags(32,782
+# define symbolFlag(33,796
+# undef symbolFlag39,1010
+bool viewFlagsShort 51,1312
+bool viewFlagsPragma 52,1340
+bool viewFlagsName 53,1370
+bool viewFlagsComment 54,1399
+viewFlags(57,1436
+static Symbol* symflagOK(82,2207
+bool hasFlag(100,2767
+void addFlag(105,2906
+void removeFlag(110,3034
+bool hasFlag(115,3171
+void addFlag(116,3247
+void removeFlag(117,3317
+getDataClassType(123,3424
+setDataClassType(133,3611
+
+AST/iterator.cpp,913
+IteratorInfo::IteratorInfo(26,707
+static inline CallExpr* asYieldExpr(42,966
+static inline CallExpr* parentYieldExpr(48,1129
+removeRetSymbolAndUses(59,1450
+isSingleLoopIterator(89,2331
+static void replaceLocalWithFieldTemp(145,4300
+replaceLocalsWithFields(272,9428
+buildZip1(354,12742
+buildZip2(396,14252
+buildZip3(431,15323
+buildZip4(477,16922
+buildAdvance(515,18008
+buildHasMore(578,20291
+buildGetValue(591,20831
+static void collectLiveLocalVariables(603,21405
+static bool containsRefVar(660,23097
+static void insertLocalsForRefs(672,23383
+addLiveLocalVariables(725,25124
+addAllLocalVariables(769,26295
+noOtherCalls(780,26652
+rebuildIterator(802,27507
+rebuildGetIterator(860,29462
+collectYieldSymbols(885,30665
+addYieldSymbols(912,31524
+removeLocals(922,31775
+static inline Symbol* createICField(933,32099
+static void addLocalsToClassAndRecord(958,33008
+void lowerIterator(998,34472
+
+AST/primitive.cpp,1175
+returnInfoUnknown(14,341
+returnInfoVoid(19,413
+returnInfoOpaque(24,479
+returnInfoBool(29,549
+returnInfoString(34,615
+returnInfoStringC(39,685
+returnInfoLocaleID(45,758
+returnInfoNodeID(50,832
+returnInfoInt32(55,906
+returnInfoInt64(60,985
+returnInfoSizeType(65,1064
+returnInfoDefaultInt(77,1438
+returnInfoUInt32(82,1525
+returnInfoComplexField(104,1896
+returnInfoFirst(117,2287
+returnInfoFirstDeref(122,2372
+returnInfoCast(127,2464
+returnInfoVal(140,2808
+returnInfoRef(148,3070
+returnInfoNumericUp(157,3309
+returnInfoArrayIndexValue(172,3686
+returnInfoArrayIndex(190,4256
+returnInfoGetMember(195,4362
+returnInfoGetTupleMember(223,5170
+returnInfoGetTupleMemberRef(230,5389
+returnInfoGetMemberRef(236,5547
+returnInfoEndCount(265,6364
+returnInfoVirtualMethodCall(279,6661
+void printPrimitiveCounts(288,6912
+HashMap<const char *, StringHashFns, PrimitiveOp *> primitives_map;312,7534
+PrimitiveOp* primitives[primitives314,7603
+PrimitiveOp::PrimitiveOp(316,7646
+prim_def(329,7942
+prim_def(337,8246
+initPrimitive(365,9339
+Map<const char*, VarSymbol*> memDescsMap;607,22599
+Vec<const char*> memDescsVec;608,22641
+VarSymbol* newMemDesc(610,22672
+
+AST/stmt.cpp,1440
+Map<GotoStmt*,GotoStmt*> copiedIterResumeGotos;18,472
+Vec<LabelSymbol*> removedIterResumeLabels;21,577
+#define FNAME(25,639
+void codegenStmt(29,807
+BlockStmt::BlockStmt(49,1310
+BlockStmt::~BlockStmt(67,1652
+void BlockStmt::verify(70,1682
+BlockStmt::copyInner(97,2546
+void BlockStmt::replaceChild(111,2934
+GenRet BlockStmt::codegen(123,3274
+BlockStmt::insertAtHead(252,7902
+BlockStmt::insertAtTail(258,7974
+BlockStmt::insertAtHead(264,8046
+BlockStmt::insertAtTail(274,8205
+BlockStmt::insertAtTailBeforeGoto(284,8364
+BlockStmt::isLoop(293,8518
+BlockStmt::length(303,8817
+BlockStmt::addUse(309,8874
+CondStmt::CondStmt(319,9091
+CondStmt::fold_cond_stmt(348,9890
+void CondStmt::verify(407,11512
+CondStmt::copyInner(446,12378
+void CondStmt::replaceChild(453,12547
+GenRet CondStmt::codegen(466,12891
+GotoStmt::GotoStmt(545,15189
+GotoStmt::GotoStmt(555,15440
+GotoStmt::GotoStmt(564,15611
+LabelSymbol* getGotoLabelSymbol(579,15953
+GotoStmt* getGotoLabelsIterResumeGoto(587,16147
+void GotoStmt::verify(593,16302
+GotoStmt::copyInner(623,17388
+void verifyNcleanCopiedIterResumeGotos(653,18432
+void GotoStmt::replaceChild(661,18689
+GenRet GotoStmt::codegen(670,18892
+const char* GotoStmt::getName(710,19926
+ExternBlockStmt::ExternBlockStmt(721,20145
+void ExternBlockStmt::verify(728,20290
+void ExternBlockStmt::replaceChild(738,20512
+GenRet ExternBlockStmt::codegen(742,20640
+ExternBlockStmt::copyInner(752,20853
+
+AST/symbol.cpp,6376
+#define __STDC_FORMAT_MACROS7,257
+FnSymbol *chpl_gen_main chpl_gen_main33,708
+ModuleSymbol* rootModule 35,741
+ModuleSymbol* theProgram 36,774
+ModuleSymbol* mainModule 37,807
+ModuleSymbol* baseModule 38,840
+ModuleSymbol* standardModule 39,873
+ModuleSymbol* printModuleInitModule 40,910
+Symbol *gNil gNil41,954
+Symbol *gUnknown gUnknown42,975
+Symbol *gMethodToken gMethodToken43,1000
+Symbol *gTypeDefaultToken gTypeDefaultToken44,1029
+Symbol *gLeaderTag gLeaderTag45,1063
+Symbol *gModuleToken gModuleToken46,1112
+Symbol *gVoid gVoid47,1141
+Symbol *gFile gFile48,1163
+Symbol *gStringC gStringC49,1185
+Symbol *gOpaque gOpaque50,1210
+Symbol *gTimer gTimer51,1234
+Symbol *gTaskID gTaskID52,1257
+Symbol *gSyncVarAuxFields gSyncVarAuxFields53,1281
+Symbol *gSingleVarAuxFields gSingleVarAuxFields54,1315
+Symbol *gTaskList gTaskList55,1351
+VarSymbol *gTrue gTrue57,1378
+VarSymbol *gFalse gFalse58,1403
+VarSymbol *gTryToken gTryToken59,1429
+VarSymbol *gBoundsChecking gBoundsChecking60,1458
+VarSymbol* gPrivatization 61,1493
+VarSymbol* gLocal 62,1527
+VarSymbol* gNodeID 63,1553
+VarSymbol *gModuleInitIndentLevel gModuleInitIndentLevel64,1580
+FnSymbol *gPrintModuleInitFn gPrintModuleInitFn65,1622
+FnSymbol* gChplHereAlloc 66,1659
+FnSymbol* gChplHereFree 67,1692
+Symbol *gCLine gCLine68,1724
+Symbol *gCFile gCFile69,1747
+Map<FnSymbol*,int> ftableMap;71,1771
+Vec<FnSymbol*> ftableVec;72,1801
+Map<Type*,Vec<FnSymbol*>*> virtualMethodTable;74,1828
+Map<FnSymbol*,int> virtualMethodMap;75,1875
+Map<FnSymbol*,Vec<FnSymbol*>*> virtualChildrenMap;76,1912
+Map<FnSymbol*,Vec<FnSymbol*>*> virtualRootsMap;77,1963
+Symbol::Symbol(80,2013
+Symbol::~Symbol(90,2196
+void Symbol::verify(94,2220
+bool Symbol::inTree(102,2475
+Type* Symbol::typeInfo(112,2622
+bool Symbol::isConstant(117,2672
+bool Symbol::isConstValWillNotChange(121,2723
+bool Symbol::isParameter(125,2787
+GenRet Symbol::codegen(130,2835
+void Symbol::codegenDef(138,2957
+void Symbol::codegenPrototype(143,3052
+FnSymbol* Symbol::getFnSymbol(146,3090
+bool Symbol::hasFlag(151,3147
+void Symbol::addFlag(157,3227
+void Symbol::copyFlags(163,3304
+void Symbol::removeFlag(168,3373
+bool Symbol::hasEitherFlag(173,3454
+bool Symbol::isImmediate(178,3554
+VarSymbol::VarSymbol(183,3603
+VarSymbol::~VarSymbol(193,3797
+void VarSymbol::verify(199,3866
+VarSymbol::copyInner(209,4064
+void VarSymbol::replaceChild(218,4289
+bool VarSymbol::isConstant(223,4425
+bool VarSymbol::isConstValWillNotChange(228,4494
+bool VarSymbol::isParameter(233,4576
+llvm::Value* codegenImmediateLLVM(239,4681
+GenRet VarSymbol::codegen(415,10036
+void VarSymbol::codegenDefC(588,15585
+void VarSymbol::codegenGlobalDef(632,16889
+void VarSymbol::codegenDef(691,18562
+bool VarSymbol::isImmediate(756,20865
+ArgSymbol::ArgSymbol(761,20929
+void ArgSymbol::verify(803,22355
+ArgSymbol::copyInner(830,23409
+void ArgSymbol::replaceChild(842,23786
+bool argMustUseCPtr(853,24146
+bool ArgSymbol::requiresCPtr(861,24299
+bool ArgSymbol::isConstant(872,24609
+bool ArgSymbol::isConstValWillNotChange(882,24917
+bool ArgSymbol::isParameter(892,25138
+const char* ArgSymbol::intentDescrString(898,25282
+GenRet ArgSymbol::codegenType(917,25837
+GenRet ArgSymbol::codegen(937,26243
+TypeSymbol::TypeSymbol(965,26679
+void TypeSymbol::verify(980,27110
+TypeSymbol::copyInner(991,27348
+void TypeSymbol::replaceChild(1001,27627
+void TypeSymbol::codegenPrototype(1006,27765
+void TypeSymbol::codegenDef(1013,27872
+void TypeSymbol::codegenMetadata(1043,28422
+GenRet TypeSymbol::codegen(1167,32813
+FnSymbol::FnSymbol(1191,33358
+FnSymbol::~FnSymbol(1219,33895
+void FnSymbol::verify(1229,34071
+FnSymbol* FnSymbol::getFnSymbol(1252,34936
+FnSymbol::copyInner(1258,35005
+void FnSymbol::replaceChild(1280,35606
+GenRet FnSymbol::codegenFunctionType(1295,36078
+void FnSymbol::codegenHeaderC(1361,37917
+GenRet FnSymbol::codegenCast(1378,38375
+void FnSymbol::codegenPrototype(1402,39003
+void FnSymbol::codegenDef(1483,41299
+GenRet FnSymbol::codegen(1584,43800
+FnSymbol::insertAtHead(1609,44370
+FnSymbol::insertAtTail(1615,44442
+FnSymbol::insertAtHead(1621,44514
+FnSymbol::insertAtTail(1631,44672
+FnSymbol::getReturnSymbol(1641,44833
+FnSymbol::insertBeforeReturn(1653,45133
+FnSymbol::insertBeforeReturnAfterLabel(1666,45498
+FnSymbol::insertBeforeDownEndCount(1675,45727
+FnSymbol::insertFormalAtHead(1687,46116
+FnSymbol::insertFormalAtTail(1698,46403
+FnSymbol::numFormals(1709,46689
+FnSymbol::getFormal(1715,46754
+hasGenericArgs(1725,46921
+bool FnSymbol::tag_generic(1751,47631
+EnumSymbol::EnumSymbol(1774,48287
+void EnumSymbol::verify(1781,48401
+EnumSymbol::copyInner(1790,48548
+void EnumSymbol::replaceChild(1796,48680
+bool EnumSymbol::isParameter(1800,48817
+void EnumSymbol::codegenDef(1802,48870
+Immediate* EnumSymbol::getImmediate(1804,48905
+ModuleSymbol::ModuleSymbol(1814,49117
+ModuleSymbol::~ModuleSymbol(1829,49436
+void ModuleSymbol::verify(1832,49472
+ModuleSymbol::copyInner(1845,49819
+static int compareLineno(1851,49937
+void ModuleSymbol::codegenDef(1863,50217
+Vec<AggregateType*> ModuleSymbol::getClasses(1890,50884
+Vec<VarSymbol*> ModuleSymbol::getConfigVars(1910,51520
+Vec<ModuleSymbol*> ModuleSymbol::getModules(1931,52144
+Vec<FnSymbol*> ModuleSymbol::getFunctions(1943,52471
+void ModuleSymbol::replaceChild(1979,53772
+LabelSymbol::LabelSymbol(1988,53991
+void LabelSymbol::verify(1996,54140
+LabelSymbol::copyInner(2012,54657
+void LabelSymbol::replaceChild(2037,55519
+void LabelSymbol::codegenDef(2041,55658
+static int literal_id 2043,55696
+HashMap<Immediate *, ImmHashFns, VarSymbol *> uniqueConstantsHash;2044,55723
+VarSymbol *new_StringSymbol(new_StringSymbol2049,55952
+VarSymbol* new_BoolSymbol(2067,56435
+VarSymbol *new_IntSymbol(new_IntSymbol2089,57124
+VarSymbol *new_UIntSymbol(new_UIntSymbol2115,57914
+static VarSymbol* new_FloatSymbol(2141,58713
+VarSymbol *new_RealSymbol(new_RealSymbol2170,59582
+VarSymbol *new_ImagSymbol(new_ImagSymbol2174,59731
+VarSymbol *new_ComplexSymbol(new_ComplexSymbol2178,59880
+immediate_type(2210,60745
+VarSymbol *new_ImmediateSymbol(new_ImmediateSymbol2231,61254
+bool localTempNames 2253,61882
+static int tempID 2257,62038
+void resetTempID(2259,62062
+FlagSet getRecordWrappedFlags(2263,62100
+FlagSet getSyncFlags(2275,62361
+VarSymbol* newTemp(2285,62525
+VarSymbol* newTemp(2298,62783
+
+AST/type.cpp,3537
+#define TYPE_EXTERN6,228
+Type::Type(23,510
+Type::~Type(37,816
+void Type::verify(40,836
+void Type::addSymbol(43,862
+bool Type::inTree(48,934
+Type* Type::typeInfo(56,1032
+GenRet Type::codegen(61,1080
+void Type::codegenDef(68,1220
+void Type::codegenPrototype(73,1308
+int Type::codegenStructure(76,1344
+Symbol* Type::getField(82,1504
+PrimitiveType::PrimitiveType(88,1637
+PrimitiveType::copyInner(97,1814
+void PrimitiveType::replaceChild(103,1942
+void PrimitiveType::verify(109,2087
+void PrimitiveType::codegenDef(116,2228
+int PrimitiveType::codegenStructure(119,2266
+EnumType::EnumType(129,2550
+EnumType::~EnumType(138,2689
+void EnumType::verify(141,2717
+EnumType::copyInner(156,3077
+void EnumType::replaceChild(165,3268
+void EnumType::codegenDef(170,3402
+int EnumType::codegenStructure(221,4825
+void EnumType::sizeAndNormalize(228,4974
+PrimitiveType* EnumType::getIntegerType(420,10045
+AggregateType::AggregateType(428,10167
+AggregateType::~AggregateType(447,10600
+void AggregateType::verify(450,10638
+AggregateType::copyInner(473,11364
+addDeclaration(489,11806
+void AggregateType::addDeclarations(523,13145
+void AggregateType::replaceChild(536,13471
+#define CLASS_STRUCT_PREFIX 540,13614
+const char* AggregateType::classStructName(569,14583
+GenRet AggregateType::codegenClassStructType(590,15216
+void AggregateType::codegenDef(609,15631
+void AggregateType::codegenPrototype(870,24959
+int AggregateType::codegenStructure(898,25767
+static const char* genUnderscore(917,26370
+static const char* genChplTypeEnumString(928,26601
+static const char* genSizeofStr(933,26744
+static const char* genNewBaseOffsetString(938,26874
+int AggregateType::codegenFieldStructure(955,27585
+int AggregateType::getMemberGEP(986,28587
+int AggregateType::getFieldPosition(1032,29859
+Symbol* AggregateType::getField(1074,30897
+Symbol* AggregateType::getField(1109,31852
+createPrimitiveType(1115,31960
+createInternalType(1126,32404
+#define INIT_PRIM_BOOL(1134,32734
+#define INIT_PRIM_INT(1138,32971
+#define INIT_PRIM_UINT(1142,33203
+#define INIT_PRIM_REAL(1146,33441
+#define INIT_PRIM_IMAG(1150,33695
+#define INIT_PRIM_COMPLEX(1154,33943
+#define CREATE_DEFAULT_SYMBOL(1162,34531
+void initChplProgram(1169,34795
+void initPrimitiveTypes(1185,35455
+void initTheProgram(1303,40245
+void initCompilerGlobals(1338,41623
+bool is_void_type(1380,43010
+bool is_bool_type(1384,43064
+bool is_int_type(1394,43275
+bool is_uint_type(1403,43437
+bool is_signed(1411,43603
+bool is_real_type(1423,43885
+bool is_imag_type(1430,43993
+bool is_complex_type(1437,44101
+bool is_enum_type(1444,44223
+bool is_string_type(1448,44279
+int get_width(1452,44337
+bool isClass(1486,45287
+bool isRecord(1493,45403
+bool isUnion(1499,45520
+bool isReferenceType(1505,45635
+bool isRefCountedType(1509,45709
+bool isRecordWrappedType(1519,46122
+bool isSyncType(1523,46210
+bool isAtomicType(1527,46280
+bool isSubClass(1531,46359
+isDistClass(1544,46569
+isDomainClass(1554,46769
+isArrayClass(1564,46975
+static Vec<TypeSymbol*> typesToStructurallyCodegen;1573,47171
+static Vec<TypeSymbol*> typesToStructurallyCodegenList;1574,47223
+void registerTypeToStructurallyCodegen(1576,47280
+GenRet genTypeStructureIndex(1584,47551
+static int compareCnames(1618,48418
+#define TYPE_STRUCTURE_FILE 1631,48716
+static int maxFieldsPerType 1632,48764
+void codegenTypeStructures(1634,48798
+void codegenTypeStructureInclude(1703,51175
+Type* getNamedType(1707,51290
+bool needsCapture(1718,51528
+VarSymbol* resizeImmediate(1749,52302
+
+AST/view.cpp,1798
+#define __STDC_FORMAT_MACROS7,257
+list_sym(23,522
+list_line(59,1483
+list_ast(73,1759
+aidError(146,3694
+printAidError(156,4004
+void viewFlags(160,4097
+html_file_name(167,4235
+html_file_name(172,4376
+hasHref(177,4497
+static void view_sym(183,4613
+view_ast(213,5347
+static void type_nprint_view(274,6850
+static void type_print_view(279,7011
+void list_view(289,7254
+void list_view(294,7372
+void list_view_noline(306,7570
+void print_view(317,7759
+void print_view_noline(328,7931
+void nprint_view(338,8092
+void nprint_view(343,8216
+void nprint_view_noline(354,8396
+BaseAST* aid(365,8566
+  #define match_id(366,8589
+void iprint_view(376,8839
+void mark_view(381,8894
+structuralTypeSymbol(388,9023
+html_adjacent_passes(396,9199
+printBlockID(408,9563
+html_print_symbol(414,9697
+html_print_fnsymbol(450,10822
+html_view_ast(480,11725
+void html_view(642,18535
+static int log_indent;690,20883
+static bool log_need_space;691,20906
+void dump_ast(698,21209
+inline void log_newline(718,21797
+inline void log_write(725,21948
+log_ast(733,22168
+log_ast_header(750,22663
+log_ast_footer(873,27634
+log_ast_symbol(889,27980
+log_ast_fnsymbol(932,29312
+#define locBuffSize 985,30986
+static char locBuff[locBuff986,31010
+int debugShortLoc 987,31044
+const char* stringLoc(989,31071
+const char* shortLoc(993,31190
+const char* debugLoc(997,31306
+const char* stringLoc(1001,31395
+const char* shortLoc(1008,31572
+const char* debugLoc(1016,31791
+void map_view(1024,31942
+void map_view(1028,31995
+void vec_view(1065,32835
+void vec_view(1068,32904
+void vec_view(1080,33173
+void vec_view(1083,33244
+void fnsWithName(1099,33580
+void fnsWithName(1102,33652
+void whocalls(1121,34148
+static char* parentMsg(1136,34518
+bool whocalls_nview 1148,34813
+void whocalls(1151,34870
+
+backend/beautify.cpp,479
+#define ZLINEFORMAT 48,1906
+#define ZLINEINPUT 49,1946
+#define ZLINEINPUTFORMAT 50,1978
+#define ZLINEINPUTLEN 51,2021
+#define ZCMAXMAPSIZE 52,2062
+#define FALSE 54,2089
+#define TRUE 55,2105
+#define max(56,2120
+static Vec<int> justification;58,2156
+static int depth 59,2187
+static int parens 60,2209
+static int justify 61,2232
+static int inquote 62,2256
+static int intick 63,2284
+static int escaped 64,2311
+static void update_state(66,2340
+void beautify(164,4382
+
+ifa/num.h,3788
+#define _num_h_7,244
+#define IFA_EXTERN 15,358
+#define IFA_EXTERN_INIT(18,415
+enum IF1_num_kind 21,450
+  NUM_KIND_NONE,22,470
+  NUM_KIND_NONE, NUM_KIND_UINT,22,470
+  NUM_KIND_NONE, NUM_KIND_UINT, NUM_KIND_INT,22,470
+  NUM_KIND_NONE, NUM_KIND_UINT, NUM_KIND_INT, NUM_KIND_REAL,22,470
+  NUM_KIND_NONE, NUM_KIND_UINT, NUM_KIND_INT, NUM_KIND_REAL, NUM_KIND_IMAG,22,470
+  NUM_KIND_COMPLEX23,547
+enum IF1_const_kind 26,570
+  CONST_KIND_STRING 27,592
+  CONST_KIND_STRING = NUM_KIND_COMPLEX 27,592
+  CONST_KIND_STRING = NUM_KIND_COMPLEX + 1, CONST_KIND_SYMBOL27,592
+enum IF1_bool_type 30,658
+  BOOL_SIZE_1,31,679
+  BOOL_SIZE_1, BOOL_SIZE_SYS,31,679
+  BOOL_SIZE_1, BOOL_SIZE_SYS, BOOL_SIZE_8,31,679
+  BOOL_SIZE_1, BOOL_SIZE_SYS, BOOL_SIZE_8, BOOL_SIZE_16,31,679
+  BOOL_SIZE_1, BOOL_SIZE_SYS, BOOL_SIZE_8, BOOL_SIZE_16, BOOL_SIZE_32,31,679
+  BOOL_SIZE_64,32,751
+  BOOL_SIZE_64, BOOL_SIZE_NUM32,751
+enum IF1_int_type 35,785
+  INT_SIZE_1,36,806
+  INT_SIZE_1, INT_SIZE_8,36,806
+  INT_SIZE_1, INT_SIZE_8, INT_SIZE_16,36,806
+  INT_SIZE_1, INT_SIZE_8, INT_SIZE_16, INT_SIZE_32,36,806
+  INT_SIZE_1, INT_SIZE_8, INT_SIZE_16, INT_SIZE_32, INT_SIZE_64,36,806
+  INT_SIZE_NUM37,871
+enum IF1_float_type 40,890
+  FLOAT_SIZE_16,41,913
+  FLOAT_SIZE_16, FLOAT_SIZE_32,41,913
+  FLOAT_SIZE_16, FLOAT_SIZE_32, FLOAT_SIZE_48,41,913
+  FLOAT_SIZE_16, FLOAT_SIZE_32, FLOAT_SIZE_48, FLOAT_SIZE_64,41,913
+  FLOAT_SIZE_80,42,976
+  FLOAT_SIZE_80, FLOAT_SIZE_96,42,976
+  FLOAT_SIZE_80, FLOAT_SIZE_96, FLOAT_SIZE_112,42,976
+  FLOAT_SIZE_80, FLOAT_SIZE_96, FLOAT_SIZE_112, FLOAT_SIZE_128,42,976
+  FLOAT_SIZE_NUM43,1041
+enum IF1_complex_type 46,1062
+  COMPLEX_SIZE_32,47,1087
+  COMPLEX_SIZE_32, COMPLEX_SIZE_64,47,1087
+  COMPLEX_SIZE_32, COMPLEX_SIZE_64, COMPLEX_SIZE_96,47,1087
+  COMPLEX_SIZE_32, COMPLEX_SIZE_64, COMPLEX_SIZE_96, COMPLEX_SIZE_128,47,1087
+  COMPLEX_SIZE_160,48,1159
+  COMPLEX_SIZE_160, COMPLEX_SIZE_192,48,1159
+  COMPLEX_SIZE_160, COMPLEX_SIZE_192, COMPLEX_SIZE_224,48,1159
+  COMPLEX_SIZE_160, COMPLEX_SIZE_192, COMPLEX_SIZE_224, COMPLEX_SIZE_256,48,1159
+  COMPLEX_SIZE_NUM49,1234
+#define BOOL_SIZE_DEFAULT 59,1556
+#define INT_SIZE_DEFAULT 60,1596
+#define FLOAT_SIZE_DEFAULT 61,1633
+#define COMPLEX_SIZE_DEFAULT 62,1674
+class Immediate 65,1722
+  unsigned int const_kind Immediate::const_kind66,1748
+  unsigned int num_index Immediate::num_index67,1779
+    bool       v_bool;Immediate::v_bool69,1819
+    int8_t     v_int8;Immediate::v_int870,1842
+    int16_t    v_int16;Immediate::v_int1671,1865
+    int32_t    v_int32;Immediate::v_int3272,1889
+    int64_t    v_int64;Immediate::v_int6473,1913
+    uint8_t    v_uint8;Immediate::v_uint875,1965
+    uint16_t   v_uint16;Immediate::v_uint1676,1989
+    uint32_t   v_uint32;Immediate::v_uint3277,2014
+    uint64_t   v_uint64;Immediate::v_uint6478,2039
+    float      v_float32;Immediate::v_float3280,2093
+    double     v_float64;Immediate::v_float6481,2119
+    complex64  v_complex64;Immediate::v_complex6482,2145
+    complex128 v_complex128;Immediate::v_complex12883,2173
+    const char *v_string;Immediate::v_string84,2202
+  Immediate& operator=(Immediate::operator=91,2336
+  Immediate& operator=(Immediate::operator=97,2467
+  Immediate(Immediate::Immediate102,2577
+  Immediate(Immediate::Immediate108,2715
+Immediate::int_value(119,2907
+Immediate::uint_value(135,3272
+class ImmHashFns 150,3629
+#define CPP_IS_LAME 155,3747
+#undef CPP_IS_LAME157,3849
+#define CPP_IS_LAME 159,3869
+#undef CPP_IS_LAME161,3986
+#define CPP_IS_LAME 163,4006
+#undef CPP_IS_LAME165,4263
+inline Immediate& Immediate::operator=(Immediate::operator=167,4283
+inline Immediate::Immediate(172,4400
+inline Immediate::Immediate(176,4490
+ImmHashFns::hash(181,4579
+ImmHashFns::equal(189,4795
+
+ifa/prim_data.h,1424
+#define _prim_data_H7,249
+#define P_prim_operator 12,312
+#define P_prim_period 14,364
+#define P_prim_setter 16,414
+#define P_prim_pow 18,461
+#define P_prim_mult 20,506
+#define P_prim_div 22,551
+#define P_prim_mod 24,595
+#define P_prim_add 26,639
+#define P_prim_subtract 28,688
+#define P_prim_lsh 30,737
+#define P_prim_rsh 32,781
+#define P_prim_less 34,827
+#define P_prim_lessorequal 36,881
+#define P_prim_greater 38,938
+#define P_prim_greaterorequal 40,998
+#define P_prim_equal 42,1056
+#define P_prim_notequal 44,1108
+#define P_prim_and 46,1158
+#define P_prim_xor 48,1203
+#define P_prim_or 50,1247
+#define P_prim_land 52,1292
+#define P_prim_lor 54,1338
+#define P_prim_assign 56,1386
+#define P_prim_apply 58,1436
+#define P_prim_by 60,1482
+#define P_prim_seqcat 62,1529
+#define P_prim_plus 64,1578
+#define P_prim_minus 66,1626
+#define P_prim_not 68,1673
+#define P_prim_lnot 70,1719
+#define P_prim_deref 72,1767
+#define P_prim_ref 74,1814
+#define P_prim_cast 76,1860
+#define P_prim_reply 78,1908
+#define P_prim_tuple 80,1957
+#define P_prim_vector 82,2007
+#define P_prim_continuation 84,2064
+#define P_prim_new 86,2118
+#define P_prim_index_object 88,2172
+#define P_prim_set_index_object 90,2239
+#define P_prim_meta_apply 92,2304
+#define P_prim_destruct 94,2361
+#define P_prim_set 96,2411
+#define P_prim_list 98,2457
+#define P_prim_coerce 100,2506
+#define P_prim_primitive 102,2560
+
+ifa/ifa_vars.cpp,56
+#define IFA_EXTERN6,228
+#define IFA_EXTERN_INIT(7,247
+
+ifa/num.cpp,505
+#define __STDC_FORMAT_MACROS7,257
+sprint_float_val(18,446
+sprint_complex_val(29,691
+snprint_imm(40,1025
+snprint_imm(107,3428
+fprint_imm(172,5657
+coerce_immediate(249,8038
+#define DO_FOLD(253,8117
+#define COMPUTE_INT_POW(302,10092
+#define COMPUTE_UINT_POW(321,11104
+#define DO_FOLDPOW(334,11714
+#define DO_FOLDB(415,16387
+#define DO_FOLDI(462,18270
+#define DO_FOLD1(505,19959
+#define DO_FOLD1I(552,21710
+fold_result(596,23280
+fold_constant(674,25882
+convert_string_to_immediate(761,28463
+
+main/passlist.h,125
+#define _PASSLIST_H_7,249
+#define FIRST 13,431
+#define LAST 14,464
+#define RUN(15,496
+PassInfo passlist[passlist20,613
+
+main/runpasses.h,29
+#define _RUN_PASSES_H_7,251
+
+main/version.h,26
+#define _VERSION_H_7,248
+
+main/version_num.h,159
+#define _version_num_H_7,252
+#define MAJOR_VERSION 9,277
+#define MINOR_VERSION 10,301
+#define UPDATE_VERSION 11,327
+static const int BUILD_VERSION 13,355
+
+main/arg.cpp,316
+#define __STDC_FORMAT_MACROS37,1685
+static void bad_flag(61,2068
+static void missing_arg(67,2198
+static void extraneous_arg(73,2363
+process_arg(81,2557
+static char* get_envvar_setting(125,4056
+process_args(148,4601
+print_n_spaces(277,8967
+word_wrap_print(285,9068
+void usage(322,10238
+free_args(431,13534
+
+main/checks.cpp,1860
+void check_parse(44,1601
+void check_checkParsed(49,1651
+void check_readExternC(54,1752
+void check_cleanup(60,1856
+void check_scopeResolve(66,1984
+void check_flattenClasses(72,2096
+void check_docs(78,2221
+void check_normalize(83,2308
+void check_checkNormalized(88,2362
+void check_buildDefaultFunctions(93,2471
+void check_createTaskFunctions(100,2645
+void check_resolve(107,2766
+void check_resolveIntents(116,2934
+void check_checkResolved(124,3110
+void check_processIteratorYields(129,3215
+void check_flattenFunctions(135,3338
+void check_cullOverReferences(143,3501
+void check_callDestructors(150,3621
+void check_lowerIterators(158,3822
+void check_parallel(171,4315
+void check_prune(179,4496
+void check_complex2record(187,4662
+void check_bulkCopyRecords(195,4855
+void check_removeUnnecessaryAutoCopyCalls(202,4977
+void check_inlineFunctions(210,5169
+void check_scalarReplace(217,5291
+void check_refPropagation(225,5459
+void check_copyPropagation(232,5580
+void check_deadCodeElimination(239,5702
+void check_removeWrapRecords(247,5866
+void check_removeEmptyRecords(255,6036
+void check_localizeGlobals(263,6203
+void check_loopInvariantCodeMotion(270,6325
+void check_prune2(277,6455
+void check_returnStarTuplesByRefArgs(285,6622
+void check_insertWideReferences(292,6754
+void check_optimizeOnClauses(299,6881
+void check_addInitCalls(306,7005
+void check_insertLineNumbers(313,7124
+void check_codegen(320,7248
+void check_makeBinary(325,7343
+void check_afterEveryPass(335,7606
+static void check_afterNormalization(346,7812
+static void check_afterResolution(355,7983
+static void check_afterCallDestructors(374,8534
+checkResolveRemovedPrims(394,9082
+checkTaskRemovedPrims(423,9832
+checkFlagRelationships(447,10433
+checkAutoCopyMap(464,10857
+checkFormalActualBaseTypesMatch(477,11105
+checkFormalActualTypesMatch(506,11910
+
+main/config.cpp,254
+static Map<const char *, Expr*> configMap;12,334
+static Vec<const char*> usedConfigParams;13,377
+bool mainHasArgs;15,420
+checkConfigs(18,444
+parseCmdLineConfig(43,1087
+getCmdLineConfig(71,2005
+useCmdLineConfig(76,2086
+isUsedCmdLineConfig(81,2161
+
+main/driver.cpp,6374
+#define EXTERN6,228
+#define __STDC_FORMAT_MACROS8,272
+const char *chplBinaryName chplBinaryName28,637
+FILE* html_index_file 29,672
+char deletedIdFilename[deletedIdFilename31,703
+FILE* deletedIdHandle 32,748
+char log_dir[log_dir35,794
+char log_module[log_module36,834
+char log_symbol[log_symbol37,872
+bool fLogIds 38,910
+int currentPassNo 40,933
+const char* currentPassName 41,956
+char CHPL_HOME[CHPL_HOME43,1002
+const char* CHPL_HOST_PLATFORM 45,1038
+const char* CHPL_HOST_COMPILER 46,1077
+const char* CHPL_TARGET_PLATFORM 47,1116
+const char* CHPL_TARGET_COMPILER 48,1157
+const char* CHPL_LOCALE_MODEL 49,1198
+const char* CHPL_COMM 50,1236
+const char* CHPL_COMM_SUBSTRATE 51,1266
+const char* CHPL_GASNET_SEGMENT 52,1306
+const char* CHPL_TASKS 53,1346
+const char* CHPL_THREADS 54,1377
+const char* CHPL_LAUNCHER 55,1410
+const char* CHPL_TIMERS 56,1444
+const char* CHPL_MEM 57,1476
+const char* CHPL_MAKE 58,1505
+const char* CHPL_ATOMICS 59,1535
+const char* CHPL_NETWORK_ATOMICS 60,1568
+const char* CHPL_GMP 61,1609
+const char* CHPL_HWLOC 62,1638
+const char* CHPL_REGEXP 63,1669
+const char* CHPL_WIDE_POINTERS 64,1701
+const char* CHPL_LLVM 65,1740
+const char* CHPL_AUX_FILESYS 66,1770
+bool widePointersStruct;68,1808
+static char makeArgument[makeArgument70,1834
+int fdump_html 72,1871
+char fdump_html_chpl_home[fdump_html_chpl_home73,1891
+bool fdump_html_incude_system_modules 74,1939
+bool fdump_html_wrap_lines 75,1985
+bool fdump_html_print_block_IDs 76,2020
+static char libraryFilename[libraryFilename77,2061
+static char incFilename[incFilename78,2109
+static char moduleSearchPath[moduleSearchPath79,2153
+static char log_flags[log_flags80,2202
+static bool rungdb 81,2235
+bool fLibraryCompile 82,2263
+bool no_codegen 83,2293
+bool genExternPrototypes 84,2318
+int debugParserLevel 85,2352
+bool developer 86,2378
+bool fVerify 87,2402
+bool ignore_errors 88,2424
+bool ignore_errors_for_pass 89,2452
+bool ignore_warnings 90,2489
+int fcg 91,2519
+static bool fBaseline 92,2532
+bool fFastFlag 93,2563
+int fConditionalDynamicDispatchLimit 94,2587
+bool fNoCopyPropagation 95,2629
+bool fNoDeadCodeElimination 96,2662
+bool fNoScalarReplacement 97,2699
+bool fNoTupleCopyOpt 98,2734
+bool fNoRemoteValueForwarding 99,2764
+bool fNoRemoveCopyCalls 100,2803
+bool fNoOptimizeLoopIterators 101,2836
+bool fNoGlobalConstOpt 102,2875
+bool fNoFastFollowers 103,2907
+bool fNoInlineIterators 104,2938
+bool fNoLiveAnalysis 105,2971
+bool fNoBoundsChecks 106,3001
+bool fNoLocalChecks 107,3031
+bool fNoNilChecks 108,3060
+bool fLLVMWideOpt 111,3112
+bool fWarnConstLoops 113,3140
+static bool fNoWarnSpecial 115,3206
+static bool fNoWarnDomainLiteral 116,3241
+static bool fNoWarnTupleIteration 117,3282
+bool fNoloopInvariantCodeMotion 119,3325
+bool fNoChecks 120,3366
+bool fNoInline 121,3390
+bool fNoPrivatization 122,3414
+bool fNoOptimizeOnClauses 123,3445
+bool fNoRemoveEmptyRecords 124,3480
+bool fNoInternalModules 125,3515
+bool fMinimalModules 126,3548
+int optimize_on_clause_limit 127,3578
+int scalar_replace_limit 128,3613
+int tuple_copy_limit 129,3643
+bool fGenIDS 130,3688
+int fLinkStyle 131,3710
+bool fLocal;132,3773
+bool fHeterogeneous 133,3834
+bool fieeefloat 134,3912
+bool report_inlining 135,3936
+char fExplainCall[fExplainCall136,3966
+int explainCallID 137,3995
+char fExplainInstantiation[fExplainInstantiation138,4019
+bool fExplainVerbose 139,4057
+bool fPrintCallStackOnError 140,4087
+bool fPrintIDonError 141,4124
+bool fCLineNumbers 142,4154
+bool fPrintEmittedCodeSize 143,4182
+char fPrintStatistics[fPrintStatistics144,4218
+bool fPrintDispatch 145,4251
+bool fReportOptimizedLoopIterators 146,4280
+bool fReportOptimizedOn 147,4324
+bool fReportPromotion 148,4357
+bool fReportScalarReplace 149,4388
+bool fReportDeadBlocks 150,4423
+bool printCppLineno 151,4455
+bool userSetCppLineno 152,4484
+int num_constants_per_variable 153,4515
+char defaultDist[defaultDist154,4551
+int instantiation_limit 155,4590
+bool fDocs 156,4621
+bool fDocsAlphabetize 157,4641
+char fDocsCommentLabel[fDocsCommentLabel158,4672
+char fDocsFolder[fDocsFolder159,4706
+bool fDocsTextOnly 160,4734
+char mainModuleName[mainModuleName161,4762
+bool printSearchDirs 162,4793
+bool printModuleFiles 163,4823
+bool llvmCodegen 164,4854
+bool externC 166,4897
+bool externC 168,4924
+char breakOnCodegenCname[breakOnCodegenCname170,4953
+bool debugCCode 172,4990
+bool optimizeCCode 173,5015
+bool fEnableTimers 175,5044
+Timer timer1;176,5072
+Timer timer2;177,5086
+Timer timer3;178,5100
+Timer timer4;179,5114
+Timer timer5;180,5128
+bool fNoMemoryFrees 182,5143
+int numGlobalsOnHeap 183,5172
+bool preserveInlinedLineNumbers 184,5198
+const char* compileCommand 186,5240
+char compileVersion[compileVersion187,5275
+static bool printCopyright 189,5301
+static bool printHelp 190,5337
+static bool printEnvHelp 191,5368
+static bool printSettingsHelp 192,5402
+static bool printLicense 193,5441
+static bool printVersion 194,5475
+static bool printChplHome 195,5509
+static bool isMaybeChplHome(211,6260
+static void setupChplHome(223,6438
+static void setCommentLabel(307,8846
+static const char* setupEnvVar(322,9249
+#define SETUP_ENV_VAR(328,9437
+static void setupOrderedGlobals(336,9678
+static void recordCodeGenStrings(380,11541
+static void setStaticLink(408,12390
+static void setDynamicLink(417,12667
+static void setChapelDebug(421,12770
+static void setDevelSettings(425,12871
+handleLibrary(436,13133
+handleLibPath(441,13252
+handleMake(446,13371
+static void handleIncDir(451,13460
+compute_program_name_loc(456,13573
+static void runCompilerInGDB(471,13957
+static void readConfig(480,14230
+static void addModulePath(506,14969
+static void noteCppLinesSet(510,15071
+static void verifySaveCDir(514,15165
+static void turnOffChecks(523,15427
+static void setFastFlag(529,15566
+static void setBaselineFlag(556,16295
+static void setHelpTrue(578,16894
+static void setHtmlUser(582,16977
+static void setWarnTupleIteration(587,17105
+static void setWarnDomainLiteral(592,17320
+static void setWarnSpecial(597,17532
+static void setPrintPassesFile(607,17784
+static ArgumentDescription arg_desc[arg_desc634,18468
+static ArgumentState arg_state 789,35120
+static void setupDependentVars(797,35203
+static void printStuff(804,35318
+compile_all(851,36426
+int main(856,36534
+
+main/log.cpp,264
+static char save_dir[save_dir13,347
+static FILE *log_FILE[log_FILE14,383
+static Vec<char> valid_log_flags;16,412
+static Vec<char> log_flags;17,446
+void init_logs(19,475
+log_flags_arg(29,680
+log_fp(54,1368
+logit(69,1734
+bool logging(75,1859
+log(84,2002
+
+main/runpasses.cpp,476
+bool printPasses 19,470
+FILE* printPassesFile 20,496
+struct PassInfo 22,527
+  const char *name;PassInfo::name25,666
+  char log_tag;PassInfo::log_tag26,686
+static void printPassTiming(32,789
+static void runPass(47,1071
+static void dump_index_header(108,3243
+static void dump_index_footer(121,3842
+static void setupLogfiles(125,3913
+static void teardownLogfiles(147,4683
+static void advanceCurrentPass(159,4936
+void runPasses(164,5043
+void initLogFlags(189,5875
+
+main/version.cpp,20
+get_version(12,318
+
+optimizations/bulkCopyRecords.cpp,227
+typedef std::set<FnSymbol*> FnSet;20,519
+static bool isTrivial(33,1061
+static bool isAssignment(113,3441
+static bool isTrivialAssignment(124,3603
+static void replaceSimpleAssignment(139,4049
+void bulkCopyRecords(151,4402
+
+optimizations/collapseBlocks.cpp,28
+void collapseBlocks(11,313
+
+optimizations/complex2record.cpp,109
+buildComplexRecord(23,594
+#define complex2rec(33,983
+#define complex2real(37,1174
+complex2record(42,1396
+
+optimizations/copyPropagation.cpp,2285
+static size_t s_repl_count;92,3380
+static size_t s_ref_repl_count;93,3460
+#define USE_NEW_IMPLEMENTATION 96,3544
+typedef std::map<Symbol*Symbol112,4044
+typedef std::map<Symbol*, Symbol*> AvailableMap;112,4044
+typedef AvailableMap::value_type AvailableMapElem;113,4093
+typedef std::pair<Symbol*Symbol114,4144
+typedef std::pair<Symbol*, Symbol*> AvailablePair;114,4144
+typedef std::map<Symbol*Symbol123,4572
+typedef std::map<Symbol*, Symbol*> RefMap;123,4572
+typedef RefMap::value_type RefMapElem;124,4615
+typedef std::map<Symbol*Symbol129,4826
+typedef std::map<Symbol*, std::vector<Symbol*> > ReverseAvailableMap;129,4826
+typedef ReverseAvailableMap::mapped_type ReverseMapList;130,4896
+static unsigned debug 135,5009
+static void extractReferences(140,5136
+static void computeRefMap(200,7014
+static bool isDef(219,7661
+static bool isUse(310,11089
+static bool isRefUse(395,13494
+static CallExpr* derefUse(486,16223
+static void propagateCopies(503,16606
+removeAvailable(569,19202
+static void removeKilledSymbols(613,20479
+static bool maybeVolatile(650,21680
+static void extractCopies(679,22648
+localCopyPropagationCore(743,25272
+size_t localCopyPropagation(770,25880
+static void createPairSet(794,26454
+static void destroyPairSet(803,26691
+static void extractAvailablePairs(814,27045
+static void computeKillSets(845,28218
+static void initCopySets(903,30127
+static void initInSets(927,31118
+static void initInSets(934,31317
+size_t globalCopyPropagation(970,32628
+static bool isCandidateForCopyPropagation(1071,35460
+static bool invalidateCopies(1084,36067
+typedef Map<Symbol*Symbol1112,36929
+typedef Map<Symbol*,Symbol*> AvailableMap;1112,36929
+typedef MapElem<Symbol*Symbol1113,36972
+typedef MapElem<Symbol*,Symbol*> AvailableMapElem;1113,36972
+typedef Map<Symbol*Symbol1114,37023
+typedef Map<Symbol*,Vec<Symbol*>*> ReverseAvailableMap;1114,37023
+makeAvailable(1118,37093
+removeAvailable(1132,37439
+freeReverseAvailable(1147,37790
+localCopyPropagationCore(1161,38276
+size_t localCopyPropagation(1214,39899
+size_t globalCopyPropagation(1254,41020
+findRefDef(1491,46894
+eliminateSingleAssignmentReference(1509,47325
+size_t singleAssignmentRefPropagation(1652,53174
+void copyPropagation(1726,55472
+void refPropagation(1750,56061
+
+optimizations/deadCodeElimination.cpp,398
+static unsigned deadBlockCount;26,561
+static bool isDeadVariable(33,693
+void deadVariableElimination(46,1153
+void deadExpressionElimination(87,2220
+void deadCodeElimination(116,3261
+void deadCodeElimination(193,5621
+static void deadBlockElimination(213,6282
+void removeDeadIterResumeGotos(283,8460
+void verifyNcleanRemovedIterResumeGotos(295,8790
+static void deadGotoElimination(307,9291
+
+optimizations/inlineFunctions.cpp,69
+inlineCall(18,435
+inlineFunction(68,1995
+inlineFunctions(110,3119
+
+optimizations/liveVariableAnalysis.cpp,29
+liveVariableAnalysis(29,795
+
+optimizations/localizeGlobals.cpp,29
+void localizeGlobals(20,701
+
+optimizations/loopInvariantCodeMotion.cpp,2361
+  #define printDebug(24,504
+  #define printDebug(26,554
+  #define startTimer(32,652
+  #define stopTimer(33,694
+  #define startTimer(35,740
+  #define stopTimer(36,782
+Timer allOperandsAreLoopInvariantTimer;40,833
+Timer computeAliasTimer;41,873
+Timer collectSymExprAndDefTimer;42,898
+Timer calculateActualDefsTimer;43,931
+Timer buildBBTimer;44,963
+Timer computeDominatorTimer;45,983
+Timer collectNaturalLoopsTimer;46,1012
+Timer canPerformCodeMotionTimer;47,1044
+Timer buildLocalDefMapsTimer;48,1077
+Timer computeLoopInvariantsTimer;49,1107
+Timer overallTimer;50,1141
+#define MAX_NUM_ALIASES 52,1162
+class Loop 70,1950
+    std::vector<BasicBlock*>* loopBlocks;Loop::loopBlocks73,1975
+    BasicBlock* header;Loop::header74,2017
+    BitVec* bitBlocks;Loop::bitBlocks75,2041
+    BitVec* bitExits;Loop::bitExits76,2064
+    Loop(Loop::Loop79,2098
+    ~Loop(Loop::~Loop85,2260
+    void insertBefore(Loop::insertBefore96,2512
+    void setHeader(Loop::setHeader106,2849
+    void combine(Loop::combine112,3014
+    void insertBlock(Loop::insertBlock119,3215
+    bool contains(Loop::contains131,3592
+    bool contains(Loop::contains136,3702
+    BasicBlock* getHeader(Loop::getHeader141,3821
+    std::vector<BasicBlock*>* getBlocks(Loop::getBlocks146,3924
+    BitVec* getBitBlocks(Loop::getBitBlocks151,4067
+    BitVec* getBitExits(Loop::getBitExits158,4289
+    unsigned size(Loop::size171,4646
+     static bool LoopSort(Loop::LoopSort176,4793
+typedef std::vector<BasicBlock*> BasicBlocks;180,4874
+typedef std::map<Symbol*Symbol181,4920
+typedef std::map<Symbol*,std::vector<SymExpr*>*> symToVecSymExprMap;181,4920
+void collectNaturalLoops(207,6530
+void collectNaturalLoopForEdge(250,8226
+static Symbol* getSvecSymbol(282,9221
+rhsAlias(301,9871
+static bool isLoopInvariantPrimitive(376,12337
+static bool isConst(449,13977
+static void addDefOrUse(477,14963
+static void buildLocalDefUseMaps(489,15370
+static void freeLocalDefUseMaps(561,18361
+static bool allOperandsAreLoopInvariant(578,18882
+static void computeLoopInvariants(682,22863
+static bool defDominatesAllUses(948,32870
+static bool defDominatesAllExits(982,33826
+static void collectUsedFnSymbolsSTL(1004,34485
+static bool containsSynchronizationVar(1028,35353
+static bool canPerformCodeMotion(1058,36303
+void loopInvariantCodeMotion(1099,37887
+
+optimizations/narrowWideReferences.cpp,1209
+int narrowCount 32,874
+class WideInfo 43,1302
+  Symbol* sym;WideInfo::sym45,1327
+  bool mustBeWide;WideInfo::mustBeWide46,1342
+  FnSymbol* fnToNarrow;WideInfo::fnToNarrow47,1361
+  Vec<Symbol*> inVec;WideInfo::inVec48,1426
+  Vec<Symbol*> outVec;WideInfo::outVec50,1554
+  Vec<SymExpr*> exprsToWiden;WideInfo::exprsToWiden52,1688
+  Vec<CallExpr*> callsToRemove;WideInfo::callsToRemove53,1757
+  WideInfo(WideInfo::WideInfo55,1828
+typedef Map<SymExpr*SymExpr61,1941
+typedef Map<SymExpr*,Type*> SymExprTypeMap;61,1941
+typedef MapElem<SymExpr*SymExpr62,1985
+typedef MapElem<SymExpr*,Type*> SymExprTypeMapElem;62,1985
+typedef Map<Symbol*Symbol63,2037
+typedef Map<Symbol*,WideInfo*> WideInfoMap;63,2037
+typedef MapElem<Symbol*Symbol64,2081
+typedef MapElem<Symbol*,WideInfo*> WideInfoMapElem;64,2081
+static Map<Symbol*,WideInfo*> wideInfoMap;69,2185
+static SymExprTypeMap widenMap;78,2532
+static Map<Symbol*,Vec<SymExpr*>*> defMap;84,2697
+static Map<Symbol*,Vec<SymExpr*>*> useMap;85,2740
+printNode(91,2843
+printNode(107,3252
+forwardPropagateFailToNarrow(117,3483
+addNarrowDep(133,3894
+narrowField(144,4160
+narrowSym(192,5602
+narrowArg(362,12931
+narrowWideReferences(392,13710
+
+optimizations/optimizeOnClauses.cpp,163
+  #define DEBUG_PRINTF(22,622
+  #define DEBUG_PRINTF(24,676
+isFastPrimitive(32,858
+inLocalBlock(315,8216
+markFastSafeFn(326,8511
+optimizeOnClauses(396,10929
+
+optimizations/reachingDefinitionsAnalysis.cpp,211
+reachingDefinitionsAnalysis(16,380
+buildDefUseChains(119,3177
+typedef MapElem<SymExpr*SymExpr185,4911
+typedef MapElem<SymExpr*,Vec<SymExpr*>*> SymExprToVecSymExprMapElem;185,4911
+freeDefUseChains(188,4986
+
+optimizations/remoteValueForwarding.cpp,132
+buildSyncAccessFunctionSet(19,431
+isSafeToDeref(96,3496
+static bool isSufficientlyConst(140,5000
+remoteValueForwarding(188,6712
+
+optimizations/removeEmptyRecords.cpp,27
+removeEmptyRecords(14,349
+
+optimizations/removeUnnecessaryAutoCopyCalls.cpp,1235
+class AutoTrack 29,1121
+  struct Link AutoTrack::Link39,1460
+    CallExpr* call;AutoTrack::Link::call40,1476
+    Link* next;AutoTrack::Link::next41,1496
+  struct Root AutoTrack::Root43,1517
+    Symbol* var;AutoTrack::Root::var44,1533
+    int refCnt;AutoTrack::Root::refCnt45,1550
+    int destCnt;AutoTrack::Root::destCnt46,1566
+    Link* copyHead;AutoTrack::Root::copyHead47,1583
+    Link* destHead;AutoTrack::Root::destHead48,1603
+    Root* next;AutoTrack::Root::next49,1623
+  bool confPart;AutoTrack::confPart57,1823
+  Root* rootHead;AutoTrack::rootHead58,1840
+  Map<AutoTrack::Map59,1858
+  Map<Symbol*, Root*> rootMap;AutoTrack::rootMap59,1858
+AutoTrack::AutoTrack(62,1893
+AutoTrack::~AutoTrack(67,1959
+void AutoTrack::move(91,2450
+void AutoTrack::autoCopy(100,2673
+void AutoTrack::autoDestroy(114,3032
+bool AutoTrack::update(126,3366
+void AutoTrack::updateAutoCopy(147,3895
+void AutoTrack::updateAutoDestroy(153,4086
+AutoTrack::Root* AutoTrack::getRoot(159,4287
+void AutoTrack::insertLink(175,4588
+static void removeUnnecessaryAutoCopyCalls(186,4824
+markPODtypes(285,8996
+isPrimitiveCopy(337,10340
+static void removePODinitDestroy(378,11977
+void removeUnnecessaryAutoCopyCalls(425,13518
+
+optimizations/removeUnnecessaryGotos.cpp,36
+void removeUnnecessaryGotos(18,456
+
+optimizations/removeWrapRecords.cpp,58
+removeWrapRecords(24,531
+getWrapRecordBaseType(153,4217
+
+optimizations/scalarReplace.cpp,1006
+static const bool debugScalarReplacement 21,480
+static int srClass 24,545
+static int srClassReplaced 25,569
+static int srRecord 26,601
+static int srRecordReplaced 27,626
+static Vec<AggregateType*> typeVec;38,1021
+static Vec<Symbol*> varSet;39,1057
+static Map<AggregateType*,int> typeOrder;40,1085
+static Map<AggregateType*,Vec<Symbol*>*> typeVarMap;41,1127
+static Map<Symbol*,Vec<SymExpr*>*> defMap;42,1180
+static Map<Symbol*,Vec<SymExpr*>*> useMap;43,1223
+typedef Map<AggregateType*AggregateType45,1267
+typedef Map<AggregateType*,Vec<Symbol*>*> AggregateTypeToVecSymbolMap;45,1267
+typedef MapElem<AggregateType*AggregateType46,1338
+typedef MapElem<AggregateType*,Vec<Symbol*>*> AggregateTypeToVecSymbolMapElem;46,1338
+computeOrder(54,1597
+compareTypesByOrder(75,2069
+removeIdentityDefs(89,2413
+removeUnusedClassInstance(106,2784
+unifyClassInstances(133,3340
+scalarReplaceClass(171,4086
+scalarReplaceRecord(324,9796
+debugScalarReplacementFailure(492,15917
+scalarReplace(508,16283
+
+parser/lexyacc.h,66
+#define _LEXYACC_H_7,248
+#undef exit23,539
+#define exit(26,603
+
+parser/modulefinder.h,31
+#define _MODULEFINDER_H_7,253
+
+parser/processTokens.h,32
+#define _PROCESSTOKENS_H_7,254
+
+parser/countTokens.cpp,1125
+bool countTokens 13,335
+bool printTokens 14,361
+#define HIST_SIZE 17,389
+#define LINE_SIZE 18,412
+static int lineTokens 20,436
+static int fileTokens 21,463
+static int totTokens 22,490
+static int blankLines 24,517
+static int commentLines 25,544
+static int codeLines 26,573
+static int lineBlank 28,600
+static int lineComment 29,630
+static char line[line30,662
+static int fileTokenHist[fileTokenHist32,697
+static int totTokenHist[totTokenHist33,734
+static int maxTokensPerLineInFile 34,770
+static int maxTokensPerLineTot 35,809
+static int firstLineInFile;37,846
+static void clearHist(40,876
+static void clearLine(48,972
+static void clearFile(65,1403
+static void clearGlob(75,1590
+static void printSeparator(82,1695
+static void printFileSummary(89,1849
+static void initTokenCount(108,2418
+static bool tokenCountingOn 117,2593
+void startCountingFileTokens(119,2631
+void stopCountingFileTokens(140,2970
+void finishCountingTokens(156,3224
+void countToken(168,3438
+void countNewline(186,3858
+void countCommentLine(212,4360
+void countSingleLineComment(219,4461
+void countMultiLineComment(234,4811
+
+parser/modulefinder.cpp,648
+int yylineno;32,623
+int yystartlineno;33,637
+char* yyfilename;34,656
+int depth;36,675
+int filemodule;37,686
+const int MAX_MOD_DEPTH 39,703
+ModInfo* currentMods[currentMods45,781
+class ModInfo 47,819
+  char* name;ModInfo::name49,844
+  ModInfo* sibling;ModInfo::sibling50,858
+  ModInfo* child;ModInfo::child51,878
+  ModInfo(ModInfo::ModInfo53,897
+  ModInfo(ModInfo::ModInfo59,975
+  void addChild(ModInfo::addChild74,1305
+  void printAll(ModInfo::printAll86,1571
+ModInfo* topLevelMod;103,1904
+void registerModule(105,1927
+void registerTopLevelCode(126,2469
+void reset(145,2970
+void printResults(151,3054
+int main(158,3176
+
+parser/parser.cpp,647
+BlockStmt* yyblock 16,415
+const char* yyfilename;17,442
+int chplLineno;18,466
+int yystartlineno;19,482
+ModTag currentModuleType;20,501
+static Vec<const char*> modNameSet;23,529
+static Vec<const char*> modNameList;24,565
+static Vec<const char*> modDoneSet;25,602
+static Vec<CallExpr*> modReqdByInt;26,638
+static bool handlingInternalModulesNow 28,713
+void addModuleToParseList(30,762
+static void addModuleToDoneList(44,1227
+static const char* filenameToModulename(50,1356
+containsOnlyModules(61,1672
+static bool firstFile 97,2856
+ModuleSymbol* ParseFile(99,2887
+ModuleSymbol* ParseMod(158,4569
+void parseDependentModules(174,4944
+
+parser/processTokens.cpp,677
+#define countNewline(16,433
+#define countSingleLineComment(17,456
+#define countMultiLineComment(18,490
+#define countCommentLine(19,523
+static int stringBuffLen 22,558
+static int stringLen 23,588
+static char* stringBuffer 24,614
+static void newString(27,650
+static char toHex(35,810
+static void addCharMaybeEscape(41,911
+static inline void addCharString(61,1551
+static inline void addChar(65,1628
+static void addString(69,1700
+void processNewline(74,1798
+char* eatStringLiteral(82,1965
+void processSingleLineComment(117,2752
+void processMultiLineComment(135,3080
+char* eatExternCode(220,5306
+void processWhitespace(324,8343
+void processInvalidToken(330,8482
+
+parser/yy.cpp,21
+void yyerror(11,283
+
+passes/addInitGuards.cpp,174
+void addInitCalls(30,1114
+void addModuleInitBlocks(37,1184
+static void addInitGuards(91,3091
+static void addInitGuard(123,4067
+static void addPrintModInitOrder(169,5934
+
+passes/buildDefaultFunctions.cpp,949
+static bool mainReturnsInt;15,389
+void buildDefaultFunctions(40,1418
+static bool type_match(102,3415
+static FnSymbol* function_exists(111,3630
+static void build_getter(142,4409
+static FnSymbol* chpl_gen_main_exists(221,7531
+static void build_chpl_entry_points(282,9492
+static void build_record_equality_function(424,14596
+static void build_record_inequality_function(453,15598
+static void build_enum_enumerate_function(481,16601
+static void build_enum_cast_function(507,17589
+static void build_enum_assignment_function(586,20701
+static void build_record_assignment_function(605,21291
+static void build_record_cast_function(642,22673
+static void build_union_assignment_function(667,23782
+static void build_record_copy_function(698,24882
+static void build_record_hash_function(724,25766
+static void buildDefaultReadWriteFunctions(766,27264
+static void buildStringCastFunction(851,30295
+static void buildDefaultDestructor(886,31483
+
+passes/checkNormalized.cpp,24
+checkNormalized(14,318
+
+passes/checkParsed.cpp,134
+checkParsed(22,512
+check_named_arguments(53,1446
+check_parsed_vars(69,1873
+check_functions(95,2774
+check_exported_names(155,4997
+
+passes/checkResolved.cpp,318
+typedef std::set<Symbol*> RefSet;22,606
+loopBodyHasExits(31,835
+checkConstWhileLoop(49,1396
+SymDeclaredInBlock(56,1547
+checkWhileLoopCondition(68,1783
+getWhileCondDef(78,2058
+checkConstLoops(102,2857
+checkResolved(159,5272
+isDefinedAllPaths(189,6252
+checkReturnPaths(275,8736
+checkNoRecordDeletes(326,10704
+
+passes/cleanup.cpp,276
+flatten_scopeless_block(26,581
+static void normalize_nested_function_expressions(40,897
+insertDestructureStatements(81,2524
+destructureTupleAssignment(124,3982
+static void flatten_primary_methods(142,4593
+static void change_cast_in_where(162,5267
+void cleanup(178,5638
+
+passes/codegen.cpp,1121
+#define __STDC_FORMAT_MACROS7,257
+GenInfo* gGenInfo;30,680
+int gMaxVMT 31,699
+fileinfo gAllExternCode;32,717
+int stmtCount 33,742
+subChar(37,782
+static void legalizeName(46,1027
+genGlobalDefClassId(113,3702
+genGlobalString(135,4431
+genGlobalInt(152,5097
+genClassIDs(168,5662
+genFtable(182,6019
+genVirtualMethodTable(233,7618
+compareSymbol(323,10590
+int fMaxCIdentLen 354,11511
+static const int maxUniquifyAddedChars 355,11534
+static char* longCNameReplacementBuffer 356,11579
+static Map<const char*, int> uniquifyNameCounts;357,11627
+static const char* uniquifyName(358,11676
+static inline bool shouldCodegenAggregate(384,12702
+static void codegen_aggregate_def(411,13686
+static void codegen_header(441,14586
+static void codegen_header_addons(887,29367
+codegen_config(897,29622
+void codegen(1008,33395
+void makeBinary(1168,38323
+GenInfo::GenInfo(1186,38766
+GenInfo::GenInfo(1234,40513
+std::string numToString(1246,40886
+std::string int64_to_string(1252,41006
+std::string uint64_to_string(1259,41133
+void genComment(1267,41263
+void genIdComment(1278,41551
+void flushStatements(1283,41670
+
+passes/createTaskFunctions.cpp,293
+static Symbol* markPruned;12,443
+static bool isCorrespCoforallIndex(16,552
+isOuterVar(51,1801
+findOuterVars(87,3149
+pruneOuterVars(102,3603
+pruneThisArg(121,4322
+addVarsToFormals(134,4595
+replaceVarUsesWithFormals(151,5090
+addVarsToActuals(173,5627
+void createTaskFunctions(199,6438
+
+passes/docs.cpp,528
+int NUMTABS 21,485
+static int compareNames(23,503
+static int compareClasses(29,675
+void docs(35,857
+bool isNotSubmodule(83,2622
+void printIntent(91,2952
+void printArg(114,3466
+void printFields(130,3926
+void inheritance(165,5058
+void printClass(174,5286
+void printVarStart(230,6712
+void printVarType(247,7015
+void printVarDocs(258,7337
+void printTabs(271,7650
+bool devOnlyFunction(283,8028
+bool devOnlyModule(291,8413
+void printModule(295,8525
+void printFunction(351,10066
+void createDocsFileFolders(416,11615
+
+passes/externCResolve.cpp,142
+static int query_uid 26,696
+static Expr* convertToChplType(31,855
+static void convertMacroToChpl(153,5942
+void convertDeclToChpl(169,6416
+
+passes/filesToAST.cpp,525
+#define __STDC_FORMAT_MACROS7,257
+bool parsed 23,540
+static ModuleSymbol* parseInternalModule(25,562
+static void setIteratorTags(47,1180
+static void parseInternalModules(65,1711
+static void countTokensInCmdLineFiles(75,1959
+struct WellKnownType89,2371
+  const char* name;WellKnownType::name91,2394
+  AggregateType** type_;WellKnownType::type_92,2414
+  bool isClass;WellKnownType::isClass93,2439
+WellKnownType wellKnownTypes[wellKnownTypes98,2529
+static void gatherWellKnownTypes(113,3107
+void parse(160,4615
+
+passes/flattenClasses.cpp,28
+void flattenClasses(14,347
+
+passes/flattenFunctions.cpp,239
+isOuterVar(19,480
+findOuterVars(35,852
+passableByVal(51,1263
+passByRef(76,2025
+addVarsToFormals(142,4315
+replaceVarUsesWithFormals(182,6205
+addVarsToActuals(227,7971
+flattenNestedFunctions(248,8669
+void flattenFunctions(357,12161
+
+passes/insertLineNumbers.cpp,397
+static Vec<FnSymbol*> queue;29,995
+static Map<FnSymbol*,ArgSymbol*> linenoMap;31,1025
+static Map<FnSymbol*,ArgSymbol*> filenameMap;32,1099
+static ArgSymbol* newLine(34,1173
+static ArgSymbol* newFile(50,1728
+insertLineNumber(73,2499
+static bool isClassMethodCall(150,5327
+static void insertNilChecks(167,5838
+void insertLineNumbers(189,6655
+static void moveLinenoInsideArgBundle(228,7700
+
+passes/normalize.cpp,952
+bool normalized 22,523
+void normalize(51,1837
+void normalize(166,5869
+checkUseBeforeDefs(208,7232
+flattenGlobalFunctions(287,10768
+insertUseForExplicitModuleCalls(310,11636
+processSyntacticDistributions(330,12216
+static bool is_void_return(349,13022
+static void insertRetMove(360,13317
+returnTypeIsArray(385,14405
+static void normalize_returns(407,15154
+static void call_constructor_for_class(558,20791
+static void applyGetterTransform(598,22532
+static void insert_call_temps(632,23632
+static void fix_user_assign(673,24808
+fix_def_expr(690,25333
+static void hack_resolve_types(869,31633
+static void fixup_array_formals(909,33308
+static void clone_parameterized_primitive_methods(984,36393
+clone_for_parameterized_primitive_formals(1019,37575
+replace_query_uses(1037,38158
+add_to_where_clause(1060,38892
+fixup_query_formals(1081,39563
+find_printModuleInit_stuff(1185,43978
+static void change_method_into_constructor(1200,44452
+
+passes/parallel.cpp,1923
+  bool firstCall;::firstCall82,2307
+  AggregateType* ctype;::ctype83,2325
+  FnSymbol*  wrap_fn;::wrap_fn84,2349
+} BundleArgsFnData;85,2371
+static BundleArgsFnData bundleArgsFnDataInit 88,2456
+static void create_arg_bundle_class(128,4244
+static Symbol* insertAutoCopyDestroyForTaskArg189,7285
+bundleArgs(281,10812
+static void create_block_fn_wrapper(321,12182
+static void call_block_fn_wrapper(413,15906
+insertEndCount(434,16622
+replicateGlobalRecordWrappedVars(456,17301
+buildHeapType(514,19489
+freeHeapAllocatedVars(532,20037
+needHeapVars(669,25433
+static void findBlockRefActuals(690,26071
+static void findHeapVarsAndRefs(719,27108
+makeHeapAllocations(771,29214
+reprivatizeIterators(1022,39531
+parallel(1083,42163
+static void insertEndCounts(1110,42684
+static void passArgsToNestedFns(1151,44329
+AggregateType* wideStringType 1179,45027
+buildWideClass(1182,45078
+Type* getOrMakeRefTypeDuringCodegen(1212,46026
+Type* getOrMakeWideTypeDuringCodegen(1233,46789
+bool isRefWideString(1273,48199
+bool isWideString(1284,48465
+static void insertLocalTemp(1298,49038
+static void localizeCall(1321,49845
+static void handleLocalBlocks(1444,54737
+static void getHeapVars(1491,56419
+static FnSymbol* heapAllocateGlobalsHead(1519,57273
+static void heapAllocateGlobalsTail(1537,57919
+insertWideReferences(1575,59406
+static void convertNilToObject(1614,60390
+static void buildWideClasses(1651,61591
+static void widenClasses(1667,62003
+static void buildWideRefMap(1731,63856
+static void widenRefs(1754,64542
+static void insertElementAccessTemps(1791,65488
+static void narrowWideClassesThroughCalls(1861,68487
+static void insertWideClassTempsForNil(1925,70981
+static void insertWideCastTemps(1990,73625
+static void derefWideStringActuals(2014,74366
+static void derefWideRefsToWideClasses(2040,75258
+static void widenGetPrivClass(2066,76243
+static void moveAddressSourcesToTemp(2089,77006
+
+passes/resolveIntents.cpp,171
+bool intentsResolved 10,295
+static IntentTag constIntentForType(12,326
+IntentTag blankIntentForType(41,1244
+void resolveArgIntent(72,2187
+void resolveIntents(91,2755
+
+passes/returnStarTuplesByRefArgs.cpp,39
+void returnStarTuplesByRefArgs(17,528
+
+passes/scopeResolve.cpp,1474
+typedef std::map<const char*char55,1808
+typedef std::map<const char*,Symbol*> SymbolTableEntry;55,1808
+typedef std::map<BaseAST*BaseAST56,1864
+typedef std::map<BaseAST*,SymbolTableEntry*> SymbolTable;56,1864
+static SymbolTable symbolTable;57,1922
+static std::map<BlockStmt*,Vec<ModuleSymbol*>*> moduleUsesCache;68,2277
+static bool enableModuleUsesCache 69,2342
+static Vec<const char*> aliasFieldSet;76,2584
+getScope(87,3017
+addToSymbolTable(122,4114
+destroyTable(160,5429
+destroyModuleUsesCaches(173,5659
+buildBreadthFirstModuleList(183,5893
+lookup(216,6879
+isMethodName(347,10728
+isMethodNameLocal(373,11429
+find_outer_loop(389,11792
+resolveGotoLabels(400,12012
+static void resolveEnumeratedTypes(443,13521
+void build_constructors(471,14369
+static void build_type_constructor(484,14592
+static void build_constructor(601,18953
+static ArgSymbol* create_generic_arg(839,27790
+static void insert_implicit_this(869,28731
+static void move_constructor_to_outer(883,29192
+static ModuleSymbol* getUsedModule(906,30024
+process_import_expr(964,32020
+void add_root_type(982,32652
+add_class_to_hierarchy(1011,33655
+static void renameDefaultType(1084,36286
+static void renameDefaultTypesToReflectWidths(1092,36523
+static bool tryCResolve_set(1101,36905
+static bool tryCResolve(1154,38471
+void scopeResolve(1161,38658
+static void resolveUnresolvedSymExprs(1262,41372
+void resolveUnresolvedSymExpr(1308,42936
+static void resolveModuleCall(1462,48565
+
+resolution/caches.cpp,485
+SymbolMapCacheEntry::SymbolMapCacheEntry(12,313
+addCache(17,421
+isCacheEntryMatch(31,800
+checkCache(43,1061
+replaceCache(55,1353
+freeCache(69,1745
+SymbolVecCacheEntry::SymbolVecCacheEntry(80,1958
+addCache(85,2069
+isCacheEntryMatch(98,2441
+checkCache(110,2672
+freeCache(123,2971
+SymbolMapCache ordersCache;134,3184
+SymbolMapCache genericsCache;135,3212
+SymbolMapCache coercionsCache;136,3242
+SymbolMapCache promotionsCache;137,3273
+SymbolVecCache defaultsCache;138,3305
+
+resolution/callDestructors.cpp,598
+static void cullAutoDestroyFlags(25,767
+static void cullExplicitAutoDestroyFlags(98,3742
+doesExitBlock(139,4796
+createRefArgIfNeeded(166,5754
+insertAutoDestroyCalls(189,6429
+static Map<FnSymbol*,Vec<FnSymbol*>*> retToArgCache;276,9744
+changeRetToArgAndClone(279,9810
+returnRecordsByReferenceArguments(509,18916
+fixupDestructors(532,19608
+static void insertGlobalAutoDestroyCalls(625,24279
+static void insertDestructorCalls(655,25457
+static void insertAutoCopyTemps(677,26243
+static void insertYieldTemps(714,27504
+static void insertReferenceTemps(755,28742
+callDestructors(777,29465
+
+resolution/callInfo.cpp,27
+CallInfo::CallInfo(11,291
+
+resolution/cullOverReferences.cpp,54
+refNecessary(14,362
+void cullOverReferences(63,2223
+
+resolution/functionResolution.cpp,8658
+#define __STDC_FORMAT_MACROS7,257
+#define ENABLE_TRACING_OF_DISAMBIGUATION 31,752
+#define TRACE_DISAMBIGUATE_BY_MATCH(34,836
+#define TRACE_DISAMBIGUATE_BY_MATCH(37,964
+class DisambiguationContext 45,1191
+  Vec<Symbol*>* actuals;DisambiguationContext::actuals48,1276
+  Expr* scope;DisambiguationContext::scope50,1344
+  bool explain;DisambiguationContext::explain52,1414
+  int i,DisambiguationContext::i54,1488
+  int i, j;DisambiguationContext::j54,1488
+  DisambiguationContext(DisambiguationContext::DisambiguationContext63,1858
+  const DisambiguationContext& forPair(DisambiguationContext::forPair73,2279
+class ResolutionCandidate 85,2554
+  FnSymbol* fn;ResolutionCandidate::fn88,2638
+  Vec<Symbol*> alignedActuals;ResolutionCandidate::alignedActuals93,2814
+  Vec<ArgSymbol*> alignedFormals;ResolutionCandidate::alignedFormals98,3005
+  SymbolMap substitutions;ResolutionCandidate::substitutions101,3122
+  ResolutionCandidate(ResolutionCandidate::ResolutionCandidate107,3266
+class DisambiguationState 123,3785
+  bool fn1MoreSpecific;DisambiguationState::fn1MoreSpecific126,3858
+  bool fn2MoreSpecific;DisambiguationState::fn2MoreSpecific128,3920
+  bool fn1Promotes;DisambiguationState::fn1Promotes131,3981
+  bool fn2Promotes;DisambiguationState::fn2Promotes133,4035
+  int paramPrefers;DisambiguationState::paramPrefers136,4108
+  DisambiguationState(DisambiguationState::DisambiguationState139,4180
+  void printSummary(DisambiguationState::printSummary149,4575
+bool resolved 167,5200
+bool inDynamicDispatchResolution 168,5223
+SymbolMap paramMap;169,5265
+static int explainCallLine;174,5315
+static ModuleSymbol* explainCallModule;175,5343
+static Vec<CallExpr*> inits;177,5384
+static std::map<FnSymbol*,bool> resolvedFns;178,5413
+static Vec<FnSymbol*> resolvedFormals;179,5458
+Vec<CallExpr*> callStack;180,5497
+static Vec<CondStmt*> tryStack;182,5524
+static bool tryFailure 183,5556
+static Map<Type*,Type*> runtimeTypeMap;185,5589
+static Map<Type*,FnSymbol*> valueToRuntimeTypeMap;187,5745
+static Map<Type*,FnSymbol*> runtimeTypeToValueMap;188,5825
+static std::map<std::string, std::pair<AggregateType*, FnSymbol*> > functionTypeMap;190,5906
+static std::map<FnSymbol*, FnSymbol*> functionCaptureMap;191,6065
+static Map<FnSymbol*,const char*> innerCompilerWarningMap;200,6588
+static Map<FnSymbol*,const char*> outerCompilerWarningMap;201,6647
+Map<Type*,FnSymbol*> autoCopyMap;203,6707
+Map<Type*,FnSymbol*> autoDestroyMap;204,6776
+Map<FnSymbol*,FnSymbol*> iteratorLeaderMap;206,6852
+Map<FnSymbol*,FnSymbol*> iteratorFollowerMap;207,6934
+bool ResolutionCandidate::computeAlignment(362,13402
+void ResolutionCandidate::computeSubstitutions(369,13656
+static bool hasRefField(374,13818
+static bool typeHasRefField(390,14194
+resolveUninsertedCall(403,14446
+static void makeRefType(422,14938
+resolveAutoCopy(451,15596
+resolveAutoDestroy(464,15932
+FnSymbol* getAutoCopy(476,16265
+FnSymbol* getAutoDestroy(481,16331
+const char* toString(486,16403
+const char* toString(491,16485
+const char* toString(562,18689
+protoIteratorMethod(647,21320
+protoIteratorClass(664,21863
+isInstantiatedField(736,24585
+determineQueriedField(754,25032
+okToConvertFormalToRefType(800,26541
+resolveSpecifiedReturnType(811,26729
+static bool convertAtomicFormalTypeToRef(855,28449
+resolveFormals(867,28824
+static bool fits_in_int_helper(915,30172
+static bool fits_in_int(931,30620
+static bool fits_in_uint_helper(961,31624
+static bool fits_in_uint(977,31947
+static void ensureEnumTypeResolved(996,32445
+isLegalLvalueActualArg(1021,33092
+isLegalConstRefActualArg(1037,33640
+canInstantiate(1050,34010
+static bool canParamCoerce(1080,35168
+canCoerce(1146,37193
+canDispatch(1184,38660
+isDispatchParent(1226,40042
+moreSpecific(1234,40214
+computeActualFormalAlignment(1244,40449
+getInstantiationType(1315,42538
+computeGenericSubs(1335,43032
+expandVarArgs(1396,45440
+resolve_type_constructor(1512,49914
+filterConcreteCandidate(1550,51513
+filterGenericCandidate(1599,52941
+filterCandidate(1672,55328
+filterCandidate(1696,56120
+getParentBlock(1708,56487
+isMoreVisibleInternal(1728,57018
+isMoreVisible(1781,58321
+static bool paramWorks(1804,58980
+static inline void registerParamPreference(1831,59632
+static bool considerParamMatches(1849,60333
+static void testArgMapping(1898,62565
+static bool isBetterMatch(2048,69094
+disambiguateByMatch(2117,71669
+explainCallMatch(2176,73564
+userCall(2188,73859
+printResolutionError(2208,74549
+static void issueCompilerError(2304,78508
+static void reissueCompilerWarning(2375,81103
+class VisibleFunctionBlock 2399,81977
+  Map<VisibleFunctionBlock::Map2401,82015
+  Map<const char*,Vec<FnSymbol*>*> visibleFunctions;VisibleFunctionBlock::visibleFunctions2401,82015
+  VisibleFunctionBlock(VisibleFunctionBlock::VisibleFunctionBlock2402,82068
+static Map<BlockStmt*,VisibleFunctionBlock*> visibleFunctionMap;2405,82101
+static int nVisibleFunctions 2406,82166
+static Map<BlockStmt*,BlockStmt*> visibilityBlockCache;2407,82225
+static Vec<BlockStmt*> standardModuleSet;2408,82281
+getVisibilityBlock(2414,82407
+static void buildVisibleFunctionMap(2434,83008
+getVisibleFunctions(2466,84046
+static void replaceActualWithDeref(2525,85743
+static void handleCaptureArgs(2540,86312
+resolve_type_expr(2594,88256
+makeNoop(2628,89041
+static bool isInConstructorLikeFunction(2636,89223
+static bool isInvokedFromConstructorLikeFunction(2644,89557
+static bool checkAndUpdateIfLegalFieldOfThis(2663,90388
+static const char* defaultRecordAssignmentTo(2676,90894
+isTypeExpr(2689,91304
+resolveDefaultGenericType(2733,92773
+gatherCandidates(2755,93397
+resolveCall(2810,94909
+static void resolveNormalCall(2826,95432
+static void resolveTupleAndExpand(3109,105285
+static void resolveTupleExpand(3161,107476
+static void resolveSetMember(3207,109208
+static void resolveMove(3259,110799
+static bool backendRequiresCopyForIn(3395,116056
+formalRequiresTemp(3404,116311
+insertFormalTemps(3439,117580
+static void addLocalCopiesAndWritebacks(3471,118897
+static Type* param_for_index_type(3617,125227
+static void fold_param_for(3641,126022
+static Expr* dropUnnecessaryCast(3711,128431
+static AggregateType* createAndInsertFunParentClass(3747,129688
+static FnSymbol* createAndInsertFunParentMethod(3777,131107
+static std::string buildParentName(3842,133362
+static AggregateType* createOrFindFunTypeFromAnnotation(3897,134566
+createFunctionAsValue(3928,135843
+isOuterVar(4063,140174
+usesOuterVars(4079,140551
+isNormalField(4120,141603
+preFold(4132,141951
+static void foldEnumOp(4794,170019
+#define FOLD_CALL1(4852,171527
+#define FOLD_CALL2(4864,172246
+isSubType(4892,174022
+insertValueTemp(4903,174232
+requiresImplicitDestroy(4923,174835
+postFold(4959,176101
+static bool is_param_resolved(5284,189059
+resolveBlock(5308,189814
+computeReturnTypeParamVectors(5387,192093
+replaceSetterArgWithTrue(5409,192788
+replaceSetterArgWithFalse(5422,193136
+insertCasts(5439,193681
+static void instantiate_default_constructor(5471,194769
+static void buildValueFunction(5505,195993
+resolveFns(5532,196841
+possible_signature_match(5695,201065
+signature_match(5711,201443
+collectInstantiatedAggregateTypes(5732,201921
+isVirtualChild(5747,202325
+addToVirtualMaps(5759,202595
+addAllToVirtualMaps(5880,207650
+buildVirtualMaps(5895,208081
+addVirtualMethodTableEntry(5913,208642
+parseExplainFlag(5928,208979
+computeStandardModuleSet(5964,209799
+resolve(5989,210411
+static void unmarkDefaultedGenerics(6050,211734
+static Vec<ModuleSymbol*> initMods;6086,212845
+static void resolveUses(6088,212882
+static void resolveExports(6113,213612
+static void resolveEnumTypes(6124,213873
+static void resolveDynamicDispatches(6133,214091
+static void insertRuntimeTypeTemps(6220,216674
+static void resolveAutoCopies(6240,217393
+static void resolveRecordInitializers(6252,217710
+static void resolveOther(6318,219980
+static void insertDynamicDispatchCalls(6330,220237
+buildRuntimeTypeInfo(6463,225971
+static void insertReturnTemps(6482,226620
+initializeClass(6525,228245
+pruneResolvedTree(6549,229010
+static void removeUnusedFunctions(6576,230022
+isUnusedClass(6588,230362
+static void removeUnusedTypes(6611,230969
+static void removeRandomJunk(6638,231788
+static void buildRuntimeTypeInitFns(6770,237533
+static void removeUnusedFormals(6821,239727
+static void replaceInitPrims(6884,242144
+static void insertRuntimeInitTemps(6935,244394
+static void removeMootFields(6973,245452
+static void removeNilTypeArgs(6989,245963
+static void expandInitFieldPrims(7018,246701
+fixTypeNames(7031,246938
+setScalarPromotionType(7052,247631
+
+resolution/generics.cpp,603
+#define __STDC_FORMAT_MACROS7,257
+static int explainInstantiationLine 20,475
+static ModuleSymbol* explainInstantiationModule 21,517
+static Vec<FnSymbol*> whereStack;23,574
+explainInstantiation(27,622
+copyGenericSub(84,2670
+instantiate_tuple(102,3121
+instantiate_tuple_hash(128,4002
+instantiate_tuple_initCopy(158,5153
+instantiate_tuple_autoCopy(175,5739
+getNewSubType(199,6723
+evaluateWhereClause(237,8247
+checkInfiniteWhereInstantiation(256,8679
+checkInstantiationLimit(289,9846
+static void renameInstantiatedTypeString(314,10792
+renameInstantiatedType(370,12572
+instantiate(442,15151
+
+resolution/lowerIterators.cpp,2363
+static void nonLeaderParCheck(22,727
+static void nonLeaderParCheckInt(36,1014
+static bool find_recursive_caller(81,2731
+static Vec<Symbol*> taskFunInRecursiveIteratorSet;120,3949
+static void computeRecursiveIteratorSet(129,4256
+static bool leaveLocalBlockUnfragmented(185,6020
+fragmentLocalBlocks(229,7257
+replaceIteratorFormalsWithIteratorFields(339,11182
+static Map<FnSymbol*,FnSymbol*> iteratorFnMap;361,11972
+static FnSymbol* argBundleCopyFn 362,12019
+static FnSymbol* argBundleFreeFn 363,12060
+static AggregateType*  argBundleType 364,12101
+ensureArgBundleType(372,12279
+createArgBundleFreeFn(398,13175
+createArgBundleCopyFn(484,17611
+bundleLoopBodyFnArgsForIteratorFnCall(577,22750
+countEnclosingLocalBlocks(692,28434
+static void localizeReturnSymbols(706,28848
+static void localizeIteratorReturnSymbols(750,30190
+yieldArraysByRef(775,30971
+void processIteratorYields(811,32284
+static Map<FnSymbol*,FnSymbol*> loopBodyFnArgsSuppliedMap;817,32376
+static void threadLoopBodyFnArgs(833,33129
+static void convertYieldsAndReturns(887,35148
+static bool fnContainsOn(932,37235
+createIteratorFn(951,37729
+expandRecursiveIteratorInline(993,39395
+typedef Map<FnSymbol*FnSymbol1064,42685
+typedef Map<FnSymbol*,FnSymbol*> TaskFnCopyMap;1064,42685
+expandIteratorInline(1070,42907
+expandBodyForIteratorInline(1114,44214
+canInlineIterator(1222,48381
+getRecursiveIterators(1241,48897
+canInlineSingleYieldIterator(1257,49349
+setupSimultaneousIterators(1290,50331
+isBoundedIterator(1316,51459
+getIteratorChildren(1331,51762
+#define ZIP1 1341,51992
+#define ZIP2 1342,52007
+#define ZIP3 1343,52022
+#define ZIP4 1344,52037
+#define HASMORE 1345,52052
+#define GETVALUE 1346,52070
+buildIteratorCallInner(1350,52103
+buildIteratorCall(1378,53082
+inlineSingleYieldIterator(1402,54119
+expand_for_loop(1473,56620
+inlineIterators(1545,59814
+static void addCrossedFreeIteratorCalls(1560,60294
+static void addCrossedFreeIteratorCalls(1632,63459
+static void fixNumericalGetMemberPrims(1663,64216
+static void cleanupLeaderFollowerIteratorCalls(1688,65119
+static void handlePolymorphicIterators(1734,67237
+static void reconstructIRAutoCopy(1791,70491
+static void reconstructIRAutoDestroy(1820,71721
+static void reconstructIRautoCopyAutoDestroy(1839,72378
+static void cleanupTemporaryVectors(1857,72856
+void lowerIterators(1864,73003
+
+resolution/wrappers.cpp,321
+buildEmptyWrapper(66,2503
+static ArgSymbol* copyFormalForWrapper(103,3846
+insertWrappedCall(117,4294
+buildDefaultWrapper(140,4969
+defaultWrap(349,14946
+buildOrderWrapper(397,16077
+orderWrap(428,16991
+buildCoercionWrapper(466,17841
+coercionWrap(537,20636
+buildPromotionWrapper(575,21576
+promotionWrap(712,27478
+
+util/clangUtil.cpp,3735
+#define __STDC_FORMAT_MACROS7,257
+typedef Type ChapelType;32,669
+void readExternC(36,714
+void cleanupExternC(40,789
+#define GLOBAL_PTR_SPACE 49,920
+#define WIDE_PTR_SPACE 50,949
+#define GLOBAL_PTR_SIZE 51,976
+#define GLOBAL_PTR_ABI_ALIGN 52,1003
+#define GLOBAL_PTR_PREF_ALIGN 53,1035
+VarSymbol *minMaxConstant(minMaxConstant72,1590
+void addMinMax(115,3251
+void addMinMax(139,3900
+void setupClangContext(149,4150
+VarSymbol *handleMacro(handleMacro236,7220
+void readMacrosClang(372,11192
+class CCodeGenConsumer 419,12889
+    GenInfo* info;CCodeGenConsumer::info421,12946
+    CCodeGenConsumer(CCodeGenConsumer::CCodeGenConsumer423,12975
+    virtual ~CCodeGenConsumer(CCodeGenConsumer::~CCodeGenConsumer427,13117
+     virtual void Initialize(CCodeGenConsumer::Initialize430,13197
+     virtual void HandleCXXStaticMemberVarInstantiation(CCodeGenConsumer::HandleCXXStaticMemberVarInstantiation436,13398
+     virtual bool HandleTopLevelDecl(CCodeGenConsumer::HandleTopLevelDecl443,13639
+     virtual void HandleTagDeclDefinition(CCodeGenConsumer::HandleTagDeclDefinition474,14984
+     virtual void HandleTranslationUnit(CCodeGenConsumer::HandleTranslationUnit513,16470
+     virtual void CompleteTentativeDefinition(CCodeGenConsumer::CompleteTentativeDefinition527,16862
+     virtual void HandleVTable(CCodeGenConsumer::HandleVTable538,17147
+class CCodeGenAction 550,17453
+  CCodeGenAction(CCodeGenAction::CCodeGenAction552,17512
+CCodeGenAction::CreateASTConsumer(559,17696
+static void cleanupClang(564,17843
+void setupClang(581,18201
+void finishCodegenLLVM(669,21048
+void prepareCodegenLLVM(693,21625
+static void handleErrorLLVM(717,22146
+struct ExternBlockInfo 726,22410
+  GenInfo* gen_info;ExternBlockInfo::gen_info727,22435
+  fileinfo file;ExternBlockInfo::file728,22456
+  ExternBlockInfo(ExternBlockInfo::ExternBlockInfo729,22473
+  ~ExternBlockInfo(ExternBlockInfo::~ExternBlockInfo730,22522
+typedef std::set<ModuleSymbol*> module_set_t;733,22551
+typedef module_set_t::iterator module_set_iterator_t;734,22597
+module_set_t gModulesWithExternBlocks;736,22652
+bool lookupInExternBlock(738,22692
+bool alreadyConvertedExtern(748,23121
+bool setAlreadyConvertedExtern(752,23266
+void runClang(758,23416
+void saveExternBlock(914,28582
+void readExternC(948,29822
+void cleanupExternC(976,30807
+Function* getFunctionLLVM(994,31334
+llvm::Type* getTypeLLVM(1009,31613
+llvm::Type* codegenCType(1021,31879
+GenRet codegenCValue(1051,33022
+LayeredValueTable::LayeredValueTable(1084,34017
+void LayeredValueTable::addLayer(1088,34093
+void LayeredValueTable::removeLayer(1092,34165
+void LayeredValueTable::addValue(1099,34263
+void LayeredValueTable::addGlobalValue(1108,34506
+void LayeredValueTable::addGlobalValue(1117,34754
+void LayeredValueTable::addGlobalType(1121,34892
+void LayeredValueTable::addGlobalCDecl(1131,35155
+void LayeredValueTable::addGlobalVarSymbol(1137,35304
+void LayeredValueTable::addBlock(1144,35465
+GenRet LayeredValueTable::getValue(1155,35725
+llvm::BasicBlock *LayeredValueTable::getBlock(LayeredValueTable::getBlock1186,36676
+llvm::Type *LayeredValueTable::getType(LayeredValueTable::getType1194,36892
+NamedDecl* LayeredValueTable::getCDecl(1213,37528
+VarSymbol* LayeredValueTable::getVarSymbol(1225,37870
+LayeredValueTable::Storage* LayeredValueTable::get(1237,38230
+bool LayeredValueTable::isAlreadyInChapelAST(1250,38487
+bool LayeredValueTable::markAddedToChapelAST(1258,38650
+void LayeredValueTable::swap(1273,39021
+int getCRecordMemberGEP(1278,39117
+bool isBuiltinExternCFunction(1311,40112
+void addAggregateGlobalOps(1318,40244
+void addGlobalToWide(1326,40475
+void setupForGlobalToWide(1337,40888
+void makeBinaryLLVM(1412,43896
+
+util/files.cpp,2492
+#define _XOPEN_SOURCE 8,275
+#define _XOPEN_SOURCE_EXTENDED 11,339
+char executableFilename[executableFilename30,667
+char saveCDir[saveCDir31,718
+char ccflags[ccflags32,754
+char ldflags[ldflags33,778
+bool ccwarnings 34,802
+static const char* intDirName 39,903
+static const int MAX_CHARS_PER_PID 41,942
+int numLibFlags 43,984
+const char** libFlag 44,1005
+Vec<const char*> incDirs;46,1035
+void addLibInfo(49,1063
+void addIncInfo(60,1328
+void ensureDirExists(65,1399
+static const char* removeSpacesFromString(73,1602
+static void ensureTmpDirExists(92,1945
+void deleteTmpDir(127,2895
+const char* genIntermediateFilename(154,3485
+const char* genIntFilename(168,3872
+static const char* stripdirectories(173,3970
+const char* objectFileForCFile(186,4254
+static FILE* openfile(192,4479
+static void closefile(211,4900
+void openfile(221,5108
+void closefile(226,5218
+void openCFile(231,5286
+void appendCFile(241,5532
+void closeCFile(250,5782
+fileinfo* openTmpFile(257,5906
+FILE* openInputFile(268,6175
+void closeInputFile(273,6257
+static const char** inputFilenames 278,6318
+static bool checkSuffix(281,6365
+bool isCSource(287,6527
+bool isCHeader(291,6606
+bool isObjFile(295,6685
+static bool foundChplSource 299,6764
+bool isChplSource(301,6802
+static bool isRecognizedSource(307,6949
+void testInputFiles(315,7136
+const char* nthFilename(343,8023
+const char* createGDBFile(348,8088
+static const char* mysystem_getresult(370,8619
+const char* runUtilScript(386,9254
+const char* getIntermediateDirName(391,9443
+static void genCFiles(395,9506
+static void genCFileBuildRules(411,9888
+static void genObjFiles(426,10367
+void genIncludeCommandLineHeaders(451,11081
+void codegen_makefile(461,11324
+static const char* searchPath(582,15651
+static Vec<const char*> intModPath;609,16701
+static Vec<const char*> stdModPath;610,16737
+static Vec<const char*> usrModPath;611,16773
+static Vec<const char*> flagModPath;612,16809
+static void addUsrDirToModulePath(615,16848
+void addFlagModulePath(633,17303
+void addDashMsToUserPath(644,17591
+void setupModulePaths(651,17716
+void addModulePathFromFilename(687,19139
+const char* modNameToFilename(701,19480
+const char* stdModNameToFilename(715,19965
+static void helpPrintPath(725,20267
+void printModuleSearchPath(731,20421
+void readArgsFromCommand(738,20611
+char* chplRealPath(764,21362
+char* dirHasFile(782,21870
+static int sys_getcwd(811,22438
+char* findProgramPath(844,23114
+bool isSameFile(922,24891
+
+util/llvmAggregateGlobalOps.cpp,2367
+static const bool DEBUG ::DEBUG54,1556
+static const bool extraChecks ::extraChecks55,1589
+static const char* debugThisFn ::debugThisFn57,1689
+#define GET_EXTRA 65,1958
+bool isGlobalLoadOrStore(::isGlobalLoadOrStore68,1994
+Value* getLoadStorePointer(87,2509
+Value* rebasePointer(100,2800
+Instruction* reorderAddressingMemopsUses(134,4179
+static int64_t GetOffsetFromIndex(202,6427
+static bool IsPointerOffset(234,7760
+struct MemOpRange 278,9460
+  int64_t Start,MemOpRange::Start281,9670
+  int64_t Start, End;MemOpRange::End281,9670
+  int64_t SlackEnd;MemOpRange::SlackEnd283,9750
+  Value *StartPtr;MemOpRange::StartPtr286,9862
+  unsigned Alignment;MemOpRange::Alignment288,9939
+  SmallVector<MemOpRange::SmallVector291,10112
+  SmallVector<Instruction*, 16> TheStores;MemOpRange::TheStores291,10112
+struct MemOpRanges 293,10158
+  std::list<MemOpRange> Ranges;MemOpRanges::Ranges296,10363
+  typedef std::list<MemOpRange>::iterator range_iterator;MemOpRanges::range_iterator297,10395
+  const DataLayout &TD;MemOpRanges::TD298,10453
+  MemOpRanges(MemOpRanges::MemOpRanges299,10477
+  typedef std::list<MemOpRange>::const_iterator const_iterator;MemOpRanges::const_iterator300,10526
+  const_iterator begin(MemOpRanges::begin301,10590
+  const_iterator end(MemOpRanges::end302,10648
+  bool empty(MemOpRanges::empty303,10702
+  bool moreThanOneOp(MemOpRanges::moreThanOneOp304,10750
+  void addInst(MemOpRanges::addInst314,11045
+  void addStore(MemOpRanges::addStore322,11301
+  void addLoad(MemOpRanges::addLoad332,11810
+void MemOpRanges::addRange(354,12871
+  struct AggregateGlobalOpsOpt 421,15088
+    const DataLayout *TD;AggregateGlobalOpsOpt::TD422,15143
+    unsigned globalSpace;AggregateGlobalOpsOpt::globalSpace423,15169
+    static char ID;AggregateGlobalOpsOpt::ID426,15206
+    AggregateGlobalOpsOpt(AggregateGlobalOpsOpt::AggregateGlobalOpsOpt427,15273
+    AggregateGlobalOpsOpt(AggregateGlobalOpsOpt::AggregateGlobalOpsOpt432,15447
+    virtual void getAnalysisUsage(AggregateGlobalOpsOpt::getAnalysisUsage441,15622
+  char AggregateGlobalOpsOpt::ID 454,16072
+FunctionPass *createAggregateGlobalOpsOptPass(createAggregateGlobalOpsOptPass460,16381
+Instruction *AggregateGlobalOpsOpt::tryAggregating(AggregateGlobalOpsOpt::tryAggregating469,16793
+bool AggregateGlobalOpsOpt::runOnFunction(719,25450
+
+util/llvmGlobalToWide.cpp,3897
+#define DEBUG_TYPE 26,1087
+  static const bool debugAllPassOne ::debugAllPassOne45,1484
+  static const bool debugAllPassTwo ::debugAllPassTwo46,1529
+  static const bool extraChecks ::extraChecks47,1574
+  static const char* debugThisFn ::debugThisFn49,1678
+  AllocaInst* makeAlloca(::makeAlloca51,1718
+  void typeChangeReplaceInstWithInst(::typeChangeReplaceInstWithInst82,2698
+  void myReplaceInstWithInst(::myReplaceInstWithInst104,3368
+  bool isaGlobalPointer(::isaGlobalPointer113,3626
+  Constant* createSizeof(::createSizeof120,3836
+  Constant* createLoadStoreControl(::createLoadStoreControl126,3999
+  Value* createWideBitCast(::createWideBitCast138,4389
+  void checkFunctionExistAndHasArgs(::checkFunctionExistAndHasArgs172,5956
+  struct TypeFixer ::TypeFixer189,6371
+  struct GlobalTypeFixer ::GlobalTypeFixer205,7087
+    Module & M;::GlobalTypeFixer::M206,7126
+    GlobalToWideInfo * info;::GlobalTypeFixer::info207,7142
+    bool debugPassTwo;::GlobalTypeFixer::debugPassTwo208,7171
+    llvm::Type* voidTy;::GlobalTypeFixer::voidTy210,7237
+    llvm::Type* voidPtrTy;::GlobalTypeFixer::voidPtrTy211,7261
+    llvm::Type* glVoidPtrTy;::GlobalTypeFixer::glVoidPtrTy212,7288
+    llvm::Type* wideVoidPtrTy;::GlobalTypeFixer::wideVoidPtrTy213,7317
+    llvm::Type* ptrLocTy;::GlobalTypeFixer::ptrLocTy214,7348
+    llvm::Type* i64Ty;::GlobalTypeFixer::i64Ty215,7374
+    llvm::Type* i8Ty;::GlobalTypeFixer::i8Ty216,7397
+    llvm::Constant* addrFn;::GlobalTypeFixer::addrFn219,7486
+    llvm::Constant* locFn;::GlobalTypeFixer::locFn220,7514
+    llvm::Constant* nodeFn;::GlobalTypeFixer::nodeFn221,7541
+    llvm::Constant* makeFn;::GlobalTypeFixer::makeFn222,7569
+    llvm::Constant* getFn;::GlobalTypeFixer::getFn223,7597
+    llvm::Constant* putFn;::GlobalTypeFixer::putFn224,7624
+    llvm::Constant* getPutFn;::GlobalTypeFixer::getPutFn225,7651
+    llvm::Constant* memsetFn;::GlobalTypeFixer::memsetFn226,7681
+    GlobalTypeFixer(::GlobalTypeFixer::GlobalTypeFixer229,7713
+    Function* getGlobalToWideFn(::GlobalTypeFixer::getGlobalToWideFn312,10885
+    Function* getWideToGlobalFn(::GlobalTypeFixer::getWideToGlobalFn316,11066
+    CallInst* callGlobalToWideFn(::GlobalTypeFixer::callGlobalToWideFn321,11248
+    CallInst* callWideToGlobalFn(::GlobalTypeFixer::callWideToGlobalFn329,11585
+    Value* getWideArg(::GlobalTypeFixer::getWideArg342,12228
+    void fixInstruction(::GlobalTypeFixer::fixInstruction377,13445
+    Type *remapType(::GlobalTypeFixer::remapType786,31258
+    Constant* remapConstant(::GlobalTypeFixer::remapConstant790,31355
+  Constant* typeMapConstant(::typeMapConstant826,32625
+  Value* typeMapValue(::typeMapValue880,34369
+  void typeRemapInstruction(::typeRemapInstruction903,35287
+  struct GlobalToWide ::GlobalToWide974,37503
+    static char ID;::GlobalToWide::ID975,37547
+    GlobalToWideInfo * info;::GlobalToWide::info977,37615
+    std::string layoutAfterwards;::GlobalToWide::layoutAfterwards978,37644
+    bool debugPassOne;::GlobalToWide::debugPassOne980,37679
+    bool debugPassTwo;::GlobalToWide::debugPassTwo981,37702
+    GlobalToWide(::GlobalToWide::GlobalToWide988,37978
+    GlobalToWide(::GlobalToWide::GlobalToWide998,38292
+    virtual bool runOnModule(::GlobalToWide::runOnModule1007,38441
+char GlobalToWide::ID 1630,60992
+ModulePass *createGlobalToWide(createGlobalToWide1633,61096
+bool containsGlobalPointers(1647,61423
+bool containsGlobalPointers(1679,62334
+void populateFunctionsForGlobalType(1687,62617
+llvm::Function* getAddrFn(1761,65082
+llvm::Function* getLocFn(1767,65316
+llvm::Function* getNodeFn(1773,65548
+llvm::Function* getMakeFn(1779,65782
+void populateFunctionsForGlobalToWideType(1786,66017
+llvm::Function* getGlobalToWideFn(1819,67206
+llvm::Function* getWideToGlobalFn(1825,67462
+Type* convertTypeGlobalToWide(1833,67720
+
+util/llvmUtil.cpp,391
+bool isArrayVecOrStruct(14,314
+int64_t arrayVecN(21,474
+llvm::Type* arrayVecEltType(36,838
+llvm::Constant* codegenSizeofLLVM(49,1168
+bool isTypeEquivalent(55,1278
+llvm::AllocaInst* makeAlloca(78,2000
+llvm::Value* createTempVarLLVM(113,3163
+llvm::Value *convertValueToType(convertValueToType130,3787
+PromotedPair convertValuesToLarger(252,8233
+bool isTypeSizeSmallerThan(405,13791
+
+util/misc.cpp,1301
+static void cleanup_for_exit(22,548
+void gdbShouldBreakHere(28,697
+static bool exit_immediately 33,791
+static bool exit_eventually 34,828
+static bool exit_end_of_pass 35,865
+static const char* err_filename;37,904
+static int err_lineno;38,937
+static int err_fatal;39,960
+static int err_user;40,982
+static int err_print;41,1003
+static int err_ignore;42,1025
+static FnSymbol* err_fn 43,1048
+bool forceWidePtrs(45,1081
+bool forceWidePtrsForLocal(49,1152
+bool requireWideReferences(53,1222
+bool requireOutlinedOn(57,1293
+const char* cleanFilename(61,1360
+static const char* cleanFilename(72,1588
+print_user_internal_error(84,1842
+findNonTaskCaller(112,2515
+setupError(135,3057
+printDevelErrorHeader(148,3392
+static void printDevelErrorFooter(205,5100
+void printCallStack(216,5439
+static void printCallStackOnError(235,6178
+void printCallStack(243,6313
+void printCallStackCalls(249,6421
+void handleError(262,6821
+void handleError(297,7418
+void handleError(304,7571
+static void vhandleError(311,7734
+void exitIfFatalErrorsEncountered(344,8333
+void considerExitingEndOfPass(355,8529
+static void handleInterrupt(364,8650
+static void handleSegFault(369,8728
+void startCatchingSignals(374,8796
+void stopCatchingSignals(382,8975
+#undef exit392,9157
+void clean_exit(394,9176
+
+util/mysystem.cpp,54
+bool printSystemCommands 11,306
+int mysystem(13,341
+
+util/stringutil.cpp,326
+#define __STDC_FORMAT_MACROS7,257
+static ChainHashMap<const char*, StringHashFns, const char*> chapelStringsTable;19,491
+canonicalize_string(22,592
+astr(32,768
+istr(73,1520
+const char* asubstr(85,1756
+void deleteStrings(96,1972
+#define define_str2Int(105,2135
+define_str2Int(122,3160
+uint64_t hexStr2uint64(157,3958
+
+util/timer.cpp,195
+_now_timer(10,278
+_diff_timer(16,376
+Timer::Timer(24,635
+void Timer::clear(30,703
+void Timer::start(35,768
+void Timer::stop(44,937
+double Timer::elapsed(55,1175
+void Timer::print(65,1380
+
+util/tmpdirname.cpp,31
+const char* tmpdirname 13,373
+
+include/alist.h,583
+#define _CHPL_LIST_H_7,250
+class AList 17,398
+  Expr* head;AList::head19,421
+  Expr* tail;AList::tail20,435
+  BaseAST* parent;AList::parent21,449
+  int length;AList::length22,468
+#define for_alist(45,1071
+#define for_alist_backward(52,1491
+#define for_enums(59,1912
+#define for_enums_backward(66,2343
+#define for_formals(73,2774
+#define next_formal(80,3352
+#define for_formals_backward(83,3529
+#define for_actuals(90,4107
+#define for_actuals_backward(97,4531
+#define for_formals_actuals(111,5510
+#define for_fields(133,7058
+#define for_fields_backward(140,7581
+
+include/arg.h,685
+#define _arg_H36,1669
+#define atoll 43,1758
+typedef void ArgumentFunction(50,1832
+  const char *name;name53,1925
+  char key;54,1945
+  const char *argumentOptions;argumentOptions55,1957
+  const char *description;description56,1988
+  const char *type;type57,2015
+  void *location;location58,2035
+  const char *env;env59,2053
+  ArgumentFunction *pfn;pfn60,2072
+} ArgumentDescription;61,2097
+typedef struct ArgumentState 63,2121
+  char **file_argument;file_argument64,2152
+  int nfile_arguments;65,2176
+  const char *program_name;program_name66,2199
+  const char *program_loc;program_loc67,2227
+  ArgumentDescription *desc;desc68,2254
+} ArgumentState;69,2283
+
+include/astutil.h,118
+#define _ASTUTIL_H_7,248
+inline void buildDefUseMaps(117,4670
+#define for_defs(142,5478
+#define for_uses(145,5560
+
+include/baseAST.h,2548
+#define _BASEAST_H_20,682
+#define foreach_ast_sep(33,987
+#define foreach_ast(54,2020
+#define proto_classes(63,2202
+#undef proto_classes65,2269
+#define decl_gvecs(75,2603
+#undef decl_gvecs77,2682
+typedef Map<Symbol*Symbol82,2743
+typedef Map<Symbol*,Symbol*> SymbolMap;82,2743
+typedef MapElem<Symbol*Symbol83,2783
+typedef MapElem<Symbol*,Symbol*> SymbolMapElem;83,2783
+struct astlocT 93,3102
+  const char* filename;astlocT::filename94,3119
+  int lineno;astlocT::lineno95,3168
+  astlocT(astlocT::astlocT96,3212
+enum AstTag 104,3389
+  E_SymExpr,AstTag::E_SymExpr105,3403
+  E_UnresolvedSymExpr,AstTag::E_UnresolvedSymExpr106,3416
+  E_DefExpr,AstTag::E_DefExpr107,3439
+  E_CallExpr,AstTag::E_CallExpr108,3452
+  E_NamedExpr,AstTag::E_NamedExpr109,3466
+  E_BlockStmt,AstTag::E_BlockStmt110,3481
+  E_CondStmt,AstTag::E_CondStmt111,3496
+  E_GotoStmt,AstTag::E_GotoStmt112,3510
+  E_ExternBlockStmt,AstTag::E_ExternBlockStmt113,3524
+  E_Expr,AstTag::E_Expr114,3545
+  E_ModuleSymbol,AstTag::E_ModuleSymbol116,3556
+  E_VarSymbol,AstTag::E_VarSymbol117,3574
+  E_ArgSymbol,AstTag::E_ArgSymbol118,3589
+  E_TypeSymbol,AstTag::E_TypeSymbol119,3604
+  E_FnSymbol,AstTag::E_FnSymbol120,3620
+  E_EnumSymbol,AstTag::E_EnumSymbol121,3634
+  E_LabelSymbol,AstTag::E_LabelSymbol122,3650
+  E_Symbol,AstTag::E_Symbol123,3667
+  E_PrimitiveType,AstTag::E_PrimitiveType125,3680
+  E_EnumType,AstTag::E_EnumType126,3699
+  E_AggregateType,AstTag::E_AggregateType127,3713
+  E_Type,AstTag::E_Type128,3732
+  E_BaseASTAstTag::E_BaseAST130,3743
+#define DECLARE_COPY(146,4141
+#define DECLARE_SYMBOL_COPY(159,4998
+#define COPY_INT(177,6069
+class BaseAST 182,6169
+  AstTag astTag;BaseAST::astTag184,6194
+  int id;BaseAST::id185,6231
+  astlocT astloc;BaseAST::astloc186,6261
+  virtual ~BaseAST(BaseAST::~BaseAST189,6348
+  int linenum(BaseAST::linenum199,6680
+  const char* fname(BaseAST::fname200,6722
+#define SET_LINENO(223,7520
+struct astlocMarker 226,7612
+  astlocT previousAstLoc;astlocMarker::previousAstLoc227,7634
+  astlocMarker(astlocMarker::astlocMarker230,7703
+  astlocMarker(astlocMarker::astlocMarker237,7890
+  ~astlocMarker(astlocMarker::~astlocMarker244,8120
+static inline bool isExpr(259,8481
+static inline bool isSymbol(261,8555
+static inline bool isType(263,8655
+#define def_is_ast(266,8756
+#undef def_is_ast287,9302
+#define def_to_ast(293,9468
+#undef def_to_ast317,10072
+#define AST_CALL_CHILD(326,10391
+#define AST_CALL_LIST(332,10692
+#define AST_CHILDREN_CALL(337,10919
+
+include/bb.h,602
+#define _BB_H_7,243
+class BasicBlock 23,582
+  static BasicBlock* basicBlock;BasicBlock::basicBlock27,742
+  static Map<BasicBlock::Map30,912
+  static Map<LabelSymbol*,std::vector<BasicBlock*>*> gotoMaps;BasicBlock::gotoMaps30,912
+  static Map<BasicBlock::Map31,975
+  static Map<LabelSymbol*,BasicBlock*> labelMaps;BasicBlock::labelMaps31,975
+  static int nextid;BasicBlock::nextid32,1025
+  int id;BasicBlock::id34,1047
+  std::vector<Expr*> exprs;BasicBlock::exprs35,1057
+  std::vector<BasicBlock*> ins;BasicBlock::ins36,1085
+  std::vector<BasicBlock*> outs;BasicBlock::outs37,1117
+
+include/beautify.h,30
+#define __BEAUTIFY_H_39,1746
+
+include/bitVec.h,161
+#define _CHPL_BIT_VEC_H_7,253
+class BitVec 9,279
+  unsigned* data;BitVec::data11,303
+  int in_size;BitVec::in_size12,321
+  int ndata;BitVec::ndata13,336
+
+include/build.h,24
+#define _BUILD_H_7,246
+
+include/checks.h,23
+#define CHECKS_H8,257
+
+include/chpl.h,117
+#define _chpl_H_7,245
+#define round2(16,378
+#define tohex1(17,430
+#define tohex2(19,514
+#define numberof(21,598
+
+include/chpltypes.h,291
+#define _chpltypes_H_7,250
+typedef struct { float r;9,273
+typedef struct { float r; float i;9,273
+typedef struct { float r; float i; } complex64;9,273
+typedef struct { double r;10,321
+typedef struct { double r; double i;10,321
+typedef struct { double r; double i; } complex128;10,321
+
+include/clangSupport.h,31
+#define _CLANGSUPPORT_H_7,253
+
+include/clangUtil.h,1287
+#define CLANGUTIL_H7,248
+class LayeredValueTable40,1026
+    struct Storage LayeredValueTable::Storage43,1063
+      struct s_u LayeredValueTable::Storage::s_u46,1201
+        llvm::Value *value;LayeredValueTable::Storage::s_u::value47,1220
+        llvm::BasicBlock *block;LayeredValueTable::Storage::s_u::block48,1248
+        llvm::Type *type;LayeredValueTable::Storage::s_u::type49,1281
+        clang::NamedDecl *cdecl;LayeredValueTable::Storage::s_u::cdecl53,1484
+        VarSymbol* chplVar;LayeredValueTable::Storage::s_u::chplVar55,1552
+      } u;LayeredValueTable::Storage::u56,1580
+      int8_t isLVPtr;LayeredValueTable::Storage::isLVPtr57,1591
+      bool isUnsigned;LayeredValueTable::Storage::isUnsigned58,1613
+      bool addedToChapelAST;LayeredValueTable::Storage::addedToChapelAST62,1790
+      Storage(LayeredValueTable::Storage::Storage64,1820
+    typedef llvm::StringMap<Storage> map_type;LayeredValueTable::map_type76,2067
+    typedef std::list<map_type> layers_type;LayeredValueTable::layers_type77,2114
+    typedef layers_type::iterator layer_iterator;LayeredValueTable::layer_iterator78,2159
+    typedef map_type::iterator value_iterator;LayeredValueTable::value_iterator79,2209
+    layers_type layers;LayeredValueTable::layers81,2261
+
+include/codegen.h,2190
+#define CODEGEN_H7,246
+struct GenInfo 38,747
+  FILE* cfile;GenInfo::cfile40,822
+  std::vector<std::string> cLocalDecls;GenInfo::cLocalDecls44,975
+  std::vector<std::string> cStatements;GenInfo::cStatements52,1406
+  int lineno;GenInfo::lineno57,1604
+  const char* filename;GenInfo::filename58,1618
+  bool parseOnly;GenInfo::parseOnly60,1643
+  llvm::Module *module;GenInfo::module63,1737
+  llvm::IRBuilder<> *builder;GenInfo::builder64,1761
+  LayeredValueTable *lvt;GenInfo::lvt65,1791
+  std::string clangInstallDir;GenInfo::clangInstallDir68,1835
+  std::string compileline;GenInfo::compileline69,1866
+  std::vector<std::string> clangCCArgs;GenInfo::clangCCArgs70,1893
+  std::vector<std::string> clangLDArgs;GenInfo::clangLDArgs71,1933
+  std::vector<std::string> clangOtherArgs;GenInfo::clangOtherArgs72,1973
+  clang::CodeGenOptions codegenOptions;GenInfo::codegenOptions74,2017
+  llvm::IntrusiveRefCntPtr<clang::DiagnosticOptions> diagOptions;GenInfo::diagOptions75,2057
+  clang::TextDiagnosticPrinter* DiagClient;GenInfo::DiagClient76,2123
+  llvm::IntrusiveRefCntPtr<clang::DiagnosticIDs> DiagID;GenInfo::DiagID77,2167
+  llvm::IntrusiveRefCntPtr<clang::DiagnosticsEngine> Diags;GenInfo::Diags78,2224
+  clang::CompilerInstance *Clang;GenInfo::Clang80,2285
+  clang::TargetOptions clangTargetOptions;GenInfo::clangTargetOptions83,2393
+  clang::LangOptions clangLangOptions;GenInfo::clangLangOptions84,2436
+  std::string moduleName;GenInfo::moduleName87,2516
+  llvm::LLVMContext llvmContext;GenInfo::llvmContext88,2542
+  clang::ASTContext *Ctx;GenInfo::Ctx89,2575
+  LLVM_TARGET_DATA *targetData;GenInfo::targetData90,2601
+  clang::CodeGen::CodeGenModule *cgBuilder;GenInfo::cgBuilder91,2633
+  CCodeGenAction *cgAction;GenInfo::cgAction92,2677
+  llvm::MDNode* tbaaRootNode;GenInfo::tbaaRootNode94,2706
+  llvm::MDNode* tbaaFtableNode;GenInfo::tbaaFtableNode95,2736
+  llvm::MDNode* tbaaVmtableNode;GenInfo::tbaaVmtableNode96,2768
+  std::string targetLayout;GenInfo::targetLayout103,3067
+  GlobalToWideInfo globalToWideInfo;GenInfo::globalToWideInfo111,3494
+  llvm::FunctionPassManager* FPM_postgen;GenInfo::FPM_postgen114,3599
+
+include/config.h,25
+#define _CONFIG_H_7,247
+
+include/countTokens.h,30
+#define _COUNTTOKENS_H_7,252
+
+include/dominator.h,32
+#define _CHPL_DOMINATOR_H7,254
+
+include/driver.h,454
+#define _driver_H_7,247
+typedef struct YYLTYPE 17,545
+       int first_line;18,574
+       int first_column;19,603
+       int last_line;20,632
+       int last_column;21,661
+       char *comment;comment22,690
+} YYLTYPE;23,719
+#define YYLTYPE_IS_DECLARED 24,730
+#define YYLTYPE_IS_TRIVIAL 25,760
+#define deletedIdON 32,933
+enum { LS_DEFAULT=135,4024
+enum { LS_DEFAULT=0, LS_STATIC,135,4024
+enum { LS_DEFAULT=0, LS_STATIC, LS_DYNAMIC 135,4024
+
+include/expr.h,1467
+#define _EXPR_H_7,245
+#define IS_EXPR(21,441
+#define IS_STMT(25,625
+class Expr 29,817
+  Expr* prev;Expr::prev31,856
+  Expr* next;Expr::next32,906
+  AList* list;Expr::list33,952
+  Expr* parentExpr;Expr::parentExpr34,993
+  Symbol* parentSymbol;Expr::parentSymbol35,1013
+  virtual ~Expr(Expr::~Expr38,1061
+class DefExpr 58,1548
+  Symbol* sym;DefExpr::sym60,1587
+  Expr* init;DefExpr::init61,1602
+  Expr* exprType;DefExpr::exprType62,1616
+class SymExpr 78,1930
+  Symbol* var;SymExpr::var80,1969
+class UnresolvedSymExpr 91,2193
+  const char* unresolved;UnresolvedSymExpr::unresolved93,2242
+class CallExpr 105,2502
+  Expr* baseExpr;CallExpr::baseExpr107,2542
+  AList argList;CallExpr::argList108,2591
+  PrimitiveOp* primitive;CallExpr::primitive109,2637
+  bool partialTag;CallExpr::partialTag110,2706
+  bool methodTag;CallExpr::methodTag111,2725
+  bool square;CallExpr::square115,2966
+class NamedExpr 149,4039
+  const char* name;NamedExpr::name151,4080
+  Expr* actual;NamedExpr::actual152,4100
+static inline bool isAlive(167,4513
+static inline bool isAliveQuick(171,4586
+static inline bool isAlive(175,4675
+static inline bool isAlive(181,4855
+#define isRootModule(185,4936
+#define isRootModuleWithType(188,4990
+static inline bool isGlobal(191,5105
+static inline bool isTaskFun(195,5211
+static inline FnSymbol* resolvedToTaskFun(203,5470
+static inline bool needsCapture(214,5789
+#define for_exprs_postorder(232,6474
+
+include/extern.h,104
+#define _extern_H_7,247
+#define EXTERN_INIT(10,281
+#define EXTERN_INIT(12,316
+#define EXTERN 13,340
+
+include/files.h,131
+#define _files_H_7,246
+struct fileinfo 23,586
+  FILE* fptr;24,604
+  const char* filename;25,618
+  const char* pathname;26,642
+
+include/flags.h,207
+#define CHPL_FLAGS_H_7,250
+enum Flag 34,934
+  FLAG_UNKNOWN Flag::FLAG_UNKNOWN35,946
+# define symbolFlag(36,966
+# undef symbolFlag38,1046
+  NUM_FLAGSFlag::NUM_FLAGS39,1065
+#define CHECK_FLAG(43,1118
+
+include/flags_list.h,143
+#define ypr 17,726
+#define npr 18,788
+#define ncm 19,843
+symbolFlag(25,1121
+#undef ypr207,15405
+#undef npr208,15416
+#undef ncm209,15427
+
+include/genret.h,576
+#define GENRET_H7,245
+#define GEN_VAL 14,331
+#define GEN_PTR 15,349
+#define GEN_WIDE_PTR 16,367
+struct GenRet 71,2755
+  std::string c;GenRet::c74,2849
+  llvm::Value *val;GenRet::val78,2938
+  llvm::Type *type;GenRet::type79,3000
+  void* val;GenRet::val82,3106
+  void* type;GenRet::type83,3119
+  Type *chplType;GenRet::chplType91,3420
+  uint8_t isLVPtr;GenRet::isLVPtr92,3438
+  bool isUnsigned;GenRet::isUnsigned101,3927
+  GenRet(GenRet::GenRet107,4251
+  GenRet(GenRet::GenRet109,4398
+  GenRet(GenRet::GenRet112,4460
+  GenRet(GenRet::GenRet115,4516
+
+include/intlimits.h,314
+#define INT8_MIN 9,264
+#define INT16_MIN 12,343
+#define INT32_MIN 15,424
+#define INT64_MIN 18,505
+#define INT8_MAX 22,586
+#define INT16_MAX 25,665
+#define INT32_MAX 28,746
+#define INT64_MAX 31,827
+#define UINT8_MAX 35,909
+#define UINT16_MAX 38,991
+#define UINT32_MAX 41,1075
+#define UINT64_MAX 44,1159
+
+include/iterator.h,817
+#define _ITERATOR_H_7,249
+enum IteratorTag 9,271
+enum IteratorTag { it_iterator,9,271
+enum IteratorTag { it_iterator, it_leader,9,271
+enum IteratorTag { it_iterator, it_leader, it_follower 9,271
+class IteratorInfo 11,330
+  IteratorTag tag;IteratorInfo::tag13,359
+  FnSymbol* iterator;IteratorInfo::iterator14,378
+  FnSymbol* getIterator;IteratorInfo::getIterator15,400
+  AggregateType* iclass;IteratorInfo::iclass16,425
+  AggregateType* irecord;IteratorInfo::irecord17,450
+  FnSymbol* advance;IteratorInfo::advance18,476
+  FnSymbol* zip1;IteratorInfo::zip119,497
+  FnSymbol* zip2;IteratorInfo::zip220,515
+  FnSymbol* zip3;IteratorInfo::zip321,533
+  FnSymbol* zip4;IteratorInfo::zip422,551
+  FnSymbol* hasMore;IteratorInfo::hasMore23,569
+  FnSymbol* getValue;IteratorInfo::getValue24,590
+
+include/list.h,2676
+#define _list_H_47,2089
+template <class C> class SLink 54,2211
+  C *next;SLink::next56,2253
+  SLink(SLink::SLink57,2264
+#define GetSLinkNext(59,2294
+template <class C> struct Link 61,2387
+  C *prev;Link::prev62,2431
+  Link(Link::Link63,2442
+#define GetLinkNext(65,2470
+#define GetLinkPrev(66,2560
+template <class C, int o> class SLL 68,2651
+  C *head;SLL::head70,2698
+  void clear(SLL::clear73,2754
+  C *next_link(SLL::next_link74,2786
+  SLL(SLL::SLL76,2841
+#define SList(78,2868
+#define forl_LL(79,2917
+template <class C, int o> class DLL 81,3000
+  C *head;DLL::head83,3047
+  void clear(DLL::clear89,3186
+  C *next_link(DLL::next_link90,3218
+  C *prev_link(DLL::prev_link91,3272
+  DLL(DLL::DLL93,3327
+#define DList(95,3354
+template <class C, int o> class Queue 97,3404
+  using DLL<Queue::DLL99,3472
+  using DLL<C, o>::head;Queue::head99,3472
+  C *tail;Queue::tail100,3497
+  void clear(Queue::clear109,3725
+  Queue(Queue::Queue111,3773
+#define Que(113,3802
+class CountQueue 116,3877
+  int size;CountQueue::size118,3926
+  inline CountQueue(CountQueue::CountQueue119,3939
+#define CountQue(129,4236
+class ConsCell 132,4314
+  C             car;ConsCell::car134,4340
+  ConsCell      *cdr;ConsCell::cdr135,4361
+  ConsCell(ConsCell::ConsCell136,4383
+  ConsCell(ConsCell::ConsCell137,4444
+  ConsCell(ConsCell::ConsCell138,4489
+class List 142,4554
+  ConsCell<C> *head;List::head144,4576
+  C first(List::first145,4597
+  C car(List::car146,4656
+  ConsCell<C> *rest(List::rest147,4686
+  ConsCell<C> *cdr(List::cdr148,4755
+  void push(List::push149,4795
+  void push(List::push150,4849
+  C pop(List::pop151,4897
+  void clear(List::clear152,4948
+  List(List::List154,4998
+  List(List::List155,5046
+  List(List::List156,5113
+  List(List::List157,5205
+#define forc_List(159,5230
+SLL<C, o>::push(push165,5392
+SLL<C, o>::pop(pop171,5500
+DLL<C, o>::push(push179,5641
+DLL<C, o>::pop(pop187,5793
+DLL<C, o>::remove(remove200,6047
+DLL<C, o>::insert(insert210,6427
+Queue<C, o>::push(push219,6729
+Queue<C, o>::pop(pop225,6843
+Queue<C, o>::insert(insert232,6974
+Queue<C, o>::remove(remove241,7154
+Queue<C, o>::append(append248,7297
+Queue<C, o>::enqueue(enqueue262,7569
+Queue<C, o>::dequeue(dequeue270,7691
+CountQueue<C, o>::push(push275,7774
+CountQueue<C, o>::pop(pop281,7879
+CountQueue<C, o>::remove(remove289,8015
+CountQueue<C, o>::enqueue(enqueue295,8126
+CountQueue<C, o>::dequeue(dequeue301,8237
+CountQueue<C, o>::insert(insert306,8324
+CountQueue<C, o>::append(append312,8451
+CountQueue<C, o>::append_clear(append_clear318,8584
+List<C>::reverse(reverse325,8715
+
+include/llvmAggregateGlobalOps.h,41
+#define _LLVMAGGREGATEGLOBALOPS_H_7,263
+
+include/llvmGlobalToWide.h,2277
+#define _LLVMGLOBALTOWIDE_H_7,257
+struct GlobalPointerInfo 57,2837
+  llvm::Type* wideTy;GlobalPointerInfo::wideTy60,2981
+  llvm::Function* addrFn;GlobalPointerInfo::addrFn66,3205
+  llvm::Function* locFn;GlobalPointerInfo::locFn72,3408
+  llvm::Function* nodeFn;GlobalPointerInfo::nodeFn78,3639
+  llvm::Function* makeFn;GlobalPointerInfo::makeFn84,3826
+  llvm::Function* globalToWideFn;GlobalPointerInfo::globalToWideFn87,3895
+  llvm::Function* wideToGlobalFn;GlobalPointerInfo::wideToGlobalFn88,3929
+  GlobalPointerInfo(GlobalPointerInfo::GlobalPointerInfo90,3964
+#define GLOBAL_PTR_BITS 95,4156
+#define GLOBAL_TYPE 96,4183
+#define GLOBAL_FN 97,4210
+#define GLOBAL_FN_GLOBAL_ADDR 98,4235
+#define GLOBAL_FN_GLOBAL_LOCID 99,4277
+#define GLOBAL_FN_GLOBAL_NODEID 100,4319
+#define GLOBAL_FN_GLOBAL_MAKE 101,4363
+#define GLOBAL_FN_GLOBAL_TO_WIDE 102,4405
+#define GLOBAL_FN_WIDE_TO_GLOBAL 103,4449
+typedef llvm::DenseMap<llvm::Type*llvm::Type105,4494
+typedef llvm::DenseMap<llvm::Type*, GlobalPointerInfo> globalTypes_t;105,4494
+typedef llvm::SmallPtrSet<llvm::Function*llvm::Function106,4564
+typedef llvm::SmallPtrSet<llvm::Function*, 32> specialFunctions_t;106,4564
+typedef llvm::TrackingVH<llvm::Constant> runtime_fn_t;107,4631
+struct GlobalToWideInfo 109,4687
+  unsigned globalSpace;GlobalToWideInfo::globalSpace110,4713
+  unsigned wideSpace;GlobalToWideInfo::wideSpace111,4737
+  llvm::Type* localeIdType;GlobalToWideInfo::localeIdType112,4759
+  llvm::Type* nodeIdType;GlobalToWideInfo::nodeIdType113,4787
+  globalTypes_t gTypes;GlobalToWideInfo::gTypes114,4813
+  specialFunctions_t specialFunctions;GlobalToWideInfo::specialFunctions115,4837
+  runtime_fn_t addrFn;GlobalToWideInfo::addrFn118,4935
+  runtime_fn_t locFn;GlobalToWideInfo::locFn123,5189
+  runtime_fn_t nodeFn;GlobalToWideInfo::nodeFn125,5273
+  runtime_fn_t makeFn;GlobalToWideInfo::makeFn127,5371
+  runtime_fn_t getFn;GlobalToWideInfo::getFn130,5475
+  runtime_fn_t putFn;GlobalToWideInfo::putFn132,5577
+  runtime_fn_t getPutFn;GlobalToWideInfo::getPutFn137,5708
+  runtime_fn_t memsetFn;GlobalToWideInfo::memsetFn140,5797
+  runtime_fn_t preservingFn;GlobalToWideInfo::preservingFn146,6013
+  GlobalToWideInfo(GlobalToWideInfo::GlobalToWideInfo148,6043
+
+include/llvmUtil.h,679
+#define _LLVMUTIL_H_7,249
+#define HAVE_LLVM_VER 17,513
+#define LLVM_TARGET_DATA 25,755
+#define LLVM_ATTRIBUTE 26,797
+static inline bool llvm_fn_param_has_attr(27,836
+#define HAVE_LLVM_VER 32,1000
+#define LLVM_TARGET_DATA 40,1221
+#define LLVM_ATTRIBUTE 41,1263
+static inline bool llvm_fn_param_has_attr(42,1303
+#define HAVE_LLVM_VER 50,1549
+#define LLVM_TARGET_DATA 58,1785
+#define LLVM_ATTRIBUTE 59,1827
+static inline bool llvm_fn_param_has_attr(60,1866
+struct PromotedPair 67,2007
+  llvm::Value* a;PromotedPair::a68,2029
+  llvm::Value* b;PromotedPair::b69,2047
+  bool isSigned;PromotedPair::isSigned70,2065
+  PromotedPair(PromotedPair::PromotedPair71,2082
+
+include/log.h,1552
+#define _log_H_7,244
+ #define NUL 46,1110
+#define LOG_parse 53,1348
+#define LOG_checkParsed 54,1384
+#define LOG_readExternC 55,1420
+#define LOG_cleanup 56,1456
+#define LOG_scopeResolve 57,1492
+#define LOG_flattenClasses 58,1528
+#define LOG_docs 59,1564
+#define LOG_normalize 60,1600
+#define LOG_checkNormalized 61,1636
+#define LOG_buildDefaultFunctions 62,1672
+#define LOG_createTaskFunctions 63,1710
+#define LOG_resolve 64,1746
+#define LOG_resolveIntents 65,1782
+#define LOG_checkResolved 66,1818
+#define LOG_processIteratorYields 67,1854
+#define LOG_flattenFunctions 68,1892
+#define LOG_cullOverReferences 69,1928
+#define LOG_callDestructors 70,1964
+#define LOG_lowerIterators 71,2000
+#define LOG_parallel 72,2036
+#define LOG_prune 73,2072
+#define LOG_complex2record 74,2108
+#define LOG_bulkCopyRecords 75,2144
+#define LOG_removeUnnecessaryAutoCopyCalls 76,2180
+#define LOG_inlineFunctions 77,2227
+#define LOG_scalarReplace 78,2263
+#define LOG_refPropagation 79,2299
+#define LOG_copyPropagation 80,2335
+#define LOG_deadCodeElimination 81,2371
+#define LOG_removeWrapRecords 82,2407
+#define LOG_removeEmptyRecords 83,2443
+#define LOG_localizeGlobals 84,2479
+#define LOG_loopInvariantCodeMotion 85,2515
+#define LOG_prune2 86,2555
+#define LOG_returnStarTuplesByRefArgs 87,2591
+#define LOG_insertWideReferences 88,2633
+#define LOG_optimizeOnClauses 89,2670
+#define LOG_addInitCalls 90,2706
+#define LOG_insertLineNumbers 91,2742
+#define LOG_codegen 92,2778
+#define LOG_makeBinary 93,2814
+#define LOG_ANY 94,2850
+
+include/map.h,4508
+#define _map_H_37,1671
+_dupstr(46,1802
+template <class K, class C> class MapElem 58,2122
+  K     key;MapElem::key60,2175
+  C     value;MapElem::value61,2188
+  bool operator==(MapElem::operator==62,2203
+  operator unsigned MapElem::operator unsigned63,2258
+  MapElem(MapElem::MapElem64,2329
+  MapElem(MapElem::MapElem65,2380
+  MapElem(MapElem::MapElem66,2438
+  MapElem(MapElem::MapElem67,2492
+template <class K, class C> class Map 70,2520
+  using Vec<Map::Vec72,2597
+  using Vec<MapElem<K, C> >::n;Map::n72,2597
+  using Vec<Map::Vec73,2629
+  using Vec<MapElem<K, C> >::i;Map::i73,2629
+  using Vec<Map::Vec74,2661
+  using Vec<MapElem<K, C> >::v;Map::v74,2661
+  MapElem<Map::MapElem75,2693
+  MapElem<Map::MapElem80,2850
+template <class C> class HashFns 84,2921
+template <class K, class AHashFns, class C> class HashMap 90,3032
+  using Map<HashMap::Map92,3119
+  using Map<K, C>::n;HashMap::n92,3119
+  using Map<HashMap::Map93,3141
+  using Map<K, C>::i;HashMap::i93,3141
+  using Map<HashMap::Map94,3163
+  using Map<K, C>::v;HashMap::v94,3163
+  using Map<HashMap::Map95,3185
+  using Map<K, C>::e;HashMap::e95,3185
+  MapElem<HashMap::MapElem96,3207
+  MapElem<HashMap::MapElem98,3262
+#define form_Map(103,3371
+class StringHashFns 109,3639
+  static unsigned int hash(StringHashFns::hash111,3700
+  static int equal(StringHashFns::equal117,3891
+template <class C, class AHashFns> class ChainHash 120,3970
+  using Map<ChainHash::Map122,4069
+  using Map<unsigned int, List<C> >::n;ChainHash::n122,4069
+  using Map<ChainHash::Map123,4109
+  using Map<unsigned int, List<C> >::v;ChainHash::v123,4109
+template <class K, class AHashFns, class C> class ChainHashMap 130,4241
+  using Map<ChainHashMap::Map133,4367
+  using Map<unsigned int, List<MapElem<K, C> > >::n;ChainHashMap::n133,4367
+  using Map<ChainHashMap::Map134,4420
+  using Map<unsigned int, List<MapElem<K, C> > >::v;ChainHashMap::v134,4420
+  MapElem<ChainHashMap::MapElem135,4473
+class StringChainHash 142,4618
+template <class C, class AHashFns, int N> class NBlockHash 147,4737
+  int n;NBlockHash::n149,4807
+  int i;NBlockHash::i150,4816
+  C *v;NBlockHash::v151,4825
+  C e[NBlockHash::e152,4833
+  C* end(NBlockHash::end154,4844
+  int length(NBlockHash::length155,4874
+  NBlockHash(NBlockHash::NBlockHash166,5117
+#define DEFAULT_BLOCK_HASH_SIZE 171,5212
+template <class C, class ABlockHashFns> class BlockHash 172,5246
+typedef BlockHash<char char174,5372
+typedef BlockHash<char *, StringHashFns> StringBlockHash;174,5372
+template <class K, class C> class Env 176,5431
+  void clear(Env::clear182,5556
+  Env(Env::Env184,5606
+  Map<Env::Map186,5627
+  Map<K,List<C> *> store;Env::store186,5627
+  List<List<K> > scope;Env::scope187,5653
+Map<K,C>::get(get196,5821
+Map<K,C>::put(put205,6010
+Map<K,C>::get_keys(get_keys216,6242
+Map<K,C>::get_keys_set(get_keys_set223,6394
+Map<K,C>::get_values(get_values230,6554
+Map<K,C>::get_record(get_record238,6751
+Map<K,C>::map_union(map_union245,6904
+map_set_add(252,7071
+map_set_add(260,7261
+HashMap<K,AHashFns,C>::get_internal(get_internal268,7483
+HashMap<K,AHashFns,C>::get(get293,8050
+HashMap<K,AHashFns,C>::put(put301,8239
+HashMap<K,AHashFns,C>::get_keys(get_keys340,9188
+HashMap<K,AHashFns,C>::get_values(get_values343,9321
+ChainHash<C, AHashFns>::put(put346,9443
+ChainHash<C, AHashFns>::get(get365,9900
+ChainHash<C, AHashFns>::get_elements(get_elements380,10275
+ChainHash<C, AHashFns>::del(del389,10487
+ChainHashMap<K, AHashFns, C>::put(put413,11007
+ChainHashMap<K, AHashFns, C>::get(get436,11688
+ChainHashMap<K, AHashFns, C>::del(del452,12206
+ChainHashMap<K, AHashFns, C>::get_keys(get_keys477,12850
+ChainHashMap<K, AHashFns, C>::get_values(get_values487,13148
+StringChainHash::canonicalize(497,13419
+Env<K,C>::get(get533,14226
+Env<K,C>::get_bucket(get_bucket542,14432
+Env<K,C>::put(put552,14646
+Env<K,C>::push(push558,14787
+Env<K,C>::pop(pop563,14865
+NBlockHash<C, AHashFns, N>::NBlockHash(NBlockHash569,15000
+NBlockHash<C, AHashFns, N>::first(first575,15151
+NBlockHash<C, AHashFns, N>::last(last580,15260
+NBlockHash<C, AHashFns, N>::put(put585,15371
+NBlockHash<C, AHashFns, N>::get(get614,15959
+NBlockHash<C, AHashFns, N>::del(del629,16283
+NBlockHash<C, AHashFns, N>::clear(clear658,16867
+NBlockHash<C, AHashFns, N>::count(count664,17006
+NBlockHash<C, AHashFns, N>::copy(copy674,17231
+NBlockHash<C, AHashFns, N>::move(move691,17609
+
+include/misc.h,384
+#define _misc_H_7,245
+#define exit(11,284
+#define INT_FATAL 19,568
+#define USR_FATAL 20,638
+#define USR_FATAL_CONT 21,708
+#define USR_WARN 22,778
+#define USR_PRINT 23,848
+#define USR_STOP 24,918
+#define INT_ASSERT(27,1040
+#define iterKindTypename 28,1119
+#define iterKindLeaderTagname 29,1155
+#define iterKindFollowerTagname 30,1194
+#define iterFollowthisArgname 31,1237
+
+include/mysystem.h,27
+#define _mysystem_H_7,249
+
+include/optimizations.h,57
+#define _OPTIMIZATIONS_H_7,254
+#define DEBUG_CP 16,665
+
+include/parser.h,25
+#define _PARSER_H_7,247
+
+include/passes.h,25
+#define _PASSES_H_7,247
+
+include/primitive.h,5521
+#define _PRIM_H_7,245
+enum PrimitiveTag 11,282
+  PRIM_UNKNOWN 12,302
+  PRIM_ACTUALS_LIST,14,369
+  PRIM_NOOP,15,390
+  PRIM_MOVE,16,403
+  PRIM_INIT,17,416
+  PRIM_NO_INIT,18,429
+  PRIM_REF_TO_STRING,19,445
+  PRIM_RETURN,20,467
+  PRIM_YIELD,21,482
+  PRIM_UNARY_MINUS,22,496
+  PRIM_UNARY_PLUS,23,516
+  PRIM_UNARY_NOT,24,535
+  PRIM_UNARY_LNOT,25,553
+  PRIM_ADD,26,572
+  PRIM_SUBTRACT,27,584
+  PRIM_MULT,28,601
+  PRIM_DIV,29,614
+  PRIM_MOD,30,626
+  PRIM_LSH,31,638
+  PRIM_RSH,32,650
+  PRIM_EQUAL,33,662
+  PRIM_NOTEQUAL,34,676
+  PRIM_LESSOREQUAL,35,693
+  PRIM_GREATEROREQUAL,36,713
+  PRIM_LESS,37,736
+  PRIM_GREATER,38,749
+  PRIM_AND,39,765
+  PRIM_OR,40,777
+  PRIM_XOR,41,788
+  PRIM_POW,42,800
+  PRIM_ASSIGN,44,813
+  PRIM_ADD_ASSIGN,45,828
+  PRIM_SUBTRACT_ASSIGN,46,847
+  PRIM_MULT_ASSIGN,47,871
+  PRIM_DIV_ASSIGN,48,891
+  PRIM_MOD_ASSIGN,49,910
+  PRIM_LSH_ASSIGN,50,929
+  PRIM_RSH_ASSIGN,51,948
+  PRIM_AND_ASSIGN,52,967
+  PRIM_OR_ASSIGN,53,986
+  PRIM_XOR_ASSIGN,54,1004
+  PRIM_MIN,56,1024
+  PRIM_MAX,57,1036
+  PRIM_SETCID,59,1049
+  PRIM_TESTCID,60,1064
+  PRIM_GETCID,61,1080
+  PRIM_SET_UNION_ID,62,1095
+  PRIM_GET_UNION_ID,63,1116
+  PRIM_GET_MEMBER,64,1137
+  PRIM_GET_MEMBER_VALUE,65,1156
+  PRIM_SET_MEMBER,66,1181
+  PRIM_CHECK_NIL,67,1200
+  PRIM_NEW,68,1218
+  PRIM_GET_REAL,69,1261
+  PRIM_GET_IMAG,70,1319
+  PRIM_QUERY,71,1377
+  PRIM_ADDR_OF,73,1436
+  PRIM_DEREF,74,1494
+  PRIM_LOCAL_CHECK,76,1550
+  PRIM_SYNC_INIT,78,1623
+  PRIM_SYNC_DESTROY,79,1641
+  PRIM_SYNC_LOCK,80,1662
+  PRIM_SYNC_UNLOCK,81,1680
+  PRIM_SYNC_WAIT_FULL,82,1700
+  PRIM_SYNC_WAIT_EMPTY,83,1723
+  PRIM_SYNC_SIGNAL_FULL,84,1747
+  PRIM_SYNC_SIGNAL_EMPTY,85,1772
+  PRIM_SINGLE_INIT,86,1798
+  PRIM_SINGLE_DESTROY,87,1818
+  PRIM_SINGLE_LOCK,88,1841
+  PRIM_SINGLE_UNLOCK,89,1861
+  PRIM_SINGLE_WAIT_FULL,90,1883
+  PRIM_SINGLE_SIGNAL_FULL,91,1908
+  PRIM_WRITEEF,93,1936
+  PRIM_WRITEFF,94,1952
+  PRIM_WRITEXF,95,1968
+  PRIM_READFE,96,1984
+  PRIM_READFF,97,1999
+  PRIM_READXX,98,2014
+  PRIM_SYNC_IS_FULL,99,2029
+  PRIM_SINGLE_WRITEEF,100,2050
+  PRIM_SINGLE_READFF,101,2073
+  PRIM_SINGLE_READXX,102,2095
+  PRIM_SINGLE_IS_FULL,103,2117
+  PRIM_GET_END_COUNT,105,2141
+  PRIM_SET_END_COUNT,106,2163
+  PRIM_PROCESS_TASK_LIST,108,2186
+  PRIM_EXECUTE_TASKS_IN_LIST,109,2212
+  PRIM_FREE_TASK_LIST,110,2242
+  PRIM_GET_SERIAL,112,2266
+  PRIM_SET_SERIAL,113,2318
+  PRIM_SIZEOF,115,2388
+  PRIM_INIT_FIELDS,117,2404
+  PRIM_PTR_EQUAL,118,2479
+  PRIM_PTR_NOTEQUAL,119,2497
+  PRIM_IS_SUBTYPE,120,2518
+  PRIM_CAST,121,2537
+  PRIM_DYNAMIC_CAST,122,2550
+  PRIM_TYPEOF,123,2571
+  PRIM_USE,124,2586
+  PRIM_USED_MODULES_LIST,125,2598
+  PRIM_TUPLE_EXPAND,126,2668
+  PRIM_TUPLE_AND_EXPAND,127,2689
+  PRIM_CHPL_COMM_GET,129,2715
+  PRIM_CHPL_COMM_PUT,130,2788
+  PRIM_CHPL_COMM_GET_STRD,131,2870
+  PRIM_CHPL_COMM_PUT_STRD,132,2960
+  PRIM_ARRAY_ALLOC,134,3044
+  PRIM_ARRAY_FREE,135,3064
+  PRIM_ARRAY_FREE_ELTS,136,3083
+  PRIM_ARRAY_GET,137,3107
+  PRIM_ARRAY_GET_VALUE,138,3125
+  PRIM_ARRAY_SHIFT_BASE_POINTER,139,3149
+  PRIM_ARRAY_SET,141,3183
+  PRIM_ARRAY_SET_FIRST,142,3201
+  PRIM_ERROR,144,3226
+  PRIM_WARNING,145,3240
+  PRIM_WHEN,146,3256
+  PRIM_TYPE_TO_STRING,147,3269
+  PRIM_BLOCK_PARAM_LOOP,149,3293
+  PRIM_BLOCK_WHILEDO_LOOP,151,3428
+  PRIM_BLOCK_DOWHILE_LOOP,152,3507
+  PRIM_BLOCK_FOR_LOOP,153,3586
+  PRIM_BLOCK_BEGIN,154,3671
+  PRIM_BLOCK_COBEGIN,155,3741
+  PRIM_BLOCK_COFORALL,156,3813
+  PRIM_BLOCK_ON,157,3886
+  PRIM_BLOCK_BEGIN_ON,158,3953
+  PRIM_BLOCK_COBEGIN_ON,159,4026
+  PRIM_BLOCK_COFORALL_ON,160,4101
+  PRIM_BLOCK_LOCAL,161,4177
+  PRIM_BLOCK_UNLOCAL,162,4247
+  PRIM_TO_LEADER,164,4326
+  PRIM_TO_FOLLOWER,165,4344
+  PRIM_DELETE,167,4365
+  PRIM_GC_CC_INIT,169,4381
+  PRIM_GC_ADD_ROOT,170,4452
+  PRIM_GC_ADD_NULL_ROOT,171,4530
+  PRIM_GC_DELETE_ROOT,172,4597
+  PRIM_GC_CLEANUP,173,4678
+  PRIM_CALL_DESTRUCTOR,175,4728
+  PRIM_LOGICAL_FOLDER,177,4802
+  PRIM_WIDE_GET_LOCALE,179,4866
+  PRIM_WIDE_GET_NODE,181,4950
+  PRIM_WIDE_GET_ADDR,182,5030
+  PRIM_ON_LOCALE_NUM,184,5114
+  PRIM_HEAP_REGISTER_GLOBAL_VAR,186,5198
+  PRIM_HEAP_BROADCAST_GLOBAL_VARS,187,5231
+  PRIM_PRIVATE_BROADCAST,188,5266
+  PRIM_INT_ERROR,193,5543
+  PRIM_CAPTURE_FN,195,5562
+  PRIM_CREATE_FN_TYPE,196,5581
+  PRIM_STRING_COPY,198,5605
+  PRIM_STRING_NORMALIZE,199,5625
+  PRIM_STRING_FROM_C_STRING,200,5699
+  PRIM_C_STRING_FROM_STRING,201,5728
+  PRIM_CAST_TO_VOID_STAR,202,5757
+  PRIM_RT_ERROR,204,5828
+  PRIM_RT_WARNING,205,5845
+  PRIM_NEW_PRIV_CLASS,207,5865
+  PRIM_NUM_PRIV_CLASSES,208,5888
+  PRIM_GET_PRIV_CLASS,209,5913
+  PRIM_NEXT_UINT32,211,5937
+  PRIM_GET_USER_LINE,212,5957
+  PRIM_GET_USER_FILE,213,5979
+  PRIM_FTABLE_CALL,215,6002
+  PRIM_IS_SYNC_TYPE,217,6023
+  PRIM_IS_SINGLE_TYPE,218,6044
+  PRIM_IS_TUPLE_TYPE,219,6067
+  PRIM_IS_STAR_TUPLE_TYPE,220,6089
+  PRIM_SET_SVEC_MEMBER,221,6116
+  PRIM_GET_SVEC_MEMBER,222,6140
+  PRIM_GET_SVEC_MEMBER_VALUE,223,6164
+  PRIM_VMT_CALL,225,6195
+  PRIM_NUM_FIELDS,227,6243
+  PRIM_FIELD_NUM_TO_NAME,228,6262
+  PRIM_FIELD_VALUE_BY_NUM,229,6288
+  PRIM_FIELD_ID_BY_NUM,230,6315
+  PRIM_FIELD_VALUE_BY_NAME,231,6339
+  PRIM_IS_UNION_TYPE,232,6367
+  PRIM_IS_ATOMIC_TYPE,233,6389
+  PRIM_ENUM_MIN_BITS,235,6413
+  PRIM_ENUM_IS_SIGNED,236,6435
+  NUM_KNOWN_PRIMS238,6459
+class PrimitiveOp 241,6481
+  PrimitiveTag tag;PrimitiveOp::tag242,6509
+  const char *name;PrimitiveOp::name243,6529
+  bool isEssential;PrimitiveOp::isEssential245,6583
+  bool passLineno;PrimitiveOp::passLineno246,6650
+
+include/resolveIntents.h,33
+#define _RESOLVEINTENTS_H_7,255
+
+include/scopeResolve.h,30
+#define SCOPE_RESOLVE_H7,252
+
+include/stlUtil.h,101
+#define STL_H15,432
+#define for_vector(40,1552
+#define for_set(44,1760
+#define for_queue(48,1962
+
+include/stmt.h,1262
+#define _STMT_H_7,245
+enum BlockTag 17,381
+  BLOCK_NORMAL,18,397
+  BLOCK_SCOPELESS,19,413
+  BLOCK_TYPE 20,466
+class BlockStmt 24,523
+  BlockTag blockTag;BlockStmt::blockTag26,564
+  AList body;BlockStmt::body27,585
+  CallExpr* blockInfo;BlockStmt::blockInfo28,599
+  CallExpr* modUses;BlockStmt::modUses29,622
+  LabelSymbol* breakLabel;BlockStmt::breakLabel30,672
+  LabelSymbol* continueLabel;BlockStmt::continueLabel31,699
+  const char* userLabel;BlockStmt::userLabel32,729
+  CallExpr* byrefVars;BlockStmt::byrefVars33,754
+class CondStmt 55,1309
+  Expr* condExpr;CondStmt::condExpr57,1349
+  BlockStmt* thenStmt;CondStmt::thenStmt58,1367
+  BlockStmt* elseStmt;CondStmt::elseStmt59,1390
+enum GotoTag 71,1636
+  GOTO_NORMAL,GotoTag::GOTO_NORMAL72,1651
+  GOTO_BREAK,GotoTag::GOTO_BREAK73,1666
+  GOTO_CONTINUE,GotoTag::GOTO_CONTINUE74,1680
+  GOTO_RETURN,GotoTag::GOTO_RETURN75,1697
+  GOTO_GETITER_END,GotoTag::GOTO_GETITER_END76,1712
+  GOTO_ITER_RESUME,GotoTag::GOTO_ITER_RESUME77,1732
+  GOTO_ITER_ENDGotoTag::GOTO_ITER_END78,1752
+class GotoStmt 82,1773
+  GotoTag gotoTag;GotoStmt::gotoTag84,1813
+  Expr* label;GotoStmt::label85,1832
+class ExternBlockStmt 98,2156
+  const char* c_code;ExternBlockStmt::c_code100,2203
+
+include/stringutil.h,29
+#define _stringutil_H_7,251
+
+include/symbol.h,5380
+#define _SYMBOL_H_7,247
+enum RetTag 33,663
+  RET_VALUE,RetTag::RET_VALUE34,677
+  RET_VAR,RetTag::RET_VAR35,690
+  RET_PARAM,RetTag::RET_PARAM36,701
+  RET_TYPERetTag::RET_TYPE37,714
+const int INTENT_FLAG_IN 40,729
+const int INTENT_FLAG_OUT 41,764
+const int INTENT_FLAG_CONST 42,799
+const int INTENT_FLAG_REF 43,834
+const int INTENT_FLAG_PARAM 44,869
+const int INTENT_FLAG_TYPE 45,905
+const int INTENT_FLAG_BLANK 46,941
+enum IntentTag 50,1071
+  INTENT_IN IntentTag::INTENT_IN51,1088
+  INTENT_IN = INTENT_FLAG_IN,IntentTag::INTENT_FLAG_IN51,1088
+  INTENT_OUT IntentTag::INTENT_OUT52,1118
+  INTENT_OUT = INTENT_FLAG_OUT,IntentTag::INTENT_FLAG_OUT52,1118
+  INTENT_INOUT IntentTag::INTENT_INOUT53,1150
+  INTENT_INOUT = INTENT_FLAG_IN IntentTag::INTENT_FLAG_IN53,1150
+  INTENT_INOUT = INTENT_FLAG_IN | INTENT_FLAG_OUT,IntentTag::INTENT_FLAG_OUT53,1150
+  INTENT_CONST IntentTag::INTENT_CONST54,1201
+  INTENT_CONST = INTENT_FLAG_CONST,IntentTag::INTENT_FLAG_CONST54,1201
+  INTENT_CONST_IN IntentTag::INTENT_CONST_IN55,1237
+  INTENT_CONST_IN = INTENT_FLAG_CONST IntentTag::INTENT_FLAG_CONST55,1237
+  INTENT_CONST_IN = INTENT_FLAG_CONST | INTENT_FLAG_IN,IntentTag::INTENT_FLAG_IN55,1237
+  INTENT_REF IntentTag::INTENT_REF56,1293
+  INTENT_REF = INTENT_FLAG_REF,IntentTag::INTENT_FLAG_REF56,1293
+  INTENT_CONST_REF IntentTag::INTENT_CONST_REF57,1325
+  INTENT_CONST_REF = INTENT_FLAG_CONST IntentTag::INTENT_FLAG_CONST57,1325
+  INTENT_CONST_REF = INTENT_FLAG_CONST | INTENT_FLAG_REF,IntentTag::INTENT_FLAG_REF57,1325
+  INTENT_PARAM IntentTag::INTENT_PARAM58,1383
+  INTENT_PARAM = INTENT_FLAG_PARAM,IntentTag::INTENT_FLAG_PARAM58,1383
+  INTENT_TYPE IntentTag::INTENT_TYPE59,1419
+  INTENT_TYPE = INTENT_FLAG_TYPE,IntentTag::INTENT_FLAG_TYPE59,1419
+  INTENT_BLANK IntentTag::INTENT_BLANK60,1453
+  INTENT_BLANK = INTENT_FLAG_BLANKIntentTag::INTENT_FLAG_BLANK60,1453
+enum ModTag 63,1492
+  MOD_INTERNAL,ModTag::MOD_INTERNAL64,1506
+  MOD_STANDARD,ModTag::MOD_STANDARD65,1580
+  MOD_USER,ModTag::MOD_USER66,1644
+  MOD_MAIN ModTag::MOD_MAIN67,1708
+typedef std::bitset<NUM_FLAGS> FlagSet;70,1789
+class Symbol 73,1831
+  const char* name;Symbol::name75,1872
+  const char* cname;Symbol::cname76,1892
+  Type* type;Symbol::type77,1953
+  DefExpr* defPoint;Symbol::defPoint78,1967
+  FlagSet flags;Symbol::flags79,2011
+#define forv_Symbol(109,2864
+class VarSymbol 112,2919
+  Immediate   *immediate;VarSymbol::immediate116,3065
+  const char* doc;VarSymbol::doc128,3438
+class ArgSymbol 140,3632
+  IntentTag intent;ArgSymbol::intent142,3675
+  BlockStmt* typeExpr;ArgSymbol::typeExpr143,3695
+  BlockStmt* defaultExpr;ArgSymbol::defaultExpr144,3772
+  BlockStmt* variableExpr;ArgSymbol::variableExpr145,3798
+  Type* instantiatedFrom;ArgSymbol::instantiatedFrom146,3825
+  bool instantiatedParam;ArgSymbol::instantiatedParam147,3851
+  bool markedGeneric;ArgSymbol::markedGeneric148,3877
+class TypeSymbol 169,4383
+  llvm::Type* llvmType;TypeSymbol::llvmType175,4570
+  llvm::MDNode* llvmTbaaNode;TypeSymbol::llvmTbaaNode176,4594
+  llvm::MDNode* llvmConstTbaaNode;TypeSymbol::llvmConstTbaaNode177,4624
+  llvm::MDNode* llvmTbaaStructNode;TypeSymbol::llvmTbaaStructNode178,4659
+  llvm::MDNode* llvmConstTbaaStructNode;TypeSymbol::llvmConstTbaaStructNode179,4695
+  void* llvmType;TypeSymbol::llvmType183,4840
+  void* llvmTbaaNode;TypeSymbol::llvmTbaaNode184,4858
+  void* llvmConstTbaaNode;TypeSymbol::llvmConstTbaaNode185,4880
+  void* llvmTbaaStructNode;TypeSymbol::llvmTbaaStructNode186,4907
+  void* llvmConstTbaaStructNode;TypeSymbol::llvmConstTbaaStructNode187,4935
+  bool codegenned;TypeSymbol::codegenned189,4975
+class FnSymbol 204,5372
+  AList formals;FnSymbol::formals206,5414
+  DefExpr* setter;FnSymbol::setter207,5431
+  Type* retType;FnSymbol::retType208,5495
+  BlockStmt* where;FnSymbol::where209,5512
+  BlockStmt* retExprType;FnSymbol::retExprType210,5532
+  BlockStmt* body;FnSymbol::body211,5558
+  IntentTag thisTag;FnSymbol::thisTag212,5577
+  RetTag retTag;FnSymbol::retTag213,5598
+  IteratorInfo* iteratorInfo;FnSymbol::iteratorInfo214,5615
+  Symbol* _this;FnSymbol::_this215,5645
+  Symbol* _outer;FnSymbol::_outer216,5662
+  FnSymbol *instantiatedFrom;FnSymbol::instantiatedFrom217,5680
+  SymbolMap substitutions;FnSymbol::substitutions218,5710
+  BlockStmt* instantiationPoint;FnSymbol::instantiationPoint219,5737
+  std::vector<BasicBlock*>* basicBlocks;FnSymbol::basicBlocks220,5796
+  Vec<CallExpr*>* calledBy;FnSymbol::calledBy221,5837
+  const char* userString;FnSymbol::userString222,5865
+  FnSymbol* valueFunction;FnSymbol::valueFunction223,5891
+  int codegenUniqueNum;FnSymbol::codegenUniqueNum225,6029
+  const char *doc;FnSymbol::doc226,6053
+class EnumSymbol 268,7034
+class ModuleSymbol 283,7338
+  ModTag modTag;ModuleSymbol::modTag285,7384
+  BlockStmt* block;ModuleSymbol::block286,7401
+  FnSymbol* initFn;ModuleSymbol::initFn287,7421
+  const char* filename;ModuleSymbol::filename288,7441
+  Vec<ModuleSymbol*> modUseList;ModuleSymbol::modUseList289,7465
+  Vec<ModuleSymbol*> modUseSet;ModuleSymbol::modUseSet290,7498
+  const char *doc;ModuleSymbol::doc291,7530
+  ExternBlockInfo* extern_info;ModuleSymbol::extern_info293,7590
+class LabelSymbol 308,7989
+  GotoStmt* iterResumeGoto;LabelSymbol::iterResumeGoto310,8034
+
+include/timer.h,251
+#define _timer_h_7,246
+typedef struct timeval _timervalue;12,306
+class Timer 14,343
+  _timervalue time;Timer::time16,365
+  double accumulated;Timer::accumulated17,385
+  bool running;Timer::running18,407
+  virtual ~Timer(Timer::~Timer21,435
+
+include/type.h,4004
+#define _TYPE_H_7,245
+class Type 39,721
+  Vec<Type*> dispatchParents;Type::dispatchParents41,760
+  Vec<Type*> dispatchChildren;Type::dispatchChildren42,812
+  Type* scalarPromotionType;Type::scalarPromotionType43,865
+  TypeSymbol* symbol;Type::symbol45,895
+  Symbol* defaultValue;Type::defaultValue46,917
+  FnSymbol* defaultInitializer;Type::defaultInitializer47,941
+  FnSymbol* defaultTypeConstructor;Type::defaultTypeConstructor50,1162
+  FnSymbol* destructor;Type::destructor51,1198
+  Vec<FnSymbol*> methods;Type::methods52,1222
+  bool hasGenericDefaults;Type::hasGenericDefaults53,1248
+  Type *instantiatedFrom;Type::instantiatedFrom54,1311
+  SymbolMap substitutions;Type::substitutions55,1337
+  AggregateType* refType;Type::refType56,1364
+  bool isInternalType;Type::isInternalType57,1440
+  std::map<Type::std::map60,1539
+  std::map<std::string, int> GEPMap;Type::GEPMap60,1539
+#define forv_Type(85,2329
+class EnumType 87,2379
+  AList constants;EnumType::constants89,2419
+  PrimitiveType* integerType;EnumType::integerType93,2572
+enum AggregateTag 111,3013
+  AGGREGATE_CLASS,AggregateTag::AGGREGATE_CLASS112,3033
+  AGGREGATE_RECORD,AggregateTag::AGGREGATE_RECORD113,3052
+  AGGREGATE_UNIONAggregateTag::AGGREGATE_UNION114,3072
+class AggregateType 117,3094
+  AggregateTag aggregateTag;AggregateType::aggregateTag119,3139
+  AList fields;AggregateType::fields120,3168
+  AList inherits;AggregateType::inherits121,3184
+  Symbol* outer;AggregateType::outer122,3245
+  const char *doc;AggregateType::doc123,3318
+  bool isClass(AggregateType::isClass144,4018
+  bool isRecord(AggregateType::isRecord145,4079
+  bool isUnion(AggregateType::isUnion146,4142
+class PrimitiveType 150,4208
+#define TYPE_EXTERN 162,4542
+TYPE_EXTERN Type* dtAny;166,4595
+TYPE_EXTERN Type* dtIteratorRecord;167,4620
+TYPE_EXTERN Type* dtIteratorClass;168,4656
+TYPE_EXTERN Type* dtIntegral;169,4691
+TYPE_EXTERN Type* dtAnyComplex;170,4721
+TYPE_EXTERN Type* dtNumeric;171,4753
+TYPE_EXTERN Type* dtAnyEnumerated;172,4782
+TYPE_EXTERN PrimitiveType* dtNil;173,4817
+TYPE_EXTERN PrimitiveType* dtUnknown;174,4851
+TYPE_EXTERN PrimitiveType* dtVoid;175,4889
+TYPE_EXTERN PrimitiveType* dtValue;176,4924
+TYPE_EXTERN PrimitiveType* dtMethodToken;177,4960
+TYPE_EXTERN PrimitiveType* dtTypeDefaultToken;178,5002
+TYPE_EXTERN PrimitiveType* dtModuleToken;179,5049
+TYPE_EXTERN PrimitiveType* dtBool;184,5258
+TYPE_EXTERN PrimitiveType* dtBools[dtBools185,5293
+TYPE_EXTERN PrimitiveType* dtInt[dtInt186,5344
+TYPE_EXTERN PrimitiveType* dtUInt[dtUInt187,5392
+TYPE_EXTERN PrimitiveType* dtReal[dtReal188,5441
+TYPE_EXTERN PrimitiveType* dtImag[dtImag189,5492
+TYPE_EXTERN Type* dtComplex[dtComplex190,5543
+TYPE_EXTERN PrimitiveType* dtString;191,5590
+TYPE_EXTERN PrimitiveType* dtSymbol;192,5627
+TYPE_EXTERN PrimitiveType* dtFile;193,5664
+TYPE_EXTERN PrimitiveType* dtOpaque;194,5700
+TYPE_EXTERN PrimitiveType* dtTaskID;195,5737
+TYPE_EXTERN PrimitiveType* dtSyncVarAuxFields;196,5774
+TYPE_EXTERN PrimitiveType* dtSingleVarAuxFields;197,5821
+TYPE_EXTERN PrimitiveType* dtTaskList;198,5870
+TYPE_EXTERN AggregateType* dtArray;204,5999
+TYPE_EXTERN AggregateType* dtReader;205,6035
+TYPE_EXTERN AggregateType* dtWriter;206,6072
+TYPE_EXTERN AggregateType* dtBaseArr;207,6109
+TYPE_EXTERN AggregateType* dtBaseDom;208,6147
+TYPE_EXTERN AggregateType* dtDist;209,6185
+TYPE_EXTERN AggregateType* dtTuple;210,6220
+TYPE_EXTERN AggregateType* dtLocale;211,6256
+TYPE_EXTERN AggregateType* dtLocaleID;212,6293
+TYPE_EXTERN AggregateType* dtMainArgument;213,6332
+TYPE_EXTERN PrimitiveType* dtStringC;215,6376
+TYPE_EXTERN Type* dtObject;218,6480
+TYPE_EXTERN Map<Type*,Type*> wideClassMap;220,6509
+TYPE_EXTERN Map<Type*,Type*> wideRefMap;221,6575
+#define is_arithmetic_type(238,7030
+#define CLASS_ID_TYPE 268,7938
+#define UNION_ID_TYPE 269,7979
+#define SIZE_TYPE 270,8020
+#define LOCALE_TYPE 271,8057
+#define LOCALE_ID_TYPE 272,8098
+#define NODE_ID_TYPE 273,8144
+
+include/vec.h,1590
+#define _vec_H_37,1671
+#define VEC_INTEGRAL_SIZE 45,1803
+#define VEC_INITIAL_SHIFT 46,1878
+#define VEC_INITIAL_SIZE 47,1912
+#define SET_LINEAR_SIZE 49,1970
+#define SET_MAX_PROBE 50,2058
+#define SET_INITIAL_INDEX 51,2092
+template <class C, int S 53,2127
+  Vec<C,S>& operator=(operator=94,3096
+#define forv_Vec(110,3545
+template <class C, int S 113,3782
+class Intervals 124,4225
+class UnionFind 133,4431
+Vec<C,S>::Vec(Vec150,4817
+Vec<C,S>::Vec(Vec154,4890
+Vec<C,S>::add(add159,4980
+Vec<C,S>::add(add170,5147
+Vec<C,S>::pop(pop183,5349
+Vec<C,S>::clear(clear194,5492
+Vec<C,S>::set_clear(set_clear202,5611
+Vec<C,S>::set_add(set_add207,5706
+Vec<C,S>::count(count225,6081
+Vec<C,S>::in(in234,6221
+Vec<C,S>::add_exclusive(add_exclusive242,6362
+Vec<C,S>::set_in(set_in251,6499
+Vec<C,S>::first(first258,6636
+Vec<C,S>::index(index266,6770
+Vec<C,S>::move_internal(move_internal274,6918
+Vec<C,S>::move(move286,7134
+Vec<C,S>::copy(copy292,7243
+Vec<C,S>::fill(fill307,7498
+Vec<C,S>::append(append313,7611
+Vec<C,S>::addx(addx320,7762
+Vec<C,S>::add_internal(add_internal347,8384
+Vec<C,S>::add_internal(add_internal353,8470
+Vec<C,S>::set_expand(set_expand359,8558
+Vec<C,S>::set_add_internal(set_add_internal370,8756
+Vec<C,S>::set_in_internal(set_in_internal395,9214
+Vec<C,S>::set_union(set_union414,9551
+Vec<C,S>::set_to_vec(set_to_vec423,9754
+Vec<C,S>::vec_to_set(vec_to_set432,9915
+Vec<C,S>::remove(remove440,10068
+Vec<C,S>::insert(insert449,10248
+Vec<C,S>::reverse(reverse458,10408
+Vec<C,S>::copy_internal(copy_internal469,10638
+
+include/view.h,23
+#define _VIEW_H_7,245
+
+include/yy.h,90
+#define _YY_H_7,243
+enum ProcIter 32,735
+  ProcIter_PROC,33,751
+  ProcIter_ITER34,768
+
+resolution/caches.h,765
+#define _CACHES_H_7,247
+class SymbolMapCacheEntry 24,834
+  FnSymbol* fn;SymbolMapCacheEntry::fn27,926
+  SymbolMap map;SymbolMapCacheEntry::map28,942
+typedef Map<FnSymbol*FnSymbol30,962
+typedef Map<FnSymbol*,Vec<SymbolMapCacheEntry*>*> SymbolMapCache;30,962
+typedef MapElem<FnSymbol*FnSymbol31,1028
+typedef MapElem<FnSymbol*,Vec<SymbolMapCacheEntry*>*> SymbolMapCacheElem;31,1028
+class SymbolVecCacheEntry 47,1716
+  FnSymbol* fn;SymbolVecCacheEntry::fn50,1810
+  Vec<Symbol*> vec;SymbolVecCacheEntry::vec51,1826
+typedef Map<FnSymbol*FnSymbol53,1849
+typedef Map<FnSymbol*,Vec<SymbolVecCacheEntry*>*> SymbolVecCache;53,1849
+typedef MapElem<FnSymbol*FnSymbol54,1915
+typedef MapElem<FnSymbol*,Vec<SymbolVecCacheEntry*>*> SymbolVecCacheElem;54,1915
+
+resolution/callInfo.h,307
+#define _CALLINFO_H_7,249
+class CallInfo 16,350
+  CallExpr*        call;CallInfo::call18,376
+  BlockStmt*       scope;CallInfo::scope19,427
+  const char*      name;CallInfo::name20,488
+  Vec<Symbol*>     actuals;CallInfo::actuals21,537
+  Vec<const char*> actualNames;CallInfo::actualNames22,587
+
+resolution/resolution.h,29
+#define _RESOLUTION_H_7,251
+
+util/tmpdirname.h,29
+#define _TMPDIRNAME_H_7,251
+
+parser/chapel.tab.h,2924
+# define YYTOKENTYPE36,1566
+   enum yytokentype 39,1690
+     TIDENT 40,1712
+     IMAGLITERAL 41,1731
+     INTLITERAL 42,1755
+     REALLITERAL 43,1778
+     STRINGLITERAL 44,1802
+     EXTERNCODE 45,1828
+     TALIGN 46,1851
+     TATOMIC 47,1870
+     TBEGIN 48,1890
+     TBREAK 49,1909
+     TBY 50,1928
+     TCLASS 51,1944
+     TCOBEGIN 52,1963
+     TCOFORALL 53,1984
+     TCONFIG 54,2006
+     TCONST 55,2026
+     TCONTINUE 56,2045
+     TDELETE 57,2067
+     TDMAPPED 58,2087
+     TDO 59,2108
+     TDOMAIN 60,2124
+     TELSE 61,2144
+     TENUM 62,2162
+     TEXPORT 63,2180
+     TEXTERN 64,2200
+     TFOR 65,2220
+     TFORALL 66,2237
+     TIF 67,2257
+     TIN 68,2273
+     TINDEX 69,2289
+     TINLINE 70,2308
+     TINOUT 71,2328
+     TITER 72,2347
+     TLABEL 73,2365
+     TLAMBDA 74,2384
+     TLET 75,2404
+     TLOCAL 76,2421
+     TMINUSMINUS 77,2440
+     TMODULE 78,2464
+     TNEW 79,2484
+     TNIL 80,2501
+     TNOINIT 81,2518
+     TON 82,2538
+     TOTHERWISE 83,2554
+     TOUT 84,2577
+     TPARAM 85,2594
+     TPLUSPLUS 86,2613
+     TPRAGMA 87,2635
+     TPRIMITIVE 88,2655
+     TPROC 89,2678
+     TRECORD 90,2696
+     TREDUCE 91,2716
+     TREF 92,2736
+     TRETURN 93,2753
+     TSCAN 94,2773
+     TSELECT 95,2791
+     TSERIAL 96,2811
+     TSINGLE 97,2831
+     TSPARSE 98,2851
+     TSUBDOMAIN 99,2871
+     TSYNC 100,2894
+     TTHEN 101,2912
+     TTYPE 102,2930
+     TUNDERSCORE 103,2948
+     TUNION 104,2972
+     TUSE 105,2991
+     TVAR 106,3008
+     TWHEN 107,3025
+     TWHERE 108,3043
+     TWHILE 109,3062
+     TYIELD 110,3081
+     TZIP 111,3100
+     TALIAS 112,3117
+     TAND 113,3136
+     TASSIGN 114,3153
+     TASSIGNBAND 115,3173
+     TASSIGNBOR 116,3197
+     TASSIGNBXOR 117,3220
+     TASSIGNDIVIDE 118,3244
+     TASSIGNEXP 119,3270
+     TASSIGNLAND 120,3293
+     TASSIGNLOR 121,3317
+     TASSIGNMINUS 122,3340
+     TASSIGNMOD 123,3365
+     TASSIGNMULTIPLY 124,3388
+     TASSIGNPLUS 125,3416
+     TASSIGNSL 126,3440
+     TASSIGNSR 127,3462
+     TBAND 128,3484
+     TBNOT 129,3502
+     TBOR 130,3520
+     TBXOR 131,3537
+     TCOLON 132,3555
+     TCOMMA 133,3574
+     TDIVIDE 134,3593
+     TDOT 135,3613
+     TDOTDOT 136,3630
+     TDOTDOTDOT 137,3650
+     TEQUAL 138,3673
+     TEXP 139,3692
+     TGREATER 140,3709
+     TGREATEREQUAL 141,3730
+     THASH 142,3756
+     TLESS 143,3774
+     TLESSEQUAL 144,3792
+     TMINUS 145,3815
+     TMOD 146,3834
+     TNOT 147,3851
+     TNOTEQUAL 148,3868
+     TOR 149,3890
+     TPLUS 150,3906
+     TQUESTION 151,3924
+     TSEMI 152,3946
+     TSHIFTLEFT 153,3964
+     TSHIFTRIGHT 154,3987
+     TSTAR 155,4011
+     TSWAP 156,4029
+     TIO 157,4047
+     TLCBR 158,4063
+     TRCBR 159,4081
+     TLP 160,4099
+     TRP 161,4115
+     TLSBR 162,4131
+     TRSBR 163,4149
+     TNOELSE 164,4167
+     TUMINUS 165,4187
+     TUPLUS 166,4207
+typedef union YYSTYPE173,4296
+
+chapel.ypp,347
+  const char* pch;48,
+  Vec<const char*>* vpch;49,
+  RetTag retTag;50,
+  bool b;51,
+  IntentTag pt;52,
+  Expr* pexpr;53,
+  DefExpr* pdefexpr;54,
+  CallExpr* pcallexpr;55,
+  BlockStmt* pblockstmt;56,
+  Type* ptype;57,
+  EnumType* penumtype;58,
+  FnSymbol* pfnsymbol;59,
+  Flag flag;60,
+  ProcIter procIter;61,
+  FlagSet* flagSet;62,
+
+chapel.tab.h,338
+} YYSTYPE;199,
+# define YYSTYPE_IS_TRIVIAL 200,
+# define yystype 201,
+# define YYSTYPE_IS_DECLARED 202,
+typedef struct YYLTYPE208,
+  int first_line;210,
+  int first_column;211,
+  int last_line;212,
+  int last_column;213,
+} YYLTYPE;214,
+# define yyltype 215,
+# define YYLTYPE_IS_DECLARED 216,
+# define YYLTYPE_IS_TRIVIAL 217,
+
+parser/chapel.tab.cpp,193
+#define YYBISON 44,2053
+#define YYBISON_VERSION 47,2094
+#define YYSKELETON_NAME 50,2147
+#define YYPURE 53,2202
+#define YYPUSH 56,2241
+#define YYPULL 59,2280
+#define YYLSP_NEEDED 62,2322
+
+chapel.ypp,6619
+  static int query_uid 26,
+  int captureTokens;27,
+  char captureString[captureString28,
+#define YYLLOC_DEFAULT(31,
+  const char* pch;YYSTYPE::pch48,
+  Vec<const char*>* vpch;YYSTYPE::vpch49,
+  RetTag retTag;YYSTYPE::retTag50,
+  bool b;YYSTYPE::b51,
+  IntentTag pt;YYSTYPE::pt52,
+  Expr* pexpr;YYSTYPE::pexpr53,
+  DefExpr* pdefexpr;YYSTYPE::pdefexpr54,
+  CallExpr* pcallexpr;YYSTYPE::pcallexpr55,
+  BlockStmt* pblockstmt;YYSTYPE::pblockstmt56,
+  Type* ptype;YYSTYPE::ptype57,
+  EnumType* penumtype;YYSTYPE::penumtype58,
+  FnSymbol* pfnsymbol;YYSTYPE::pfnsymbol59,
+  Flag flag;YYSTYPE::flag60,
+  ProcIter procIter;YYSTYPE::procIter61,
+  FlagSet* flagSet;YYSTYPE::flagSet62,
+    break;197,
+    break;203,
+    break;208,
+    break;209,
+    break;214,
+    break;215,
+    break;229,
+    break;230,
+    break;231,
+    break;232,
+    break;233,
+    break;234,
+    break;235,
+    break;236,
+    break;237,
+    break;238,
+    break;239,
+    break;240,
+    break;241,
+    break;242,
+    break;243,
+    break;244,
+    break;248,
+    break;249,
+    break;250,
+    break;251,
+    break;252,
+    break;253,
+    break;254,
+    break;255,
+    break;256,
+    break;257,
+    break;258,
+    break;259,
+    break;260,
+    break;261,
+    break;262,
+    break;274,
+    break;275,
+    break;279,
+    break;284,
+    break;288,
+    break;289,
+    break;293,
+    break;294,
+    break;298,
+    break;318,
+    break;322,
+    break;323,
+    break;324,
+    break;325,
+    break;326,
+    break;327,
+    break;328,
+    break;329,
+    break;330,
+    break;331,
+    break;332,
+    break;333,
+    break;334,
+    break;340,
+    break;346,
+    break;353,
+    break;357,
+    break;361,
+    break;362,
+    break;363,
+    break;364,
+    break;369,
+    break;373,
+    break;374,
+    break;379,
+    break;381,
+    break;386,
+    break;394,
+    break;398,
+    break;399,
+    break;404,
+    break;406,
+    break;408,
+    break;412,
+    break;413,
+    break;418,
+    break;420,
+    break;422,
+  case 424,
+    break;432,
+    break;442,
+    break;446,
+    break;451,
+    break;455,
+    break;456,
+  case 458,
+    break;464,
+  case 466,
+    break;469,
+    break;485,
+    break;491,
+    break;493,
+    break;496,
+    break;499,
+    break;502,
+    break;505,
+  case 507,
+    break;513,
+  case 515,
+    break;520,
+  case 522,
+    break;541,
+    break;548,
+    break;553,
+    break;557,
+    break;562,
+    break;567,
+    break;568,
+    break;569,
+    break;570,
+    break;571,
+    break;572,
+    break;573,
+    break;574,
+    break;575,
+    break;576,
+    break;577,
+    break;578,
+    break;579,
+    break;580,
+    break;581,
+    break;582,
+    break;583,
+    break;584,
+    break;585,
+    break;586,
+    break;587,
+    break;588,
+    break;589,
+    break;590,
+    break;591,
+    break;595,
+    break;596,
+    break;597,
+    break;598,
+    break;599,
+    break;600,
+    break;601,
+    break;602,
+    break;603,
+    break;604,
+    break;605,
+    break;606,
+    break;610,
+    break;611,
+    break;615,
+    break;619,
+    break;620,
+    break;621,
+    break;626,
+    break;628,
+    break;630,
+    break;632,
+    break;636,
+    break;637,
+    break;638,
+    break;639,
+    break;640,
+    break;641,
+    break;642,
+    break;643,
+    break;644,
+    break;645,
+    break;649,
+    break;650,
+    break;651,
+    break;655,
+    break;656,
+    break;660,
+    break;661,
+    break;662,
+    break;663,
+    break;664,
+    break;668,
+    break;674,
+    break;679,
+    break;681,
+    break;685,
+    break;690,
+    break;691,
+    break;695,
+    break;696,
+    break;701,
+    break;703,
+    break;708,
+    break;713,
+    break;715,
+    break;717,
+  case 719,
+    break;727,
+  case 729,
+    break;735,
+    break;739,
+    break;741,
+    break;743,
+    break;750,
+    break;754,
+    break;758,
+    break;762,
+    break;763,
+    break;764,
+    break;773,
+    break;778,
+  case 780,
+    break;784,
+    break;786,
+    break;791,
+    break;793,
+    break;795,
+    break;800,
+    break;802,
+    break;804,
+    break;810,
+    break;811,
+    break;812,
+    break;816,
+    break;818,
+    break;822,
+    break;823,
+    break;824,
+    break;825,
+    break;848,
+    break;852,
+    break;860,
+    break;861,
+    break;865,
+    break;866,
+    break;867,
+    break;872,
+    break;874,
+    break;880,
+    break;882,
+    break;884,
+    break;888,
+    break;889,
+    break;890,
+    break;891,
+    break;892,
+    break;893,
+    break;894,
+    break;900,
+    break;901,
+    break;902,
+    break;903,
+    break;907,
+    break;908,
+    break;909,
+    break;913,
+    break;914,
+    break;918,
+    break;923,
+    break;924,
+    break;928,
+    break;929,
+    break;930,
+    break;931,
+    break;936,
+    break;953,
+    break;955,
+    break;957,
+    break;959,
+    break;961,
+    break;963,
+    break;965,
+    break;970,
+    break;972,
+    break;974,
+    break;976,
+    break;978,
+    break;980,
+    break;982,
+    break;984,
+    break;986,
+    break;988,
+    break;990,
+    break;992,
+    break;999,
+    break;1005,
+    break;1011,
+    break;1017,
+    break;1023,
+    break;1028,
+    break;1032,
+    break;1048,
+    break;1052,
+    break;1053,
+    break;1057,
+    break;1058,
+    break;1064,
+    break;1069,
+    break;1074,
+    break;1090,
+    break;1092,
+    break;1094,
+    break;1096,
+    break;1098,
+    break;1100,
+    break;1123,
+    break;1124,
+    break;1125,
+    break;1129,
+    break;1130,
+    break;1131,
+    break;1139,
+    break;1140,
+    break;1141,
+    break;1145,
+    break;1146,
+    break;1147,
+    break;1148,
+    break;1149,
+    break;1150,
+    break;1154,
+    break;1158,
+    break;1159,
+    break;1163,
+    break;1164,
+    break;1165,
+    break;1166,
+    break;1167,
+    break;1168,
+    break;1169,
+    break;1170,
+    break;1171,
+    break;1172,
+    break;1173,
+    break;1174,
+    break;1175,
+    break;1176,
+    break;1177,
+    break;1178,
+    break;1179,
+    break;1180,
+    break;1181,
+    break;1182,
+    break;1183,
+    break;1184,
+    break;1185,
+    break;1189,
+    break;1190,
+    break;1191,
+    break;1192,
+    break;1193,
+    break;1194,
+    break;1198,
+    break;1199,
+    break;1200,
+    break;1201,
+    break;1205,
+    break;1206,
+    break;1207,
+    break;1208,
+    break;1213,
+    break;1214,
+    break;1215,
+    break;1216,
+    break;1217,
+    break;1218,
+    break;1219,
+
+chapel.tab.cpp,9627
+# define YYDEBUG 103,
+# undef YYERROR_VERBOSE108,
+# define YYERROR_VERBOSE 109,
+# define YYERROR_VERBOSE 111,
+# define YYTOKEN_TABLE 116,
+# define YYTOKENTYPE122,
+   enum yytokentype 125,
+     TIDENT yytokentype::TIDENT126,
+     IMAGLITERAL yytokentype::IMAGLITERAL127,
+     INTLITERAL yytokentype::INTLITERAL128,
+     REALLITERAL yytokentype::REALLITERAL129,
+     STRINGLITERAL yytokentype::STRINGLITERAL130,
+     EXTERNCODE yytokentype::EXTERNCODE131,
+     TALIGN yytokentype::TALIGN132,
+     TATOMIC yytokentype::TATOMIC133,
+     TBEGIN yytokentype::TBEGIN134,
+     TBREAK yytokentype::TBREAK135,
+     TBY yytokentype::TBY136,
+     TCLASS yytokentype::TCLASS137,
+     TCOBEGIN yytokentype::TCOBEGIN138,
+     TCOFORALL yytokentype::TCOFORALL139,
+     TCONFIG yytokentype::TCONFIG140,
+     TCONST yytokentype::TCONST141,
+     TCONTINUE yytokentype::TCONTINUE142,
+     TDELETE yytokentype::TDELETE143,
+     TDMAPPED yytokentype::TDMAPPED144,
+     TDO yytokentype::TDO145,
+     TDOMAIN yytokentype::TDOMAIN146,
+     TELSE yytokentype::TELSE147,
+     TENUM yytokentype::TENUM148,
+     TEXPORT yytokentype::TEXPORT149,
+     TEXTERN yytokentype::TEXTERN150,
+     TFOR yytokentype::TFOR151,
+     TFORALL yytokentype::TFORALL152,
+     TIF yytokentype::TIF153,
+     TIN yytokentype::TIN154,
+     TINDEX yytokentype::TINDEX155,
+     TINLINE yytokentype::TINLINE156,
+     TINOUT yytokentype::TINOUT157,
+     TITER yytokentype::TITER158,
+     TLABEL yytokentype::TLABEL159,
+     TLAMBDA yytokentype::TLAMBDA160,
+     TLET yytokentype::TLET161,
+     TLOCAL yytokentype::TLOCAL162,
+     TMINUSMINUS yytokentype::TMINUSMINUS163,
+     TMODULE yytokentype::TMODULE164,
+     TNEW yytokentype::TNEW165,
+     TNIL yytokentype::TNIL166,
+     TNOINIT yytokentype::TNOINIT167,
+     TON yytokentype::TON168,
+     TOTHERWISE yytokentype::TOTHERWISE169,
+     TOUT yytokentype::TOUT170,
+     TPARAM yytokentype::TPARAM171,
+     TPLUSPLUS yytokentype::TPLUSPLUS172,
+     TPRAGMA yytokentype::TPRAGMA173,
+     TPRIMITIVE yytokentype::TPRIMITIVE174,
+     TPROC yytokentype::TPROC175,
+     TRECORD yytokentype::TRECORD176,
+     TREDUCE yytokentype::TREDUCE177,
+     TREF yytokentype::TREF178,
+     TRETURN yytokentype::TRETURN179,
+     TSCAN yytokentype::TSCAN180,
+     TSELECT yytokentype::TSELECT181,
+     TSERIAL yytokentype::TSERIAL182,
+     TSINGLE yytokentype::TSINGLE183,
+     TSPARSE yytokentype::TSPARSE184,
+     TSUBDOMAIN yytokentype::TSUBDOMAIN185,
+     TSYNC yytokentype::TSYNC186,
+     TTHEN yytokentype::TTHEN187,
+     TTYPE yytokentype::TTYPE188,
+     TUNDERSCORE yytokentype::TUNDERSCORE189,
+     TUNION yytokentype::TUNION190,
+     TUSE yytokentype::TUSE191,
+     TVAR yytokentype::TVAR192,
+     TWHEN yytokentype::TWHEN193,
+     TWHERE yytokentype::TWHERE194,
+     TWHILE yytokentype::TWHILE195,
+     TYIELD yytokentype::TYIELD196,
+     TZIP yytokentype::TZIP197,
+     TALIAS yytokentype::TALIAS198,
+     TAND yytokentype::TAND199,
+     TASSIGN yytokentype::TASSIGN200,
+     TASSIGNBAND yytokentype::TASSIGNBAND201,
+     TASSIGNBOR yytokentype::TASSIGNBOR202,
+     TASSIGNBXOR yytokentype::TASSIGNBXOR203,
+     TASSIGNDIVIDE yytokentype::TASSIGNDIVIDE204,
+     TASSIGNEXP yytokentype::TASSIGNEXP205,
+     TASSIGNLAND yytokentype::TASSIGNLAND206,
+     TASSIGNLOR yytokentype::TASSIGNLOR207,
+     TASSIGNMINUS yytokentype::TASSIGNMINUS208,
+     TASSIGNMOD yytokentype::TASSIGNMOD209,
+     TASSIGNMULTIPLY yytokentype::TASSIGNMULTIPLY210,
+     TASSIGNPLUS yytokentype::TASSIGNPLUS211,
+     TASSIGNSL yytokentype::TASSIGNSL212,
+     TASSIGNSR yytokentype::TASSIGNSR213,
+     TBAND yytokentype::TBAND214,
+     TBNOT yytokentype::TBNOT215,
+     TBOR yytokentype::TBOR216,
+     TBXOR yytokentype::TBXOR217,
+     TCOLON yytokentype::TCOLON218,
+     TCOMMA yytokentype::TCOMMA219,
+     TDIVIDE yytokentype::TDIVIDE220,
+     TDOT yytokentype::TDOT221,
+     TDOTDOT yytokentype::TDOTDOT222,
+     TDOTDOTDOT yytokentype::TDOTDOTDOT223,
+     TEQUAL yytokentype::TEQUAL224,
+     TEXP yytokentype::TEXP225,
+     TGREATER yytokentype::TGREATER226,
+     TGREATEREQUAL yytokentype::TGREATEREQUAL227,
+     THASH yytokentype::THASH228,
+     TLESS yytokentype::TLESS229,
+     TLESSEQUAL yytokentype::TLESSEQUAL230,
+     TMINUS yytokentype::TMINUS231,
+     TMOD yytokentype::TMOD232,
+     TNOT yytokentype::TNOT233,
+     TNOTEQUAL yytokentype::TNOTEQUAL234,
+     TOR yytokentype::TOR235,
+     TPLUS yytokentype::TPLUS236,
+     TQUESTION yytokentype::TQUESTION237,
+     TSEMI yytokentype::TSEMI238,
+     TSHIFTLEFT yytokentype::TSHIFTLEFT239,
+     TSHIFTRIGHT yytokentype::TSHIFTRIGHT240,
+     TSTAR yytokentype::TSTAR241,
+     TSWAP yytokentype::TSWAP242,
+     TIO yytokentype::TIO243,
+     TLCBR yytokentype::TLCBR244,
+     TRCBR yytokentype::TRCBR245,
+     TLP yytokentype::TLP246,
+     TRP yytokentype::TRP247,
+     TLSBR yytokentype::TLSBR248,
+     TRSBR yytokentype::TRSBR249,
+     TNOELSE yytokentype::TNOELSE250,
+     TUMINUS yytokentype::TUMINUS251,
+     TUPLUS yytokentype::TUPLUS252,
+typedef union YYSTYPE259,
+} YYSTYPE;285,
+# define YYSTYPE_IS_TRIVIAL 286,
+# define yystype 287,
+# define YYSTYPE_IS_DECLARED 288,
+typedef struct YYLTYPE292,
+  int first_line;YYLTYPE::first_line294,
+  int first_column;YYLTYPE::first_column295,
+  int last_line;YYLTYPE::last_line296,
+  int last_column;YYLTYPE::last_column297,
+} YYLTYPE;298,
+# define yyltype 299,
+# define YYLTYPE_IS_DECLARED 300,
+# define YYLTYPE_IS_TRIVIAL 301,
+# undef short312,
+typedef YYTYPE_UINT8 yytype_uint8;316,
+typedef unsigned char yytype_uint8;318,
+typedef YYTYPE_INT8 yytype_int8;322,
+typedef signed char yytype_int8;325,
+typedef short int yytype_int8;327,
+typedef YYTYPE_UINT16 yytype_uint16;331,
+typedef unsigned short int yytype_uint16;333,
+typedef YYTYPE_INT16 yytype_int16;337,
+typedef short int yytype_int16;339,
+#  define YYSIZE_T 344,
+#  define YYSIZE_T 346,
+#  define YYSIZE_T 350,
+#  define YYSIZE_T 352,
+#define YYSIZE_MAXIMUM 356,
+#   define YY_(362,
+#  define YY_(366,
+# define YYUSE(372,
+# define YYUSE(374,
+# define YYID(379,
+#    define YYSTACK_ALLOC 402,
+#    define YYSTACK_ALLOC 406,
+#    define alloca 409,
+#    define YYSTACK_ALLOC 411,
+#      define EXIT_SUCCESS 416,
+#  define YYSTACK_FREE(425,
+#   define YYSTACK_ALLOC_MAXIMUM 431,
+#  define YYSTACK_ALLOC 434,
+#  define YYSTACK_FREE 435,
+#   define YYSTACK_ALLOC_MAXIMUM 437,
+#    define EXIT_SUCCESS 444,
+#   define YYMALLOC 448,
+#   define YYFREE 455,
+union yyalloc471,
+  yytype_int16 yyss_alloc;yyalloc::yyss_alloc473,
+  YYSTYPE yyvs_alloc;yyalloc::yyvs_alloc474,
+  YYLTYPE yyls_alloc;yyalloc::yyls_alloc475,
+# define YYSTACK_GAP_MAXIMUM 479,
+# define YYSTACK_BYTES(483,
+# define YYCOPY_NEEDED 487,
+# define YYSTACK_RELOCATE(494,
+#   define YYCOPY(512,
+#   define YYCOPY(515,
+#define YYFINAL 528,
+#define YYLAST 530,
+#define YYNTOKENS 533,
+#define YYNNTS 535,
+#define YYNRULES 537,
+#define YYNSTATES 539,
+#define YYUNDEFTOK 542,
+#define YYMAXUTOK 543,
+#define YYTRANSLATE(545,
+static const yytype_uint8 yytranslate[yytranslate549,
+static const yytype_uint16 yyprhs[yyprhs595,
+static const yytype_int16 yyrhs[yyrhs642,
+static const yytype_uint16 yyrline[yyrline787,
+static const char *const yytname[yytname837,
+static const yytype_uint16 yytoknum[yytoknum891,
+static const yytype_uint8 yyr1[yyr1910,
+static const yytype_uint8 yyr2[yyr2957,
+static const yytype_uint16 yydefact[yydefact1006,
+static const yytype_int16 yydefgoto[yydefgoto1089,
+#define YYPACT_NINF 1106,
+static const yytype_int16 yypact[yypact1107,
+static const yytype_int16 yypgoto[yypgoto1190,
+#define YYTABLE_NINF 1208,
+static const yytype_int16 yytable[yytable1209,
+#define yypact_value_is_default(2292,
+#define yytable_value_is_error(2295,
+static const yytype_int16 yycheck[yycheck2298,
+static const yytype_uint8 yystos[yystos3383,
+#define yyerrok	3465,
+#define yyclearin	3466,
+#define YYEMPTY	3467,
+#define YYEOF	3468,
+#define YYACCEPT	3470,
+#define YYABORT	3471,
+#define YYERROR	3472,
+#define YYFAIL	3482,
+#define YYRECOVERING(3490,
+#define YYBACKUP(3492,
+#define YYTERROR	3509,
+#define YYERRCODE	3510,
+#define YYRHSLOC(3517,
+# define YYLLOC_DEFAULT(3519,
+#  define YY_LOCATION_PRINT(3545,
+#  define YY_LOCATION_PRINT(3550,
+# define YYLEX 3558,
+# define YYLEX 3560,
+#  define YYFPRINTF 3568,
+# define YYDPRINTF(3571,
+# define YY_SYMBOL_PRINT(3577,
+    int yytype;3602,
+    YYSTYPE const * const yyvaluep;3603,
+    YYLTYPE const * const yylocationp;3604,
+    int yytype;3636,
+    YYSTYPE const * const yyvaluep;3637,
+    YYLTYPE const * const yylocationp;3638,
+    yytype_int16 *yytop;yytop3665,
+  for (; yybottom 3669,
+      default: break;7023,
+  yylen 7039,
+  *++yyvsp yyvsp7042,
+  *++yylsp yylsp7043,
+  yyn 7049,
+  yystate 7051,
+    yystate 7055,
+  goto yynewstate;7057,
+  yytoken 7066,
+# define YYSYNTAX_ERROR 7075,
+# undef YYSYNTAX_ERROR7104,
+  yyerror_range[yyerror_range7108,
+  goto yyerrlab1;7131,
+  yyerror_range[yyerror_range7145,
+  yylen 7149,
+  yystate 7151,
+  goto yyerrlab1;7152,
+  yyerrstatus 7159,
+      yyn 7163,
+      yyerror_range[yyerror_range7179,
+      yystate 7183,
+  *++yyvsp yyvsp7187,
+  yyerror_range[yyerror_range7189,
+  *++yylsp yylsp7193,
+  yystate 7198,
+  goto yynewstate;7199,
+  yyresult 7206,
+  goto yyreturn;7207,
+  yyresult 7213,
+  goto yyreturn;7214,
+  yyresult 7222,
+
+lex.yy.cpp,5604
+#define  YY_INT_ALIGNED 5,
+#define FLEX_SCANNER9,
+#define YY_FLEX_MAJOR_VERSION 10,
+#define YY_FLEX_MINOR_VERSION 11,
+#define YY_FLEX_SUBMINOR_VERSION 12,
+#define FLEX_BETA14,
+#define FLEXINT_H30,
+#define __STDC_LIMIT_MACROS 40,
+typedef int8_t flex_int8_t;44,
+typedef uint8_t flex_uint8_t;45,
+typedef int16_t flex_int16_t;46,
+typedef uint16_t flex_uint16_t;47,
+typedef int32_t flex_int32_t;48,
+typedef uint32_t flex_uint32_t;49,
+typedef signed char flex_int8_t;51,
+typedef short int flex_int16_t;52,
+typedef int flex_int32_t;53,
+typedef unsigned char flex_uint8_t;54,
+typedef unsigned short int flex_uint16_t;55,
+typedef unsigned int flex_uint32_t;56,
+#define INT8_MIN 61,
+#define INT16_MIN 64,
+#define INT32_MIN 67,
+#define INT8_MAX 70,
+#define INT16_MAX 73,
+#define INT32_MAX 76,
+#define UINT8_MAX 79,
+#define UINT16_MAX 82,
+#define UINT32_MAX 85,
+#define YY_USE_CONST93,
+#define YY_USE_CONST100,
+#define yyconst 106,
+#define yyconst108,
+#define YY_NULL 112,
+#define YY_SC_TO_UI(119,
+#define BEGIN 125,
+#define YY_START 131,
+#define YYSTATE 132,
+#define YY_STATE_EOF(135,
+#define YY_NEW_FILE 138,
+#define YY_END_OF_BUFFER_CHAR 140,
+#define YY_BUF_SIZE 144,
+#define YY_STATE_BUF_SIZE 149,
+#define YY_TYPEDEF_YY_BUFFER_STATE152,
+typedef struct yy_buffer_state *YY_BUFFER_STATE;YY_BUFFER_STATE153,
+#define EOB_ACT_CONTINUE_SCAN 160,
+#define EOB_ACT_END_OF_FILE 161,
+#define EOB_ACT_LAST_MATCH 162,
+    #define YY_LESS_LINENO(164,
+#define yyless(167,
+#define unput(180,
+#define YY_TYPEDEF_YY_SIZE_T183,
+typedef size_t yy_size_t;184,
+#define YY_STRUCT_YY_BUFFER_STATE188,
+struct yy_buffer_state189,
+	FILE *yy_input_file;yy_buffer_state::yy_input_file191,
+	char *yy_ch_buf;yy_buffer_state::yy_ch_buf193,
+	char *yy_buf_pos;yy_buffer_state::yy_buf_pos194,
+	yy_size_t yy_buf_size;yy_buffer_state::yy_buf_size199,
+	int yy_n_chars;yy_buffer_state::yy_n_chars204,
+	int yy_is_our_buffer;yy_buffer_state::yy_is_our_buffer210,
+	int yy_is_interactive;yy_buffer_state::yy_is_interactive217,
+	int yy_at_bol;yy_buffer_state::yy_at_bol223,
+    int yy_bs_lineno;yy_buffer_state::yy_bs_lineno225,
+    int yy_bs_column;yy_buffer_state::yy_bs_column226,
+	int yy_fill_buffer;yy_buffer_state::yy_fill_buffer231,
+	int yy_buffer_status;yy_buffer_state::yy_buffer_status233,
+#define YY_BUFFER_NEW 235,
+#define YY_BUFFER_NORMAL 236,
+#define YY_BUFFER_EOF_PENDING 247,
+static size_t yy_buffer_stack_top 253,
+static size_t yy_buffer_stack_max 254,
+static YY_BUFFER_STATE * yy_buffer_stack 255,
+#define YY_CURRENT_BUFFER 263,
+#define YY_CURRENT_BUFFER_LVALUE 270,
+static char yy_hold_char;273,
+static int yy_n_chars;274,
+int yyleng;275,
+static char *yy_c_buf_p yy_c_buf_p278,
+static int yy_init 279,
+static int yy_start 280,
+static int yy_did_buffer_switch_on_eof;285,
+#define YY_FLUSH_BUFFER 299,
+#define yy_new_buffer 309,
+#define yy_set_interactive(311,
+#define yy_set_bol(321,
+#define YY_AT_BOL(331,
+#define yywrap(335,
+#define YY_SKIP_YYWRAP336,
+typedef unsigned char YY_CHAR;338,
+FILE *yyin yyin340,
+typedef int yy_state_type;342,
+int yylineno 346,
+#define yytext_ptr 349,
+#define YY_DO_BEFORE_ACTION 359,
+#define YY_NUM_RULES 366,
+#define YY_END_OF_BUFFER 367,
+struct yy_trans_info370,
+	flex_int32_t yy_verify;yy_trans_info::yy_verify372,
+	flex_int32_t yy_nxt;yy_trans_info::yy_nxt373,
+static yyconst flex_int16_t yy_accept[yy_accept375,
+static yyconst flex_int32_t yy_ec[yy_ec417,
+static yyconst flex_int32_t yy_meta[yy_meta449,
+static yyconst flex_int16_t yy_base[yy_base460,
+static yyconst flex_int16_t yy_def[yy_def502,
+static yyconst flex_int16_t yy_nxt[yy_nxt544,
+static yyconst flex_int16_t yy_chk[yy_chk600,
+static yy_state_type yy_last_accepting_state;656,
+static char *yy_last_accepting_cpos;yy_last_accepting_cpos657,
+int yy_flex_debug 660,
+#define REJECT 665,
+#define yymore(666,
+#define YY_MORE_ADJ 667,
+#define YY_RESTORE_YY_MORE_OFFSET668,
+char *yytext;yytext669,
+#define INITIAL 743,
+#define externmode 744,
+#define YY_EXTRA_TYPE 755,
+#define YY_READ_BUF_SIZE 821,
+#define ECHO 829,
+#define YY_INPUT(836,
+#define yyterminate(873,
+#define YY_START_STACK_INCR 878,
+#define YY_FATAL_ERROR(883,
+#define YY_DECL_IS_OURS 892,
+#define YY_DECL 896,
+#define YY_USER_ACTION903,
+#define YY_BREAK 908,
+#define YY_RULE_SETUP 911,
+static int yy_get_next_buffer 1810,
+    static yy_state_type yy_get_previous_state 1944,
+    static yy_state_type yy_try_NUL_trans 1976,
+    static int yyinput 2001,
+    void yyrestart 2078,
+    void yy_switch_to_buffer 2095,
+static void yy_load_buffer_state 2126,
+    YY_BUFFER_STATE yy_create_buffer 2140,
+    void yy_delete_buffer 2168,
+    static void yy_init_buffer 2191,
+    void yy_flush_buffer 2219,
+void yypush_buffer_state 2248,
+void yypop_buffer_state 2278,
+static void yyensure_buffer_stack 2297,
+YY_BUFFER_STATE yy_scan_buffer 2346,
+YY_BUFFER_STATE yy_scan_string 2383,
+YY_BUFFER_STATE yy_scan_bytes 2396,
+#define YY_EXIT_FAILURE 2427,
+static void yy_fatal_error 2430,
+#undef yyless2438,
+#define yyless(2439,
+int yyget_lineno 2458,
+FILE *yyget_in yyget_in2467,
+FILE *yyget_out yyget_out2475,
+int yyget_leng 2483,
+char *yyget_text yyget_text2492,
+void yyset_lineno 2501,
+void yyset_in 2513,
+void yyset_out 2518,
+int yyget_debug 2523,
+void yyset_debug 2528,
+static int yy_init_globals 2533,
+int yylex_destroy 2562,
+static void yy_flex_strncpy 2588,
+static int yy_flex_strlen 2597,
+void *yyalloc yyalloc2607,
+void *yyrealloc yyrealloc2612,
+void yyfree 2624,
+#define YYTABLES_NAME 2629,
+
+chapel.lex,243
+#define processToken(16,
+#define processStringLiteral(43,
+#define processExtern(55,
+#define processExternCode(63,
+int getNextYYChar(254,
+bool chplParseString;262,
+const char *chplParseStringMsg chplParseStringMsg263,
+parseString(265,
+
+passes/reservedSymbolNames.h,0
+
+passes/docs.h,0
+
+parser/lexyacc.cpp,0
+
+parser/lex.yy.cpp,0
+
+ifa/cast_code.cpp,0

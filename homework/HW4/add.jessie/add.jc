@@ -1,0 +1,90 @@
+# InvariantPolicy = Arguments
+# SeparationPolicy = Regions
+# AnnotationPolicy = None
+# AbstractDomain = Pol
+# FloatModel = math
+
+axiomatic Padding {
+
+  logic type padding
+  
+}
+
+tag intP = {
+  integer intM: 32;
+}
+
+type intP = [intP]
+
+tag unsigned_charP = {
+  integer unsigned_charM: 8;
+}
+
+type unsigned_charP = [unsigned_charP]
+
+tag charP = {
+  integer charM: 8;
+}
+
+type charP = [charP]
+
+tag voidP = {
+}
+
+type voidP = [voidP]
+
+unit ipadd(integer n_1, intP[..] a, intP[..] b)
+  requires (_C_20 : ((((_C_23 : (2147483647 > n_1)) && (_C_24 : (n_1 >= 0))) &&
+                       ((_C_26 : (\offset_min(a) <= 0)) &&
+                         (_C_27 : (\offset_max(a) >= (n_1 - 1))))) &&
+                      ((_C_29 : (\offset_min(b) <= 0)) &&
+                        (_C_30 : (\offset_max(b) >= (n_1 - 1))))));
+behavior default:
+  assigns (a + [0..(n_1 - 1)]).intM;
+  ensures (_C_19 : (\forall integer i_1;
+                     (((0 <= i_1) && (i_1 <= (\at(n_1,Old) - 1))) ==>
+                       ((\at(a,Old) + i_1).intM ==
+                         (\at((a + i_1).intM,Old) + (\at(b,Old) + i_1).intM)))));
+{  
+   (var integer i);
+   
+   {  (_C_1 : (i = 0));
+      
+      loop 
+      behavior default:
+        invariant (_C_6 : ((_C_7 : (0 <= i)) && (_C_8 : (i <= n_1))));
+      behavior default:
+        invariant (_C_5 : (\forall integer x;
+                            (((0 <= x) && (x < i)) ==>
+                              ((a + x).intM ==
+                                (\at((a + x).intM,Pre) + (b + x).intM)))));
+      behavior default:
+        invariant (_C_4 : (\forall integer x_0;
+                            (((i <= x_0) && (x_0 <= n_1)) ==>
+                              ((a + x_0).intM == \at((a + x_0).intM,Pre)))));
+      behavior default:
+        invariant (_C_3 : (\forall integer x_1;
+                            (((0 <= x_1) && (x_1 < n_1)) ==>
+                              ((b + x_1).intM == \at((b + x_1).intM,Pre)))));
+      variant (_C_2 : (n_1 - i));
+      while (true)
+      {  
+         {  (if (i < n_1) then () else 
+            (goto while_0_break));
+            
+            {  (_C_16 : ((_C_15 : (_C_14 : (a + i)).intM) = (_C_13 : 
+                                                            ((_C_12 : 
+                                                             (_C_11 : 
+                                                             (a + i)).intM) +
+                                                              (_C_10 : 
+                                                              (_C_9 : 
+                                                              (b + i)).intM)))));
+               (_C_18 : (i = (_C_17 : (i + 1))))
+            }
+         }
+      };
+      (while_0_break : ());
+      
+      (return ())
+   }
+}

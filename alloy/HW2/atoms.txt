@@ -1,0 +1,14 @@
+Dan DeCamillo
+3 OCTOBER 2014
+CISC 414/614 Fall 2014
+
+1. a.u Answer: Expression. Type: BXC Value: {(B0, C0), (B0, C1)}
+2. u.c[a] Answer: Expression. Type: B Value: {(B0)}
+3. s.t Answer: Expression Value:ERROR
+4. s + u.c Answer: Expression Type: AXB Value: {(A1,B0), (A1, B2), (A0, B0), (A2, B0)}
+5. s - u.c Answer: Expression Type: AXB Value {(A2, B0)}
+6. s & u.c Answer Expression Type: AXB Value: {}
+7. some x: A | x->B in s Answer: Predicate Value: T
+8. all x: A, y :C | some x.u.y  Answer: Predicate Value: T 
+9. s ++ a->b Answer: Expression Type: AXB Value: {(A1, B0), (A1, B2), (A0, B0), (A2, B0)}
+10. {a->b: A->B | a->b->C in u} Answer: Expression Value: ERROR

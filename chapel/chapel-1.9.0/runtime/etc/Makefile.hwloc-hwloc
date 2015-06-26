@@ -1,0 +1,8 @@
+#
+# Copyright (c) 2004-2014, Cray Inc.  (See LICENSE file for more details)
+#
+
+GEN_CFLAGS += -I$(HWLOC_INCLUDE_DIR)
+GEN_LFLAGS += -L$(HWLOC_LIB_DIR) -Wl,-rpath -Wl,$(HWLOC_LIB_DIR)
+
+LIBS += -lhwloc

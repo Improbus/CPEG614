@@ -1,0 +1,84 @@
+# InvariantPolicy = Arguments
+# SeparationPolicy = Regions
+# AnnotationPolicy = None
+# AbstractDomain = Pol
+# FloatModel = math
+
+axiomatic Padding {
+
+  logic type padding
+  
+}
+
+tag unsigned_charP = {
+  integer unsigned_charM: 8;
+}
+
+type unsigned_charP = [unsigned_charP]
+
+tag charP = {
+  integer charM: 8;
+}
+
+type charP = [charP]
+
+tag voidP = {
+}
+
+type voidP = [voidP]
+
+axiomatic powers {
+
+  logic real power(real x, integer n)
+   
+  axiom power0 :
+  (\forall real x_0;
+    (power(x_0, 0) == 1))
+   
+  axiom power1 :
+  (\forall real x_1;
+    (\forall integer n_0;
+      ((n_0 >= 1) ==> (power(x_1, n_0) == (x_1 * power(x_1, (n_0 - 1)))))))
+  
+}
+
+real series(integer n_1, real x)
+  requires (_C_19 : ((_C_20 : (n_1 >= 0)) && (_C_21 : (x != 1))));
+behavior default:
+  ensures (_C_18 : (((\at(x,Old) - 1) * \result) ==
+                     (power(\at(x,Old), \at(n_1,Old)) - 1)));
+{  
+   (var integer i);
+   
+   (var real s);
+   
+   (var real t);
+   
+   {  (_C_1 : (i = 0));
+      (_C_3 : (s = (_C_2 : (0 :> real))));
+      (_C_5 : (t = (_C_4 : (1 :> real))));
+      
+      loop 
+      behavior default:
+        invariant (_C_9 : ((_C_10 : (0 <= i)) && (_C_11 : (i <= n_1))));
+      behavior default:
+        invariant (_C_8 : (t == power(x, i)));
+      behavior default:
+        invariant (_C_7 : ((s * (x - 1)) == (t - 1)));
+      variant (_C_6 : (n_1 - i));
+      while (true)
+      {  
+         {  (if (i < n_1) then () else 
+            (goto while_0_break));
+            
+            {  (_C_13 : (s = (_C_12 : (s + t))));
+               (_C_15 : (t = (_C_14 : (t * x))));
+               (_C_17 : (i = (_C_16 : (i + 1))))
+            }
+         }
+      };
+      (while_0_break : ());
+      
+      (return s)
+   }
+}

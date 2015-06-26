@@ -1,0 +1,197 @@
+/* Daniel A DeCamillo */
+/* 04-December-2014 */
+/* CISC 414/614 FALL 2014 */
+/* Homework 5 */
+
+dan@0466J-E6400:~/cpeg614/homework/HW5/P3$ spin ltl.pml 
+ltl f1: [] ((s>=0))
+ltl f2: <> ([] ((s>=1)))
+ltl f3: (! (<> ((s==2)))) || ([] ((s==2)))
+ltl f4: (! (((s==1)) && (<> ((s==3))))) || ((! ((s==3))) U ((s==2)))
+ltl f5: (([] (<> ((s==1)))) && ([] (<> ((s==2))))) && ([] (<> ((s==3))))
+
+dan@0466J-E6400:~/cpeg614/homework/HW5/P3$ spin -a ltl.pml 
+ltl f1: [] ((s>=0))
+ltl f2: <> ([] ((s>=1)))
+ltl f3: (! (<> ((s==2)))) || ([] ((s==2)))
+ltl f4: (! (((s==1)) && (<> ((s==3))))) || ((! ((s==3))) U ((s==2)))
+ltl f5: (([] (<> ((s==1)))) && ([] (<> ((s==2))))) && ([] (<> ((s==3))))
+  the model contains 5 never claims: f5, f4, f3, f2, f1
+  only one claim is used in a verification run
+  choose which one with ./pan -a -N name (defaults to -N f1)
+
+dan@0466J-E6400:~/cpeg614/homework/HW5/P3$ cc -o pan pan.c
+dan@0466J-E6400:~/cpeg614/homework/HW5/P3$ ./pan -a -n -N f1
+
+(Spin Version 6.3.2 -- 17 May 2014)
+	+ Partial Order Reduction
+
+Full statespace search for:
+	never claim         	+ (f1)
+	assertion violations	+ (if within scope of claim)
+	acceptance   cycles 	+ (fairness disabled)
+	invalid end states	- (disabled by never claim)
+
+State-vector 28 byte, depth reached 15, errors: 0
+        8 states, stored
+        1 states, matched
+        9 transitions (= stored+matched)
+        0 atomic steps
+hash conflicts:         0 (resolved)
+
+Stats on memory usage (in Megabytes):
+    0.000	equivalent memory usage for states (stored*(State-vector + overhead))
+    0.277	actual memory usage for states
+  128.000	memory used for hash table (-w24)
+    0.534	memory used for DFS stack (-m10000)
+  128.730	total actual memory usage
+
+
+
+pan: elapsed time 0 seconds
+
+dan@0466J-E6400:~/cpeg614/homework/HW5/P3$ ./pan -a -n -N f2
+
+(Spin Version 6.3.2 -- 17 May 2014)
+	+ Partial Order Reduction
+
+Full statespace search for:
+	never claim         	+ (f2)
+	assertion violations	+ (if within scope of claim)
+	acceptance   cycles 	+ (fairness disabled)
+	invalid end states	- (disabled by never claim)
+
+State-vector 28 byte, depth reached 15, errors: 0
+       10 states, stored (18 visited)
+        5 states, matched
+       23 transitions (= visited+matched)
+        0 atomic steps
+hash conflicts:         0 (resolved)
+
+Stats on memory usage (in Megabytes):
+    0.001	equivalent memory usage for states (stored*(State-vector + overhead))
+    0.277	actual memory usage for states
+  128.000	memory used for hash table (-w24)
+    0.534	memory used for DFS stack (-m10000)
+  128.730	total actual memory usage
+
+
+
+pan: elapsed time 0 seconds
+
+dan@0466J-E6400:~/cpeg614/homework/HW5/P3$ ./pan -a -n -N f3
+pan:1: assertion violated  !((s==2)) (at depth 8)
+pan: wrote ltl.pml.trail
+
+(Spin Version 6.3.2 -- 17 May 2014)
+Warning: Search not completed
+	+ Partial Order Reduction
+
+Full statespace search for:
+	never claim         	+ (f3)
+	assertion violations	+ (if within scope of claim)
+	acceptance   cycles 	+ (fairness disabled)
+	invalid end states	- (disabled by never claim)
+
+State-vector 28 byte, depth reached 8, errors: 1
+        5 states, stored
+        0 states, matched
+        5 transitions (= stored+matched)
+        0 atomic steps
+hash conflicts:         0 (resolved)
+
+Stats on memory usage (in Megabytes):
+    0.000	equivalent memory usage for states (stored*(State-vector + overhead))
+    0.277	actual memory usage for states
+  128.000	memory used for hash table (-w24)
+    0.534	memory used for DFS stack (-m10000)
+  128.730	total actual memory usage
+
+
+
+pan: elapsed time 0 seconds
+
+dan@0466J-E6400:~/cpeg614/homework/HW5/P3$ ./pan -r -N f3
+MSC: ~G 23
+  1:	proc  0 (f3) ltl.pml:23 (state 7)	[(!((s==2)))]
+  2:	proc  1 (:init:) ltl.pml:11 (state 9)	[((s==0))]
+MSC: ~G 29
+  3:	proc  0 (f3) ltl.pml:29 (state 15)	[(1)]
+  4:	proc  1 (:init:) ltl.pml:11 (state 2)	[s = 1]
+  5:	proc  0 (f3) ltl.pml:29 (state 15)	[(1)]
+  6:	proc  1 (:init:) ltl.pml:11 (state 9)	[((s==1))]
+  7:	proc  0 (f3) ltl.pml:29 (state 15)	[(1)]
+  8:	proc  1 (:init:) ltl.pml:12 (state 4)	[s = 2]
+pan:1: assertion violated  !((s==2)) (at depth 9)
+spin: trail ends after 9 steps
+#processes 2:
+  9:	proc 0 (f3)  ltl.pml:29 (state 15) (invalid end state)
+		((s==2))
+		(1)
+  9:	proc 1 (:init:)  ltl.pml:11 (state  9) (invalid end state)
+		((s==0))
+		((s==1))
+		((s==2))
+		((s==3))
+global vars:
+	int    s:	2
+
+dan@0466J-E6400:~/cpeg614/homework/HW5/P3$ ./pan -a -n -N f4
+
+(Spin Version 6.3.2 -- 17 May 2014)
+	+ Partial Order Reduction
+
+Full statespace search for:
+	never claim         	+ (f4)
+	assertion violations	+ (if within scope of claim)
+	acceptance   cycles 	+ (fairness disabled)
+	invalid end states	- (disabled by never claim)
+
+State-vector 28 byte, depth reached 0, errors: 0
+        1 states, stored
+        0 states, matched
+        1 transitions (= stored+matched)
+        0 atomic steps
+hash conflicts:         0 (resolved)
+
+Stats on memory usage (in Megabytes):
+    0.000	equivalent memory usage for states (stored*(State-vector + overhead))
+    0.277	actual memory usage for states
+  128.000	memory used for hash table (-w24)
+    0.534	memory used for DFS stack (-m10000)
+  128.730	total actual memory usage
+
+
+
+pan: elapsed time 0.01 seconds
+
+dan@0466J-E6400:~/cpeg614/homework/HW5/P3$ ./pan -a -n -N f5
+
+(Spin Version 6.3.2 -- 17 May 2014)
+	+ Partial Order Reduction
+
+Full statespace search for:
+	never claim         	+ (f5)
+	assertion violations	+ (if within scope of claim)
+	acceptance   cycles 	+ (fairness disabled)
+	invalid end states	- (disabled by never claim)
+
+State-vector 28 byte, depth reached 15, errors: 0
+       24 states, stored (40 visited)
+       26 states, matched
+       66 transitions (= visited+matched)
+        0 atomic steps
+hash conflicts:         0 (resolved)
+
+Stats on memory usage (in Megabytes):
+    0.001	equivalent memory usage for states (stored*(State-vector + overhead))
+    0.277	actual memory usage for states
+  128.000	memory used for hash table (-w24)
+    0.534	memory used for DFS stack (-m10000)
+  128.730	total actual memory usage
+
+
+
+pan: elapsed time 0 seconds
+
+

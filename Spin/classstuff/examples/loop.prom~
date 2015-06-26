@@ -1,0 +1,9 @@
+init {
+	int i=0;
+	
+	do
+	:: i<9 -> i++;
+	:: printf("i = %d\n",i);
+	:: i>9 -> break;
+	od
+}
